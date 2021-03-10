@@ -1,14 +1,25 @@
 DROP TABLE IF EXISTS users CASCADE;
 
-DROP TABLE IF EXISTS todos CASCADE;
+DROP TABLE IF EXISTS types CASCADE;
 
 DROP TABLE IF EXISTS categories CASCADE;
 
+DROP TABLE IF EXISTS items_wishlist CASCADE;
+
+DROP TABLE IF EXISTS requested_money CASCADE;
+
+DROP TABLE IF EXISTS donated_money CASCADE;
+
+DROP TABLE IF EXISTS request_volunteer CASCADE;
+
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  type_id INTEGER REFERENCES types(id) ON DELETE CASCADE,
+  avatar TEXT,
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
 );
 
 CREATE TABLE categories (
@@ -16,12 +27,44 @@ CREATE TABLE categories (
   category_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE todos (
+CREATE TABLE types (
+  id SERIAL PRIMARY KEY NOT NULL,
+  type_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE items_wishlist (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+  item_name VARCHAR(255) NOT NULL,
+  is_active BOOLEAN NOT NULL DEFAULT FALSE,
+  entry_date TIMESTAMP,
+  donated_date TIMESTAMP
+);
+
+CREATE TABLE requested_money (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  is_active BOOLEAN NOT NULL DEFAULT FALSE,
+  requested_amount INTEGER,
+);
+
+CREATE TABLE donated_money (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  donation_date DATE,
+  donated_amount INTEGER,
+);
+
+CREATE TABLE request_volunteer (
+  id SERIAL PRIMARY KEY NOT NULL,
+  volunteer_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  requestor_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  description TEXT NOT NULL,
   title VARCHAR(255) NOT NULL,
-  is_active BOOLEAN NOT NULL DEFAULT TRUE,
-  created_date DATE,
-  scheduled_date DATE
+  is_active BOOLEAN NOT NULL DEFAULT FALSE,
+  start_date DATE NOT NULL,
+  end_date DATE NOT NULL,
+  start_time TIME NOT NULL,
+  end_time TIME NOT NULL
 );
