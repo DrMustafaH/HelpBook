@@ -73,5 +73,6 @@ CREATE TABLE donated_money (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   donation_date DATE,
+  donated_amount INTEGER,
   requested_money_id INTEGER
 );

@@ -141,14 +141,13 @@ INSERT INTO
     donated_date
   )
 VALUES
-  (2, 5, 'Dog food', false, '15-12-2020'),
-  (2, 5, 'Puppy pads', false, '15-12-2020'),
-  (3, 2, 'Rice bags', false, '20-01-2021'),
-  (3, 2, 'Canned beans', false, '25-01-2021'),
-  (5, 6, 'Markers', false, '03-02-2021'),
-  (5, 6, 'Note pads', false, '03-02-2021'),
-  (5, 6, 'Scissors', false, '05-02-2021'),
-;
+  (2, 5, 'Dog food', false, '12-15-2020', null),
+  (2, 5, 'Puppy pads', false, '12-15-2020', null),
+  (3, 2, 'Rice bags', false, '01-20-2021', null),
+  (3, 2, 'Canned beans', false, '01-25-2021', null),
+  (5, 6, 'Markers', false, '03-02-2021', null),
+  (5, 6, 'Note pads', false, '03-02-2021', null),
+  (5, 6, 'Scissors', false, '05-02-2021', null);
 
 -- seeds for requested money table
 INSERT INTO
@@ -167,5 +166,5 @@ INSERT INTO
   )
 VALUES
   (1, '06-03-2020', 100, 1),
-  (4, '20-06-2020', 250, 1),
-  (1, '15-09-2020', 300, 2);
+  (4, '06-20-2020', 250, 1),
+  (1, '09-15-2020', 300, 2);
