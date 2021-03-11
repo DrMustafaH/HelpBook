@@ -36,7 +36,7 @@ const usersRoutes = require("./routes/users");
 const itemsWishlistsRoutes = require("./routes/items_wishlist");
 const donationsRoutes = require("./routes/donations");
 // const loginRoutes = require("./routes/login");
-// const categoriesRoutes = require("./routes/categoriesRoutes");
+const categoriesRoutes = require("./routes/categories");
 // const logoutRoutes = require("./routes/logout");
 
 // Mount all resource routes
@@ -44,7 +44,7 @@ const donationsRoutes = require("./routes/donations");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/wishlist", itemsWishlistsRoutes(db));
 app.use("/api/donations", donationsRoutes(db));
-// app.use("/api/categories", categoriesRoutes(db));
+app.use("/api/categories", categoriesRoutes(db));
 // app.use("/logout", logoutRoutes(db));
 
 app.get("/", (req, res) => {
