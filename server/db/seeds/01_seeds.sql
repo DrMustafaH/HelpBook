@@ -138,16 +138,25 @@ INSERT INTO
     item_name,
     is_active,
     entry_date,
-    donated_date
+    donated_date,
+    quantity
   )
 VALUES
-  (2, 5, 'Dog food', false, '12-15-2020', null),
-  (2, 5, 'Puppy pads', false, '12-15-2020', null),
-  (3, 2, 'Rice bags', false, '01-20-2021', null),
-  (3, 2, 'Canned beans', false, '01-25-2021', null),
-  (5, 6, 'Markers', false, '03-02-2021', null),
-  (5, 6, 'Note pads', false, '03-02-2021', null),
-  (5, 6, 'Scissors', false, '05-02-2021', null);
+  (2, 5, 'Dog food', TRUE, '12-15-2020', null, 3),
+  (2, 5, 'Puppy pads', TRUE, '12-15-2020', null, 10),
+  (3, 2, 'Rice bags', TRUE, '01-20-2021', null, 3),
+  (
+    3,
+    2,
+    'Canned beans',
+    TRUE,
+    '01-25-2021',
+    null,
+    5
+  ),
+  (5, 6, 'Markers', TRUE, '03-02-2021', null, 10),
+  (5, 6, 'Note pads', TRUE, '03-02-2021', null, 10),
+  (5, 6, 'Scissors', TRUE, '05-02-2021', null, 2);
 
 -- seeds for requested money table
 INSERT INTO

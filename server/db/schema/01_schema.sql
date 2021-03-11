@@ -57,7 +57,8 @@ CREATE TABLE items_wishlist (
   item_name VARCHAR(255) NOT NULL,
   is_active BOOLEAN NOT NULL DEFAULT FALSE,
   entry_date TIMESTAMP,
-  donated_date TIMESTAMP
+  donated_date TIMESTAMP DEFAULT NULL,
+  quantity INTEGER NOT NULL
 );
 
 -- sixth
