@@ -32,7 +32,7 @@ app.use(express.static("public"));
 //   keys: ['key1', 'key2']
 // }));
 
-// const usersRoutes = require("./routes/users");
+const usersRoutes = require("./routes/users");
 // const todoRoutes = require("./routes/todoRoutes");
 // const loginRoutes = require("./routes/login");
 // const categoriesRoutes = require("./routes/categoriesRoutes");
@@ -40,14 +40,14 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-// app.use("/api/users", usersRoutes(db));
+app.use("/api/users", usersRoutes(db));
 // app.use("/api/todos", todoRoutes(db));
 // app.use("/login", loginRoutes(db));
 // app.use("/api/categories", categoriesRoutes(db));
 // app.use("/logout", logoutRoutes(db));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  // res.render("index");
 });
 
 app.listen(PORT, () => {
