@@ -35,9 +35,8 @@ app.use(express.static("public"));
 const usersRoutes = require("./routes/users");
 const itemsWishlistsRoutes = require("./routes/items_wishlist");
 const donationsRoutes = require("./routes/donations");
-// const loginRoutes = require("./routes/login");
+const typesRoutes = require("./routes/types");
 const categoriesRoutes = require("./routes/categories");
-// const logoutRoutes = require("./routes/logout");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -45,7 +44,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/wishlist", itemsWishlistsRoutes(db));
 app.use("/api/donations", donationsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
-// app.use("/logout", logoutRoutes(db));
+app.use("/api/usertype", typesRoutes(db));
 
 app.get("/", (req, res) => {
   // res.render("index");
