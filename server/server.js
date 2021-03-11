@@ -34,6 +34,7 @@ app.use(express.static("public"));
 
 const usersRoutes = require("./routes/users");
 const itemsWishlistsRoutes = require("./routes/items_wishlist");
+const donationsRoutes = require("./routes/donations");
 // const loginRoutes = require("./routes/login");
 // const categoriesRoutes = require("./routes/categoriesRoutes");
 // const logoutRoutes = require("./routes/logout");
@@ -42,7 +43,7 @@ const itemsWishlistsRoutes = require("./routes/items_wishlist");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/wishlist", itemsWishlistsRoutes(db));
-// app.use("/login", loginRoutes(db));
+app.use("/api/donations", donationsRoutes(db));
 // app.use("/api/categories", categoriesRoutes(db));
 // app.use("/logout", logoutRoutes(db));
 
