@@ -8,7 +8,7 @@
 6. Donors when registered successfully will be directed to their profile and will be able to track all their activities and information.
 7. Donors will be directed to payment page when donation action is selected.
 8. Donors should be able to pay with credit card successfully and directed back to their profile with a success message provided.
-9. Donors should be notified to any payements failures that occured in process.
+9. Donors should be notified to any payements failures that occured in process. (stretch)
 10. Donors should not be able to create a wishlist or ask for donations.
 11. Users that ask for help (Receivers) will be directed to login page when they press the 'I want help' button.
 12. Receivers with no account can access register page through the login page and register successfully.
