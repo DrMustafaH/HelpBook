@@ -1,0 +1,36 @@
+.landing-section{
+  background-color: #f0efec;
+  img{
+    width: 300px;
+    height: 300px;
+  }
+  Button{
+    font-family:'Hind Madurai', sans-serif;
+    font-weight: 700;
+    background-color: #3891A6;
+    margin:20px;
+    color: #f0efec;
+    font-size: 1.15rem;
+  }
+  Button:hover{
+    background-color: #0E212F;
+  }
+}
+
+.landing-msg{
+display: flex;
+flex-direction: column;
+font-size: 80px;
+font-family: 'Montserrat', sans-serif;
+font-weight: 900;
+margin: 10px;
+color: #ffff20;
+ p{
+  margin: 10px;
+ }
+}
+
+.landing-msg-helpbook{
+font-size: 50px;
+color: #0E212F;
+}
