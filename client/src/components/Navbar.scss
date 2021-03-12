@@ -1,0 +1,18 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  img{
+    width:100px;
+    height:100px;
+  }
+
+  ul{
+    display: flex;
+    list-style-type: none;
+    font-weight: 900;
+    font-size: 20px;
+    li{
+      margin: 20px;
+    }
+  }
+}
