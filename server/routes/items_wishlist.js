@@ -66,9 +66,8 @@ module.exports = (db) => {
         quantity,
       ]
     )
-      .then((data) => {
-        const todos = data.rows;
-        res.json({ todos });
+      .then(() => {
+        res.status(201);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
