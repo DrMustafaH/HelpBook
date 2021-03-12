@@ -1,0 +1,16 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: 30px 100px;
+  img {
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #0e212f;
+  }
+}
+
+.profile-greeting {
+  padding-left: 30px;
+  font-family: "Trirong", serif;
+  margin-bottom: 0;
+}
