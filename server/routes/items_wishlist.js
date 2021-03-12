@@ -82,9 +82,8 @@ module.exports = (db) => {
     WHERE id = $1;`,
       [req.body.id]
     )
-      .then((data) => {
-        const todos = data.rows;
-        res.json({ todos });
+      .then(() => {
+        res.status(200);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -98,9 +97,8 @@ module.exports = (db) => {
     SET item_name = $1, quantity = $2, category_id = $3 WHERE id = $4;`,
       [req.body.item_name, req.body.quantity, req.body.category_id, req.body.id]
     )
-      .then((data) => {
-        const todos = data.rows;
-        res.json({ todos });
+      .then(() => {
+        res.status(200);
       })
       .catch((err) => {
         console.log(err);
@@ -115,9 +113,8 @@ module.exports = (db) => {
       WHERE id = $1`,
       [req.body.id]
     )
-      .then((data) => {
-        const todos = data.rows;
-        res.json({ todos });
+      .then(() => {
+        res.status(200);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
