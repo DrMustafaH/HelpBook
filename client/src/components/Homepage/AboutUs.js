@@ -1,6 +1,5 @@
 import React from "react";
 import "./AboutUs.scss";
-// import Button from "@material-ui/core/Button";
 
 export default function AboutUs() {
   return (
