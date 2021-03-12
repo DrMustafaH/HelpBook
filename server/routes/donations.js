@@ -81,7 +81,7 @@ module.exports = (db) => {
 
   // Set a donation amount/target in database
   router.post("/receiver", (req, res) => {
-    const user_id = req.params.id;
+    const user_id = req.body.user_id;
     const is_active = true;
     const requested_amount = req.body.requested_amount;
 
@@ -94,9 +94,8 @@ module.exports = (db) => {
         `,
       [user_id, is_active, requested_amount]
     )
-      .then((data) => {
-        const todos = data.rows;
-        res.json({ todos });
+      .then(() => {
+        res.status(201);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -107,12 +106,11 @@ module.exports = (db) => {
   router.post("/receiver/edit", (req, res) => {
     db.query(
       `UPDATE requested_money
-          SET requested_amount = $1, WHERE id = $2;`,
+          SET requested_amount = $1 WHERE id = $2;`,
       [req.body.requested_amount, req.body.id]
     )
-      .then((data) => {
-        const todos = data.rows;
-        res.json({ todos });
+      .then(() => {
+        res.status(200);
       })
       .catch((err) => {
         console.log(err);
