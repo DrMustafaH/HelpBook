@@ -1,0 +1,15 @@
+.categories-section{
+  display: flex;
+  flex-direction: column;
+  height: 430px;
+  width: 80%;
+  margin: 0 10%;
+}
+.first-four{
+  display: flex;
+  justify-content: space-evenly;
+}
+.second-four{
+  display: flex;
+  justify-content: space-evenly;
+}
