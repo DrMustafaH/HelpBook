@@ -4,22 +4,26 @@ import { Paper, withStyles } from "@material-ui/core";
 
 const StyledPaper = withStyles({
   root: {
-    height: "150px",
-    margin: "50px 10px 10px 10px",
+    height: 300,
+    width: "100%",
     color: "#0E212F",
-    textAlign: "left",
-    fontFamily: "'Hind Madurai', sans-serif",
-    borderRadius: 10,
-    margin: "20px 100px",
-    padding: "10px",
+    display: "flex",
+    fontFamily: "'Trirong', serif",
+    fontWeight: "700",
+    fontSize: "1.3rem",
+    borderRadius: 22,
+    border: "4px solid #f0efec",
+    maxHeight: 300,
+    overflow: "auto",
+    textDecorationLine: "underline",
   },
 })(Paper);
 
 export default function Header() {
   return (
-    <div className="recommendations-box">
+    <div className="recommendations-section">
       <StyledPaper>
-        <h1 className="recommendations-header">Recommendations</h1>
+        <p className="recommendations-heading">News Log</p>
       </StyledPaper>
     </div>
   );

@@ -1,62 +1,38 @@
 import React from "react";
+import FollowingItem from "./FollowingItem";
 import "./FollowingSection.scss";
+import { Paper, withStyles } from "@material-ui/core";
+
+const StyledPaper = withStyles({
+  root: {
+    background: "#f0efec",
+    height: 400,
+    width: "100%",
+    margin: "50px 10px 10px 10px",
+    color: "#0E212F",
+    display: "flex",
+    flexDirection: "column",
+    fontFamily: "'Trirong', serif",
+    fontWeight: "700",
+    fontSize: "2.5rem",
+    borderRadius: 0,
+    maxHeight: 500,
+    overflow: "auto",
+  },
+})(Paper);
 
 export default function FollowingSection() {
   return (
     <div className="following-section">
-      <h1 className="following-section-header">Following:</h1>
-
-      <div className="list-display">
-        <div>
-          <div className="following-receiver-summary">
-            <img
-              alt="profile"
-              src="https://robohash.org/doloribusdolornam.jpg?size=50x50&set=set1"
-            ></img>
-            <div className="following-receiver-info">
-              <h3>Name</h3>
-              <p>description</p>
-            </div>
-            <i class="fa fa-minus-circle" aria-hidden="true"></i>
-          </div>
-          <div className="following-receiver-summary">
-            <img
-              alt="profile"
-              src="https://robohash.org/impeditutsapiente.png?size=50x50&set=set1"
-            ></img>
-            <div className="following-receiver-info">
-              <h3>Name</h3>
-              <p>description</p>
-            </div>
-            <i class="fa fa-minus-circle" aria-hidden="true"></i>
-          </div>
+      <StyledPaper>
+        <div>Following:</div>
+        <div className="list-display">
+          <FollowingItem />
+          <FollowingItem />
+          <FollowingItem />
+          <FollowingItem />
         </div>
-        <div>
-          <div className="following-receiver-summary">
-            <img
-              alt="profile"
-              src="https://robohash.org/etconsequaturmagni.png?size=50x50&set=set1"
-            ></img>
-            <div className="following-receiver-info">
-              <h3>Name</h3>
-              <p>description</p>
-            </div>
-            <i class="fa fa-minus-circle" aria-hidden="true"></i>
-          </div>
-          <div className="following-receiver-summary">
-            <img
-              alt="profile"
-              src="https://robohash.org/sitetvel.png?size=50x50&set=set1"
-            ></img>
-            <div className="following-receiver-info">
-              <h3>Name</h3>
-              <p>description</p>
-            </div>
-            <i class="fa fa-minus-circle" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
-      <p>Click here to see more</p>
+      </StyledPaper>
     </div>
   );
 }
