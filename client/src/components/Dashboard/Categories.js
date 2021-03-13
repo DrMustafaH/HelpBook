@@ -1,7 +1,6 @@
 import React from "react";
 import "./Categories.scss";
 import { Paper, withStyles } from "@material-ui/core";
-import shadows from "@material-ui/core/styles/shadows";
 
 const StyledPaper = withStyles({
   root: {
@@ -21,7 +20,6 @@ const StyledPaper = withStyles({
       background: "#3891A6",
       transition: "background 0.5s ease-in-out",
       cursor: "pointer",
-      boxShadow: "10",
     },
   },
 })(Paper);
