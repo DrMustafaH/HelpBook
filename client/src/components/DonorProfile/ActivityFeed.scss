@@ -1,0 +1,32 @@
+.activity-feed-section {
+  border: 1px solid red;
+  background-color: #f0efec;
+  margin-bottom: 20px;
+  // margin: 0 0 20px 100px;
+  // width: 50%;
+}
+.activity-feed-header {
+  font-family: "Trirong", serif;
+}
+
+.activity-feed-item {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  padding-left: 30px;
+  i {
+    padding-right: 30px;
+  }
+  p {
+    padding-right: 20px;
+    font-size: 18px;
+  }
+  .activity-feed-timestamp {
+    font-style: italic;
+    font-size: 16px;
+  }
+}
+
+// .activity-feed-item {
+// }
