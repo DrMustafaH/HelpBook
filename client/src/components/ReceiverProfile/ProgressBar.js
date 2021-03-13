@@ -4,20 +4,19 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Button from "@material-ui/core/Button";
 import "./ProgressBar.scss";
 import { Grid } from "@material-ui/core";
-import ProgressBar from "react-bootstrap/ProgressBar";
 
 const BorderLinearProgress = withStyles((theme) => ({
   root: {
     height: 30,
-    width: "60%",
-    // borderRadius: 5,
-    // color: "#ffffff",
+    width: "auto",
+    maxWidth: "1065px",
+    margin: "0 50px",
   },
   colorPrimary: {
     backgroundColor: "#f0efec",
   },
   bar: {
-    borderRadius: 5,
+    borderRadius: 15,
     backgroundColor: "#0E212F",
   },
 }))(LinearProgress);
@@ -28,17 +27,17 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CustomProgressBar() {
+export default function ProgressBar() {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
-      <br />
-      <BorderLinearProgress variant="determinate" value={30} />
-      <ProgressBar className="progress-bar" label="60%" />
+      <div>
+        <h3>Current donations: $400 / Goal: $1000</h3>
+        <BorderLinearProgress variant="determinate" value={30} />
+      </div>
       <div className="donations-receiver-button">
-        <Button variant="contained">Edit</Button>
-        <Button variant="contained">Add</Button>
+        <Button variant="contained">Edit Amount</Button>
+        <Button variant="contained">Add New Goal</Button>
       </div>
     </div>
   );

@@ -1,15 +1,16 @@
 import React from "react";
 import Header from "../DonorProfile/Header";
-import CustomProgressBar from "./ProgressBar";
+import ProgressBar from "./ProgressBar";
 import TotalFollowers from "./TotalFollowers";
+import "./ReceiverProfile.scss";
 
 export default function DonorProfile() {
   return (
     <div>
       <Header />
-      <div>
+      <div className="receiver-followers">
         <TotalFollowers />
-        <CustomProgressBar />
+        <ProgressBar />
       </div>
     </div>
   );
