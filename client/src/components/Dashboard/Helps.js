@@ -7,7 +7,7 @@ const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
     height: 500,
-    width: 450,
+    width: "45%",
     margin: "50px 10px 10px 10px",
     color: "#0E212F",
     display: "flex",

@@ -5,7 +5,7 @@ import { Paper, withStyles } from "@material-ui/core";
 const StyledPaper = withStyles({
   root: {
     height: 300,
-    width: 1040,
+    width: "100%",
     color: "#0E212F",
     display: "flex",
     fontFamily: "'Trirong', serif",

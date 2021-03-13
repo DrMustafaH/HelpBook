@@ -5,8 +5,8 @@ import { Paper, withStyles } from "@material-ui/core";
 const StyledPaper = withStyles({
   root: {
     background: "#0E212F",
-    height: 100,
-    width: 150,
+    height: 150,
+    width: 250,
     margin: "50px 10px 10px 10px",
     color: "#f0efec",
     display: "flex",
@@ -14,7 +14,7 @@ const StyledPaper = withStyles({
     justifyContent: "center",
     fontFamily: "'Hind Madurai', sans-serif",
     fontWeight: "700",
-    fontSize: "1.15rem",
+    fontSize: "1.7rem",
     borderRadius: 22,
     "&:hover": {
       background: "#3891A6",

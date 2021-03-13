@@ -13,8 +13,7 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: "95%",
-    maxWidth: "36ch",
+    width: "auto",
     backgroundColor: "#f0efec",
     borderRadius: 22,
     position: "center",
