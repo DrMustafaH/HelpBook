@@ -1,9 +1,6 @@
 .activity-feed-section {
-  border: 1px solid red;
-  background-color: #f0efec;
-  margin-bottom: 20px;
-  // margin: 0 0 20px 100px;
-  // width: 50%;
+  margin: 0 0 0 10px;
+  flex-grow: 3;
 }
 .activity-feed-header {
   font-family: "Trirong", serif;
@@ -27,6 +24,3 @@
     font-size: 16px;
   }
 }
-
-// .activity-feed-item {
-// }
