@@ -1,6 +1,7 @@
 import React from "react";
 import Categories from "./Categories";
 import Helps from "./Helps";
+import NewsLog from "./NewsLog";
 import Search from "./Search";
 
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
       <Search />
       <Categories />
       <Helps />
+      <NewsLog />
     </div>
   );
 }
