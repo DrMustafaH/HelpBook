@@ -6,8 +6,8 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM items_wishlist;`)
       .then((data) => {
-        const users = data.rows;
-        res.json({ users });
+        const items_wishlist = data.rows;
+        res.json({ items_wishlist });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -23,8 +23,8 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        const todos = data.rows;
-        res.json({ todos });
+        const items_wishlist_id = data.rows;
+        res.json({ items_wishlist_id });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

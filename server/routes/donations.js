@@ -8,8 +8,8 @@ module.exports = (db) => {
   router.get("/donor", (req, res) => {
     db.query(`SELECT * FROM donated_money;`)
       .then((data) => {
-        const users = data.rows;
-        res.json({ users });
+        const donated_money = data.rows;
+        res.json({ donated_money });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -25,8 +25,8 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        const users = data.rows;
-        res.json({ users });
+        const donated_money_id = data.rows;
+        res.json({ donated_money_id });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -39,8 +39,8 @@ module.exports = (db) => {
   router.get("/receiver", (req, res) => {
     db.query(`SELECT * FROM requested_money;`)
       .then((data) => {
-        const users = data.rows;
-        res.json({ users });
+        const requested_money = data.rows;
+        res.json({ requested_money });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -56,8 +56,8 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        const users = data.rows;
-        res.json({ users });
+        const requested_money_id = data.rows;
+        res.json({ requested_money_id });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -71,8 +71,8 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        const users = data.rows;
-        res.json({ users });
+        const total_donations = data.rows;
+        res.json({ total_donations });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

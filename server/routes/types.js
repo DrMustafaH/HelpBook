@@ -6,8 +6,8 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM types;`)
       .then((data) => {
-        const users = data.rows;
-        res.json({ users });
+        const types = data.rows;
+        res.json({ types });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

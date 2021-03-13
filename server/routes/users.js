@@ -23,8 +23,8 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        const users = data.rows;
-        res.json({ users });
+        const users_id = data.rows;
+        res.json({ users_id });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
