@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     backgroundColor: theme.palette.background.paper,
   },
+  event: {
+    marginLeft: "20px",
+  },
 }));
 
 export default function ScheduledVolunteering() {
@@ -19,24 +22,24 @@ export default function ScheduledVolunteering() {
       <h1>Upcoming Volunteering</h1>
       <List component="nav" className={classes.root}>
         <div className="event-date">
-          <h2>DATE</h2>
-          <ListItem button>
-            <ListItemText primary="Event" className={classes.event} />
-          </ListItem>
-        </div>
-        <Divider />
-
-        <div className="event-date">
-          <h2>DATE</h2>
-          <ListItem button>
+          <h2>10/02</h2>
+          <ListItem button className={classes.event}>
             <ListItemText primary="Event" />
           </ListItem>
         </div>
         <Divider />
 
         <div className="event-date">
-          <h2>DATE</h2>
-          <ListItem button>
+          <h2>20/07</h2>
+          <ListItem button className={classes.event}>
+            <ListItemText primary="Event" />
+          </ListItem>
+        </div>
+        <Divider />
+
+        <div className="event-date">
+          <h2>01/09</h2>
+          <ListItem button className={classes.event}>
             <ListItemText primary="Event" />
           </ListItem>
         </div>
