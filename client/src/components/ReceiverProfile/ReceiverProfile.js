@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../DonorProfile/Header";
 import ProgressBar from "./ProgressBar";
 import TotalFollowers from "./TotalFollowers";
+import Wishlist from "./Wishlist";
 import "./ReceiverProfile.scss";
 
 export default function DonorProfile() {
@@ -11,6 +12,9 @@ export default function DonorProfile() {
       <div className="receiver-followers">
         <TotalFollowers />
         <ProgressBar />
+      </div>
+      <div>
+        <Wishlist />
       </div>
     </div>
   );
