@@ -1,11 +1,8 @@
 import {
-  Avatar,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemText,
   makeStyles,
-  Typography,
   withStyles,
 } from "@material-ui/core";
 import React from "react";
@@ -61,7 +58,6 @@ const StyledIconDelete = withStyles({
 
 const StyledCategoryIcon = withStyles({
   root: {
-    // marginTop: 3,
     marginRight: 20,
   },
 })(Icon);

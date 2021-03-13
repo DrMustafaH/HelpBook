@@ -9,7 +9,6 @@ import {
   ListItemText,
   makeStyles,
   Paper,
-  Typography,
   withStyles,
 } from "@material-ui/core";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";

@@ -3,7 +3,6 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Button from "@material-ui/core/Button";
 import "./ProgressBar.scss";
-import { Grid } from "@material-ui/core";
 
 const BorderLinearProgress = withStyles((theme) => ({
   root: {

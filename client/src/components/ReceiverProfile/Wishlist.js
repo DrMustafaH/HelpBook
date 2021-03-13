@@ -9,7 +9,7 @@ const StyledPaper = withStyles({
     background: "#f0efec",
     height: 500,
     width: "100%",
-    margin: "50px 10px 10px 0",
+    margin: "0 10px 10px 0",
     color: "#0E212F",
     display: "flex",
     justifyContent: "center",

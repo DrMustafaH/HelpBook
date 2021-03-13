@@ -1,8 +1,6 @@
 import {
-  Avatar,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemText,
   makeStyles,
   Typography,
