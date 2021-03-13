@@ -3,6 +3,7 @@ import "./Donations.scss";
 import { Paper, withStyles } from "@material-ui/core";
 import DonationItem from "./DonationItem";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
 const StyledPaper = withStyles({
   root: {
@@ -22,22 +23,19 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
-const StyledAddIcon = withStyles({
+const StyledIconArrow = withStyles({
   root: {
-    fontSize: "40px",
-    "&:hover": {
-      color: "#3891A6",
-      cursor: "pointer",
-    },
+    color: "#0E212F",
+    fontSize: "30px",
   },
-})(AddCircleIcon);
+})(ArrowRightIcon);
 
 export default function Donations() {
   return (
     <div className="donations-section">
       <StyledPaper>
         <div className="donation-items-list">
-          Donations
+          <p className="donations-title">Donations</p>
           <div>
             <DonationItem />
             <DonationItem />

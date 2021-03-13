@@ -9,6 +9,7 @@ import {
   withStyles,
 } from "@material-ui/core";
 import React from "react";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -28,11 +29,19 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const StyledIconArrow = withStyles({
+  root: {
+    color: "#0E212F",
+    fontSize: "30px",
+  },
+})(ArrowRightIcon);
+
 export default function DonationItem() {
   const classes = useStyles();
   return (
     <List className={classes.root}>
       <ListItem alignItems="flex-start">
+        <StyledIconArrow />
         <ListItemText primary="Quantity - Item name" />
       </ListItem>
     </List>
