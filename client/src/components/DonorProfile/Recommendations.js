@@ -1,5 +1,5 @@
 import React from "react";
-// import "./Header.scss";
+import "./Recommendations.scss";
 import { Paper, withStyles } from "@material-ui/core";
 
 const StyledPaper = withStyles({
@@ -11,7 +11,7 @@ const StyledPaper = withStyles({
     fontFamily: "'Hind Madurai', sans-serif",
     borderRadius: 10,
     margin: "20px 100px",
-    padding: "20px",
+    padding: "10px",
   },
 })(Paper);
 
@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <div className="recommendations-box">
       <StyledPaper>
-        <h1>Recommendations</h1>
+        <h1 className="recommendations-header">Recommendations</h1>
       </StyledPaper>
     </div>
   );
