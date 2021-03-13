@@ -3,6 +3,7 @@ import Header from "../DonorProfile/Header";
 import ProgressBar from "./ProgressBar";
 import TotalFollowers from "./TotalFollowers";
 import Wishlist from "./Wishlist";
+import Donations from "./Donations";
 import "./ReceiverProfile.scss";
 
 export default function DonorProfile() {
@@ -13,8 +14,9 @@ export default function DonorProfile() {
         <TotalFollowers />
         <ProgressBar />
       </div>
-      <div>
+      <div className="wishlist-donations-section">
         <Wishlist />
+        <Donations />
       </div>
     </div>
   );
