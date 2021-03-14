@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./components/Homepage/Homepage";
 import Dashboard from "./components/Dashboard/Dashboard";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DonorProfile from "./components/DonorProfile/DonorProfile";
 import ReceiverProfile from "./components/ReceiverProfile/ReceiverProfile";
 
