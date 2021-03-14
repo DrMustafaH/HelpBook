@@ -1,6 +1,5 @@
 import {
   Avatar,
-  List,
   ListItem,
   ListItemAvatar,
   ListItemText,
@@ -27,7 +26,6 @@ const useStyles = makeStyles((props) => ({
     display: "inline",
   },
 }));
-
 const StyledIconAdd = withStyles({
   root: {
     marginTop: 20,
@@ -41,29 +39,16 @@ const StyledIconAdd = withStyles({
 export default function HelpItem(props) {
   const classes = useStyles();
   return (
-    <List className={classes.root}>
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="org-avatar" src={props.avatar} />
-        </ListItemAvatar>
-        <ListItemText
-          primary={props.username}
-          // secondary={
-          //   <React.Fragment>
-          //     <Typography
-          //       component="span"
-          //       variant="body2"
-          //       className={classes.inline}
-          //       color="textPrimary"
-          //     >
-          //       Vaccine Day
-          //     </Typography>
-          //     {" Need volunteers to help out in vaccine delivery…"}
-          //   </React.Fragment>
-          // }
-        />
-        <StyledIconAdd />
-      </ListItem>
-    </List>
+    <ListItem
+      className={classes.root}
+      alignItems="flex-start"
+      onClick={props.onClick}
+    >
+      <ListItemAvatar>
+        <Avatar alt="org-avatar" src={props.avatar} />
+      </ListItemAvatar>
+      <ListItemText primary={props.username} />
+      <StyledIconAdd />
+    </ListItem>
   );
 }

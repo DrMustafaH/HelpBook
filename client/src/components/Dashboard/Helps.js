@@ -1,7 +1,8 @@
 import React from "react";
 import "./Helps.scss";
-import { Paper, withStyles } from "@material-ui/core";
+import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import HelpItem from "./HelpItem";
+import { useHistory } from "react-router-dom";
 
 const StyledPaper = withStyles({
   root: {
@@ -21,7 +22,25 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+const useStyles = makeStyles((props) => ({
+  root: {
+    width: "auto",
+    backgroundColor: "#f0efec",
+    borderRadius: 22,
+    position: "center",
+    padding: 0,
+    marginLeft: 10,
+  },
+}));
+
 export default function Helps(props) {
+  const classes = useStyles();
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/receiver");
+  }
+
   const users_organizations = props.list.map((user, i) => {
     if (user.type_id === 2) {
       return (
@@ -31,6 +50,7 @@ export default function Helps(props) {
           username={user.username}
           category_id={user.category_id}
           type_id={user.type_id}
+          onClick={handleClick}
         />
       );
     }
@@ -44,6 +64,7 @@ export default function Helps(props) {
           username={user.username}
           category_id={user.category_id}
           type_id={user.type_id}
+          // onClick={handleClick}
         />
       );
     }
@@ -53,13 +74,13 @@ export default function Helps(props) {
       <StyledPaper>
         <div>
           Organizations
-          {users_organizations}
+          <List className={classes.root}>{users_organizations}</List>
         </div>
       </StyledPaper>
       <StyledPaper>
         <div>
           Individuals
-          {users_individuals}
+          <List className={classes.root}>{users_individuals}</List>
         </div>
       </StyledPaper>
     </div>
