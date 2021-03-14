@@ -3,45 +3,12 @@ import axios from "axios";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-// import HomePage from "./components/Homepage/Homepage";
+import HomePage from "./components/Homepage/Homepage";
 import Dashboard from "./components/Dashboard/Dashboard";
-// import DonorProfile from "./components/DonorProfile/DonorProfile";
-// import ReceiverProfile from "./components/ReceiverProfile/ReceiverProfile";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import DonorProfile from "./components/DonorProfile/DonorProfile";
+import ReceiverProfile from "./components/ReceiverProfile/ReceiverProfile";
 
-const categories = [
-  {
-    id: 1,
-    name: "Health",
-  },
-  {
-    id: 2,
-    name: "Food Banks",
-  },
-  {
-    id: 3,
-    name: "Immigration & Refugees",
-  },
-  {
-    id: 4,
-    name: "Education",
-  },
-  {
-    id: 5,
-    name: "Animals",
-  },
-  {
-    id: 6,
-    name: "Kids",
-  },
-  {
-    id: 7,
-    name: "Women",
-  },
-  {
-    id: 8,
-    name: "Others",
-  },
-];
 const users = [
   {
     id: 1,
@@ -111,44 +78,41 @@ const usertype = [
 
 //homepage
 function App() {
-  //   const [state, setState] = useState({
-  //     users: {},
-  //     categories: {"Health"}
-  //   wishlist: {},
-  //   usertype: {},
-  //   donations_donor: {},
-  //   donations_receiver: {},
-  //   });
-  // const setCategory = (category) => {}
-  // useEffect(() => {
-  //   Promise.all([
-  //     axios.get("/api/users"),
-  //     axios.get("/api/categories"),
-  //     axios.get("/api/wishlist"),
-  //     axios.get("/api/usertype"),
-  //     axios.get("/api/donations/donor"),
-  //     axios.get("/api/donations/receiver"),
-  //   ]).then((all) => {
-  //     setState((prev) => ({
-  //       ...prev,
-  //       users: all[0].data,
-  //       categories: all[1].data,
-  //       wishlist: all[2].data,
-  //       usertype: all[3].data,
-  //       donations_donor: all[4].data,
-  //       donations_receiver: all[5].data,
-  //     }));
-  //   });
-  // }, []);
-  // console.log("THIS IS STATE", state.categories);
+  // Retreive categories data from local api and set it with useState
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    axios.get("/api/categories").then((res) => {
+      setCategories(res.data);
+    });
+  }, []);
+
   return (
     <div className="App">
-      <Navbar />
-      {/* <HomePage /> */}
-      <Dashboard users={users} usertype={usertype} categories={categories} />
-      {/* <DonorProfile />
-      <ReceiverProfile /> */}
-      <Footer />
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard
+              users={users}
+              usertype={usertype}
+              categories={categories}
+            />
+          </Route>
+          <Route exact path="/receiver">
+            <ReceiverProfile />
+          </Route>
+          <Route exact path="/donor">
+            <DonorProfile />
+          </Route>
+          <Route exact path="/*">
+            <h1>PAGE NOT FOUND</h1>
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }

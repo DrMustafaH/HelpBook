@@ -4,7 +4,8 @@ import Helps from "./Helps";
 import NewsLog from "./NewsLog";
 import Search from "./Search";
 
-export default function HomePage(props) {
+export default function Dashboard(props) {
+  console.log("IN DAS", props.categories);
   // let arr = props.users;
   // console.log("ARRR", arr.users[0].avatar);
   console.log("DASH PROPS", props.users[0].avatar);

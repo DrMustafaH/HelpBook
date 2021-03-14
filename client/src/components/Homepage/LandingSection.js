@@ -1,8 +1,15 @@
 import React from "react";
 import "./LandingSection.scss";
 import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
 
 export default function LandingSection() {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/dashboard");
+  }
+
   return (
     <div className="landing-section">
       <img
@@ -15,7 +22,9 @@ export default function LandingSection() {
       </div>
       <div>
         <Button variant="contained">I Need Help</Button>
-        <Button variant="contained">I Want To Help</Button>
+        <Button variant="contained" onClick={handleClick}>
+          I Want To Help
+        </Button>
       </div>
     </div>
   );

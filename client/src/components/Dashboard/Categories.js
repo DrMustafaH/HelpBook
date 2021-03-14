@@ -30,6 +30,11 @@ export default function Categories(props) {
     console.log(id);
   }
 
+  // async getUserByCategory(){
+  //   const res = await axios(`/users/category/${ID}`);
+  //     res.json();
+  // }
+
   const categories = props.categories.map((category, i) => {
     if (i < 4) {
       return (
