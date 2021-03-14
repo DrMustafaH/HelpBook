@@ -11,7 +11,7 @@ import {
 import React from "react";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((props) => ({
   root: {
     width: "auto",
     backgroundColor: "#f0efec",
@@ -39,32 +39,29 @@ const StyledIconAdd = withStyles({
   },
 })(PersonAddIcon);
 
-export default function HelpItem() {
+export default function HelpItem(props) {
   const classes = useStyles();
   return (
     <List className={classes.root}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar
-            alt="org-avatar"
-            src="https://robohash.org/autminimadolor.bmp?size=50x50&set=set1"
-          />
+          <Avatar alt="org-avatar" src={props.avatar} />
         </ListItemAvatar>
         <ListItemText
-          primary="World Health Organization"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                Vaccine Day
-              </Typography>
-              {" Need volunteers to help out in vaccine delivery…"}
-            </React.Fragment>
-          }
+          primary={props.username}
+          // secondary={
+          //   <React.Fragment>
+          //     <Typography
+          //       component="span"
+          //       variant="body2"
+          //       className={classes.inline}
+          //       color="textPrimary"
+          //     >
+          //       Vaccine Day
+          //     </Typography>
+          //     {" Need volunteers to help out in vaccine delivery…"}
+          //   </React.Fragment>
+          // }
         />
         <StyledIconAdd />
       </ListItem>

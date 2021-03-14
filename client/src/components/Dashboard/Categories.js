@@ -24,21 +24,29 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
-export default function Categories() {
+export default function Categories(props) {
+  const categories = props.categories.map((category, i) => {
+    if (i < 4) {
+      return (
+        <StyledPaper key={i} category_id={category.id}>
+          {category.name}
+        </StyledPaper>
+      );
+    }
+  });
+  const categories2 = props.categories.map((category, i) => {
+    if (i > 3 && i < 8) {
+      return (
+        <StyledPaper key={i} category_id={category.id}>
+          {category.name}
+        </StyledPaper>
+      );
+    }
+  });
   return (
     <div className="categories-section">
-      <div className="first-four">
-        <StyledPaper>Health</StyledPaper>
-        <StyledPaper>Food Banks</StyledPaper>
-        <StyledPaper>Immigration & Refugees</StyledPaper>
-        <StyledPaper>Education</StyledPaper>
-      </div>
-      <div className="second-four">
-        <StyledPaper>Animals</StyledPaper>
-        <StyledPaper>Kids</StyledPaper>
-        <StyledPaper>Women</StyledPaper>
-        <StyledPaper>Others</StyledPaper>
-      </div>
+      <div className="first-four">{categories}</div>
+      <div className="second-four">{categories2}</div>
     </div>
   );
 }

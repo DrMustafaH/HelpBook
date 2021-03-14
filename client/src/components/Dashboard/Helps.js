@@ -20,30 +20,58 @@ const StyledPaper = withStyles({
     overflow: "auto",
   },
 })(Paper);
-
-export default function Helps() {
+// const days = props.days.map((day, i) => {
+//   return (
+//     <DayListItem
+//       key={i}
+//       name={day.name}
+//       spots={day.spots}
+//       selected={day.name === props.day}
+//       setDay={(event) => props.setDay(day.name)}
+//     />
+//   );
+// });
+// return <ul>{days}</ul>;
+export default function Helps(props) {
+  const users_organizations = props.users.map((user, i) => {
+    if (user.type_id === 2) {
+      return (
+        <HelpItem
+          key={i}
+          avatar={user.avatar}
+          username={user.username}
+          category_id={user.category_id}
+          type_id={user.type_id}
+        />
+      );
+    }
+  });
+  const users_individuals = props.users.map((user, i) => {
+    if (user.type_id === 3) {
+      return (
+        <HelpItem
+          key={i}
+          avatar={user.avatar}
+          username={user.username}
+          category_id={user.category_id}
+          type_id={user.type_id}
+        />
+      );
+    }
+  });
+  console.log("HELPS PROPS", props);
   return (
     <div className="helps-section">
       <StyledPaper>
         <div>
           Organizations
-          <HelpItem />
-          <HelpItem />
-          <HelpItem />
-          <HelpItem />
-          <HelpItem />
-          <HelpItem />
+          {users_organizations}
         </div>
       </StyledPaper>
       <StyledPaper>
         <div>
           Individuals
-          <HelpItem />
-          <HelpItem />
-          <HelpItem />
-          <HelpItem />
-          <HelpItem />
-          <HelpItem />
+          {users_individuals}
         </div>
       </StyledPaper>
     </div>
