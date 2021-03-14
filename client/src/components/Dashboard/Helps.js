@@ -20,18 +20,7 @@ const StyledPaper = withStyles({
     overflow: "auto",
   },
 })(Paper);
-// const days = props.days.map((day, i) => {
-//   return (
-//     <DayListItem
-//       key={i}
-//       name={day.name}
-//       spots={day.spots}
-//       selected={day.name === props.day}
-//       setDay={(event) => props.setDay(day.name)}
-//     />
-//   );
-// });
-// return <ul>{days}</ul>;
+
 export default function Helps(props) {
   const users_organizations = props.users.map((user, i) => {
     if (user.type_id === 2) {
@@ -59,7 +48,6 @@ export default function Helps(props) {
       );
     }
   });
-  console.log("HELPS PROPS", props);
   return (
     <div className="helps-section">
       <StyledPaper>

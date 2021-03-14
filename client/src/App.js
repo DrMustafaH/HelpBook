@@ -111,15 +111,15 @@ const usertype = [
 
 //homepage
 function App() {
-  // const [state, setState] = useState({
-  //   users: {},
-  //   categories: {},
+  //   const [state, setState] = useState({
+  //     users: {},
+  //     categories: {"Health"}
   //   wishlist: {},
   //   usertype: {},
   //   donations_donor: {},
   //   donations_receiver: {},
-  // });
-
+  //   });
+  // const setCategory = (category) => {}
   // useEffect(() => {
   //   Promise.all([
   //     axios.get("/api/users"),

@@ -1,4 +1,3 @@
-import { CircularProgress } from "@material-ui/core";
 import React from "react";
 import Categories from "./Categories";
 import Helps from "./Helps";
@@ -14,8 +13,7 @@ export default function HomePage(props) {
       <Search />
       <Categories
         categories={props.categories}
-        // onclick={}
-        setCategory={(category) => console.log(category)}
+        // setCategory={(category) => console.log(category)}
       />
       <Helps users={props.users} categories={props.categories} />
       <NewsLog />
