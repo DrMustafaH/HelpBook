@@ -7,7 +7,8 @@ module.exports = (db) => {
     db.query(`SELECT * FROM categories;`)
       .then((data) => {
         const categories = data.rows;
-        res.json({ categories });
+        // console.log(categories);
+        res.json(categories);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

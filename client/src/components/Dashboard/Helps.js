@@ -22,7 +22,7 @@ const StyledPaper = withStyles({
 })(Paper);
 
 export default function Helps(props) {
-  const users_organizations = props.users.map((user, i) => {
+  const users_organizations = props.list.map((user, i) => {
     if (user.type_id === 2) {
       return (
         <HelpItem
@@ -35,7 +35,7 @@ export default function Helps(props) {
       );
     }
   });
-  const users_individuals = props.users.map((user, i) => {
+  const users_individuals = props.list.map((user, i) => {
     if (user.type_id === 3) {
       return (
         <HelpItem

@@ -1,22 +1,31 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Categories from "./Categories";
 import Helps from "./Helps";
 import NewsLog from "./NewsLog";
 import Search from "./Search";
 
 export default function Dashboard(props) {
-  console.log("IN DAS", props.categories);
-  // let arr = props.users;
-  // console.log("ARRR", arr.users[0].avatar);
-  console.log("DASH PROPS", props.users[0].avatar);
+  const [selected, setSelected] = useState();
+  const [helpList, setHelpList] = useState([]);
+
+  useEffect(() => {
+    if (!selected) return;
+    async function getUsersByCategory() {
+      const res = await axios.get(`/api/users/category/${selected.id}`);
+      setHelpList(res.data);
+    }
+    getUsersByCategory();
+  }, [selected]);
+
   return (
     <div>
       <Search />
       <Categories
         categories={props.categories}
-        // setCategory={(category) => console.log(category)}
+        setCategory={(category) => setSelected(category)}
       />
-      <Helps users={props.users} categories={props.categories} />
+      <Helps list={helpList} />
       <NewsLog />
     </div>
   );

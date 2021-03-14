@@ -31,6 +31,32 @@ module.exports = (db) => {
       });
   });
 
+  // get users from a category id
+  router.get("/category/:id", (req, res) => {
+    db.query(
+      `SELECT * FROM users
+    WHERE category_id = $1
+    ;`,
+      [req.params.id]
+    )
+      .then((data) => {
+        const users = data.rows;
+        const mappedUser = users.map(
+          ({ id, username, type_id, avatar, category_id }) => ({
+            id,
+            username,
+            type_id,
+            avatar,
+            category_id,
+          })
+        );
+        res.json(mappedUser);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
   // Adds a new user to the database
   router.post("/", (req, res) => {
     const username = req.body.username;

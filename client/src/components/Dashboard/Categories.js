@@ -25,9 +25,8 @@ const StyledPaper = withStyles({
 })(Paper);
 
 export default function Categories(props) {
-  function handleClick(event, id) {
-    event.preventDefault();
-    console.log(id);
+  function handleClick(category) {
+    props.setCategory(category);
   }
 
   // async getUserByCategory(){
@@ -36,35 +35,35 @@ export default function Categories(props) {
   // }
 
   const categories = props.categories.map((category, i) => {
-    if (i < 4) {
-      return (
-        <StyledPaper
-          key={i}
-          category_id={category.id}
-          onClick={(e) => handleClick(e, category.id)}
-        >
-          {category.name}
-        </StyledPaper>
-      );
-    }
+    // if (i < 4) {
+    return (
+      <StyledPaper
+        key={i}
+        category_id={category.id}
+        onClick={() => handleClick(category)}
+      >
+        {category.name}
+      </StyledPaper>
+    );
+    // }
   });
-  const categories2 = props.categories.map((category, i) => {
-    if (i > 3 && i < 8) {
-      return (
-        <StyledPaper
-          key={i}
-          category_id={category.id}
-          onClick={(e) => handleClick(e, category.id)}
-        >
-          {category.name}
-        </StyledPaper>
-      );
-    }
-  });
+  // const categories2 = props.categories.map((category, i) => {
+  // if (i > 3 && i < 8) {
+  //     return (
+  //       <StyledPaper
+  //         key={i}
+  //         category_id={category.id}
+  //         onClick={(e) => handleClick(e, category.id)}
+  //       >
+  //         {category.name}
+  //       </StyledPaper>
+  //     );
+  //   }
+  // });
   return (
     <div className="categories-section">
       <div className="first-four">{categories}</div>
-      <div className="second-four">{categories2}</div>
+      {/* <div className="second-four">{categories2}</div> */}
     </div>
   );
 }
