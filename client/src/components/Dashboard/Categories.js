@@ -25,9 +25,8 @@ const StyledPaper = withStyles({
 })(Paper);
 
 export default function Categories(props) {
-  function handleClick(event, id) {
-    event.preventDefault();
-    console.log(id);
+  function handleClick(category) {
+    props.setCategory(category);
   }
 
   const categories = props.categories.map((category, i) => {
@@ -36,7 +35,7 @@ export default function Categories(props) {
         <StyledPaper
           key={i}
           category_id={category.id}
-          onClick={(e) => handleClick(e, category.id)}
+          onClick={(e) => handleClick(category)}
         >
           {category.name}
         </StyledPaper>
@@ -49,7 +48,7 @@ export default function Categories(props) {
         <StyledPaper
           key={i}
           category_id={category.id}
-          onClick={(e) => handleClick(e, category.id)}
+          onClick={(e) => handleClick(category)}
         >
           {category.name}
         </StyledPaper>

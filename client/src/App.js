@@ -3,10 +3,12 @@ import axios from "axios";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-// import HomePage from "./components/Homepage/Homepage";
+import HomePage from "./components/Homepage/Homepage";
 import Dashboard from "./components/Dashboard/Dashboard";
-// import DonorProfile from "./components/DonorProfile/DonorProfile";
-// import ReceiverProfile from "./components/ReceiverProfile/ReceiverProfile";
+import DonorProfile from "./components/DonorProfile/DonorProfile";
+import ReceiverProfile from "./components/ReceiverProfile/ReceiverProfile";
+import { Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 const categories = [
   {
@@ -143,12 +145,30 @@ function App() {
   // console.log("THIS IS STATE", state.categories);
   return (
     <div className="App">
-      <Navbar />
-      {/* <HomePage /> */}
-      <Dashboard users={users} usertype={usertype} categories={categories} />
-      {/* <DonorProfile />
-      <ReceiverProfile /> */}
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard
+              users={users}
+              usertype={usertype}
+              categories={categories}
+            />
+          </Route>
+          <Route path="/donor">
+            <DonorProfile />
+          </Route>
+          <Route path="/*">
+            <div>NOT FOUND</div>
+          </Route>
+        </Switch>
+
+        {/* <ReceiverProfile />  */}
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

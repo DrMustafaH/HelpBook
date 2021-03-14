@@ -1,22 +1,67 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Categories from "./Categories";
 import Helps from "./Helps";
 import NewsLog from "./NewsLog";
 import Search from "./Search";
+const categories = [
+  {
+    id: 1,
+    name: "Health",
+  },
+  {
+    id: 2,
+    name: "Food Banks",
+  },
+  {
+    id: 3,
+    name: "Immigration & Refugees",
+  },
+  {
+    id: 4,
+    name: "Education",
+  },
+  {
+    id: 5,
+    name: "Animals",
+  },
+  {
+    id: 6,
+    name: "Kids",
+  },
+  {
+    id: 7,
+    name: "Women",
+  },
+  {
+    id: 8,
+    name: "Others",
+  },
+];
+export default function Dashboard(props) {
+  const [selected, setSelected] = useState();
+  const [helpList, setHelpList] = useState([]);
 
-export default function HomePage(props) {
-  // let arr = props.users;
-  // console.log("ARRR", arr.users[0].avatar);
-  console.log("DASH PROPS", props.users[0].avatar);
+  useEffect(() => {
+    console.log(selected);
+    if (!selected) return;
+    async function getHelpList() {
+      const res = await axios.get(`/api/users/help/${selected.id}`);
+      console.log(res.data);
+      setHelpList(res.data);
+    }
+    getHelpList();
+  }, [selected]);
+
   return (
     <div>
       <Search />
       <Categories
-        categories={props.categories}
-        // setCategory={(category) => console.log(category)}
+        categories={categories}
+        setCategory={(category) => setSelected(category)}
       />
-      <Helps users={props.users} categories={props.categories} />
-      <NewsLog />
+      <Helps list={helpList} />
+      {/* <NewsLog /> */}
     </div>
   );
 }
