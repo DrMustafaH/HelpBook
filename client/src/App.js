@@ -161,12 +161,13 @@ function App() {
           <Route path="/donor">
             <DonorProfile />
           </Route>
+          <Route path="/receiver/:id">
+            <ReceiverProfile />
+          </Route>
           <Route path="/*">
             <div>NOT FOUND</div>
           </Route>
         </Switch>
-
-        {/* <ReceiverProfile />  */}
         <Footer />
       </BrowserRouter>
     </div>

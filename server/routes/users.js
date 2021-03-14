@@ -23,8 +23,8 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        const users_id = data.rows;
-        res.json({ users_id });
+        const user = data.rows;
+        res.json(user);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -40,9 +40,15 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        const users_id = data.rows;
+        const users = data.rows;
         // console.log(users_id);
-        res.json(users_id);
+        const mappedUsers = users.map(({ avatar, username, type_id, id }) => ({
+          avatar,
+          username,
+          type_id,
+          id,
+        }));
+        res.json(mappedUsers);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
