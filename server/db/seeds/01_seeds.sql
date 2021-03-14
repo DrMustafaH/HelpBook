@@ -44,7 +44,7 @@ VALUES
     'password',
     2,
     'https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=robohash&r=x',
-    null
+    1
   ),
   (
     'share food bank',
@@ -52,7 +52,7 @@ VALUES
     'password',
     2,
     'https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=retro&r=x',
-    null
+    2
   ),
   (
     'JoeD',

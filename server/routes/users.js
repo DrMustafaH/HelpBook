@@ -31,6 +31,24 @@ module.exports = (db) => {
       });
   });
 
+  // get a user from a specific category_id
+  router.get("/help/:id", (req, res) => {
+    db.query(
+      `SELECT * FROM users
+    WHERE category_id = $1
+    ;`,
+      [req.params.id]
+    )
+      .then((data) => {
+        const users_id = data.rows;
+        // console.log(users_id);
+        res.json(users_id);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
   // Adds a new user to the database
   router.post("/", (req, res) => {
     const username = req.body.username;
