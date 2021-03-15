@@ -13,7 +13,14 @@ export default function ReceiverProfile() {
   const [userId, setUserId] = useState(Number(params.id));
   const [user, setUser] = useState();
   const [followersCount, setFollowersCount] = useState();
-  const [totalDonation, setTotalDonation] = useState();
+  const [totalDonation, setTotalDonation] = useState({
+    id: 0,
+    is_active: false,
+    requested_money: 0,
+    requested_money_id: 0,
+    sum: 0,
+    user_id: 0,
+  });
 
   useEffect(() => {
     async function getUserData() {
@@ -35,6 +42,7 @@ export default function ReceiverProfile() {
     async function getTotalDonations() {
       const res = await axios.get(`/api/users/total_donation/${userId}`);
       setTotalDonation(res.data);
+      console.log("RES>DATA", res.data);
     }
     getTotalDonations();
   }, [userId]);
