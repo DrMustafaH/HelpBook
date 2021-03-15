@@ -9,30 +9,42 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function ReceiverProfile() {
-  // const [followersCount, setFollowersCount] = useState([]);
-  // useEffect(() => {
-  //   axios.get(`/api/users/followers/${ID}`).then((res) => {
-  //     setFollowersCount(res.data);
-  //   });
-  // }, []);
   const params = useParams();
   const [userId, setUserId] = useState(Number(params.id));
   const [user, setUser] = useState();
+  const [followersCount, setFollowersCount] = useState();
 
   useEffect(() => {
+    // Promise.all([
+    //   axios.get(`/api/users/${userId}`),
+    //   axios.get(`/api/users/followers/${userId}`),
+    // ]).then((all) => {
+    //   setUser(all[0].data[0]);
+    //   setFollowersCount(all[1].data);
+    // });
     async function getUserData() {
       const res = await axios.get(`/api/users/${userId}`);
-      // console.log("RES1", res.data[0]);
       setUser(res.data[0]);
     }
     getUserData();
   }, [userId]);
+
+  useEffect(() => {
+    async function getFollowersCount() {
+      const res = await axios.get(`/api/users/followers/${userId}`);
+      setFollowersCount(res.data);
+    }
+    getFollowersCount();
+  }, [userId]);
+
+  console.log("USR", user);
+  console.log("FLLS", followersCount);
   if (!user) return <div>User does not exist</div>;
   return (
     <div>
       <Header username={user.username} avatar={user.avatar} />
       <div className="receiver-followers">
-        <TotalFollowers />
+        {followersCount && <TotalFollowers count={followersCount} />}
         <ProgressBar />
       </div>
       <div className="wishlist-donations-section">

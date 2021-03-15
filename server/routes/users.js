@@ -66,8 +66,9 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        const followersCount = data.rows;
-        res.json(followersCount);
+        const followersCount = data.rows[0];
+        console.log(followersCount);
+        res.json(followersCount.count);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
