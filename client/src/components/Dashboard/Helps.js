@@ -37,8 +37,8 @@ export default function Helps(props) {
   const classes = useStyles();
   const history = useHistory();
 
-  function handleClick() {
-    history.push("/receiver");
+  function onUserSelection(id) {
+    history.push(`/receiver/${id}`);
   }
 
   const users_organizations = props.list.map((user, i) => {
@@ -50,7 +50,7 @@ export default function Helps(props) {
           username={user.username}
           category_id={user.category_id}
           type_id={user.type_id}
-          onClick={handleClick}
+          onUserSelection={() => onUserSelection(user.id)}
         />
       );
     }
@@ -64,7 +64,7 @@ export default function Helps(props) {
           username={user.username}
           category_id={user.category_id}
           type_id={user.type_id}
-          // onClick={handleClick}
+          onUserSelection={() => onUserSelection(user.id)}
         />
       );
     }

@@ -42,7 +42,7 @@ export default function HelpItem(props) {
     <ListItem
       className={classes.root}
       alignItems="flex-start"
-      onClick={props.onClick}
+      onClick={() => props.onUserSelection()}
     >
       <ListItemAvatar>
         <Avatar alt="org-avatar" src={props.avatar} />

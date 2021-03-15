@@ -1,14 +1,11 @@
 import React from "react";
 import "./Header.scss";
 
-export default function Header() {
+export default function Header(props) {
   return (
     <div className="profile-header">
-      <img
-        alt="avatar"
-        src="https://robohash.org/autminimadolor.bmp?&set=set1"
-      ></img>
-      <h1 className="profile-greeting">Hi there, username</h1>
+      <img alt="avatar" src={props.avatar}></img>
+      <h1 className="profile-greeting">Hi there, {props.username}</h1>
     </div>
   );
 }

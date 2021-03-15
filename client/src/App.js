@@ -101,7 +101,7 @@ function App() {
               categories={categories}
             />
           </Route>
-          <Route exact path="/receiver">
+          <Route exact path="/receiver/:id">
             <ReceiverProfile />
           </Route>
           <Route exact path="/donor">

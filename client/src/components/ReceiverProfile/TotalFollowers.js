@@ -17,7 +17,7 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
-export default function ProgressBar() {
+export default function TotalFollowers() {
   return (
     <div className="total-followers-box">
       <StyledPaper>
