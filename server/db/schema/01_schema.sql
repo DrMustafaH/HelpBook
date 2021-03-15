@@ -6,6 +6,10 @@ DROP TABLE IF EXISTS requested_money CASCADE;
 
 DROP TABLE IF EXISTS donated_money CASCADE;
 
+DROP TABLE IF EXISTS receiver_followers CASCADE;
+
+DROP TABLE IF EXISTS donor_following CASCADE;
+
 DROP TABLE IF EXISTS users CASCADE;
 
 DROP TABLE IF EXISTS types CASCADE;
@@ -76,4 +80,17 @@ CREATE TABLE donated_money (
   donation_date DATE,
   donated_amount INTEGER,
   requested_money_id INTEGER
+);
+
+-- eigth
+CREATE TABLE donor_following (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- ninth
+CREATE TABLE receiver_followers (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  donor_id INTEGER REFERENCES donor_following(id) ON DELETE CASCADE
 );
