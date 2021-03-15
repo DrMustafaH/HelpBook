@@ -14,7 +14,7 @@ export default function ReceiverProfile() {
   const [user, setUser] = useState();
   const [followersCount, setFollowersCount] = useState();
   const [donationMoneyLog, setDonationMoneyLog] = useState();
-  const [donationItemLog, setdonationItemLog] = useState();
+  const [donationItemLog, setDonationItemLog] = useState();
   const [wishlist, setWishlist] = useState();
   const [totalDonation, setTotalDonation] = useState({
     id: 0,
@@ -61,7 +61,7 @@ export default function ReceiverProfile() {
   useEffect(() => {
     async function getDonationItemLog() {
       const res = await axios.get(`/api/users/wishlistDonationLog/${userId}`);
-      setdonationItemLog(res.data);
+      setDonationItemLog(res.data);
       // console.log("DONATION-ITEM", res.data);
     }
     getDonationItemLog();
