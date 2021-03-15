@@ -90,15 +90,9 @@ export default function ReceiverProfile() {
       </div>
       <div className="wishlist-donations-section">
         {wishlist && <Wishlist wishlist={wishlist} />}
-        {
-          (donationMoneyLog,
-          donationItemLog && (
-            <Donations
-              donationLog={donationMoneyLog}
-              itemLog={donationItemLog}
-            />
-          ))
-        }
+        {donationMoneyLog && donationItemLog && (
+          <Donations donationLog={donationMoneyLog} itemLog={donationItemLog} />
+        )}
       </div>
     </div>
   );
