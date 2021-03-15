@@ -15,13 +15,6 @@ export default function ReceiverProfile() {
   const [followersCount, setFollowersCount] = useState();
 
   useEffect(() => {
-    // Promise.all([
-    //   axios.get(`/api/users/${userId}`),
-    //   axios.get(`/api/users/followers/${userId}`),
-    // ]).then((all) => {
-    //   setUser(all[0].data[0]);
-    //   setFollowersCount(all[1].data);
-    // });
     async function getUserData() {
       const res = await axios.get(`/api/users/${userId}`);
       setUser(res.data[0]);
