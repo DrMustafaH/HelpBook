@@ -67,7 +67,6 @@ module.exports = (db) => {
     )
       .then((data) => {
         const followersCount = data.rows[0];
-        console.log(followersCount);
         res.json(followersCount.count);
       })
       .catch((err) => {
@@ -75,34 +74,24 @@ module.exports = (db) => {
       });
   });
 
-  // get users profile information from a user id
-  // router.get("/category/:id", (req, res) => {
-  //   db.query(
-  //     `SELECT users.id, username, avatar, type_id, donor_following.id as donor_following, receiver_followers.id as receiver_followers FROM users
-  //     JOIN donor_following ON users.id = donor_following.user_id
-  //     JOIN receiver_followers ON users.id = receiver_followers.user_id
-  //     WHERE users.id = 18
-  //     GROUP BY users.id, donor_following.id, receiver_followers.id
-  //   ;`,
-  //     [req.params.id]
-  //   )
-  //     .then((data) => {
-  //       const users = data.rows;
-  //       const mappedUser = users.map(
-  //         ({ id, username, type_id, avatar, category_id }) => ({
-  //           id,
-  //           username,
-  //           type_id,
-  //           avatar,
-  //           category_id,
-  //         })
-  //       );
-  //       res.json(mappedUser);
-  //     })
-  //     .catch((err) => {
-  //       res.status(500).json({ error: err.message });
-  //     });
-  // });
+  // get total amount of donations for a specific user id
+  router.get("/total_donation/:id", (req, res) => {
+    db.query(
+      `SELECT requested_money.* , donated_money.requested_money_id as requested_money_id, sum(donated_money.donated_amount) FROM requested_money
+      JOIN donated_money on donated_money.requested_money_id = requested_money.id
+      WHERE requested_money.user_id = $1
+      GROUP BY requested_money.id, donated_money.requested_money_id;`,
+      [req.params.id]
+    )
+      .then((data) => {
+        const totalDonation = data.rows[0];
+        console.log(totalDonation);
+        res.json(totalDonation);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
 
   // Adds a new user to the database
   router.post("/", (req, res) => {

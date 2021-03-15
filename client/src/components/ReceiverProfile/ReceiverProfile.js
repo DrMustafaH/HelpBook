@@ -13,6 +13,7 @@ export default function ReceiverProfile() {
   const [userId, setUserId] = useState(Number(params.id));
   const [user, setUser] = useState();
   const [followersCount, setFollowersCount] = useState();
+  const [totalDonation, setTotalDonation] = useState();
 
   useEffect(() => {
     async function getUserData() {
@@ -30,15 +31,29 @@ export default function ReceiverProfile() {
     getFollowersCount();
   }, [userId]);
 
-  console.log("USR", user);
-  console.log("FLLS", followersCount);
+  useEffect(() => {
+    async function getTotalDonations() {
+      const res = await axios.get(`/api/users/total_donation/${userId}`);
+      setTotalDonation(res.data);
+    }
+    getTotalDonations();
+  }, [userId]);
+
+  // console.log("USR", user);
+  // console.log("FLLS", followersCount);
+  console.log("DONATION", totalDonation);
   if (!user) return <div>User does not exist</div>;
   return (
     <div>
       <Header username={user.username} avatar={user.avatar} />
       <div className="receiver-followers">
         {followersCount && <TotalFollowers count={followersCount} />}
-        <ProgressBar />
+        {totalDonation && (
+          <ProgressBar
+            sum={totalDonation.sum}
+            requested_amount={totalDonation.requested_amount}
+          />
+        )}
       </div>
       <div className="wishlist-donations-section">
         <Wishlist />

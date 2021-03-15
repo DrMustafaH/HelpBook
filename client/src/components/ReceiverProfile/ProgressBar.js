@@ -26,13 +26,18 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ProgressBar() {
+export default function ProgressBar(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <div>
-        <h3>Current donations: $400 / Goal: $1000</h3>
-        <BorderLinearProgress variant="determinate" value={30} />
+        <h3>
+          Current donations: ${props.sum} / Goal: ${props.requested_amount}
+        </h3>
+        <BorderLinearProgress
+          variant="determinate"
+          value={(props.sum / props.requested_amount) * 100}
+        />
       </div>
       <div className="donations-receiver-button">
         <Button variant="contained">Edit Amount</Button>
