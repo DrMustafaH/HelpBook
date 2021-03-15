@@ -12,10 +12,10 @@ import ChildCareIcon from "@material-ui/icons/ChildCare";
 
 const useStyles = makeStyles(() => ({
   root: {
-    // "&:hover": {
-    //   backgroundColor: "#dbd6c5",
-    //   borderRadius: 22,
-    // },
+    "&:hover": {
+      backgroundColor: "#dbd6c5",
+      borderRadius: 22,
+    },
   },
 }));
 
