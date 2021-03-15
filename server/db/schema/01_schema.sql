@@ -62,7 +62,8 @@ CREATE TABLE items_wishlist (
   is_active BOOLEAN NOT NULL DEFAULT FALSE,
   entry_date TIMESTAMP,
   donated_date TIMESTAMP DEFAULT NULL,
-  quantity INTEGER NOT NULL
+  quantity INTEGER NOT NULL,
+  donor_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 -- sixth

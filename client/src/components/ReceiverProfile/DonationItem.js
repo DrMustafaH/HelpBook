@@ -13,9 +13,16 @@ export default function DonationItem(props) {
   return (
     <ListItem alignItems="flex-start">
       <StyledIconArrow />
-      <ListItemText>
-        {props.date.slice(0, 10)} | {props.name} donated ${props.amount}.
-      </ListItemText>
+      {!props.amount && (
+        <ListItemText>
+          {props.name} donated: {props.item}
+        </ListItemText>
+      )}
+      {!props.item && (
+        <ListItemText>
+          {props.name} donated: ${props.amount}
+        </ListItemText>
+      )}
     </ListItem>
   );
 }

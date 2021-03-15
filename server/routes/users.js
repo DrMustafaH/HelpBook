@@ -14,7 +14,7 @@ module.exports = (db) => {
       });
   });
 
-  // get a user from a specific id
+  // USING get a user from a specific id
   router.get("/:id", (req, res) => {
     db.query(
       `SELECT id, username, avatar, type_id FROM users
@@ -31,7 +31,7 @@ module.exports = (db) => {
       });
   });
 
-  // get users from a category id
+  // USING get users from a category id
   router.get("/category/:id", (req, res) => {
     db.query(
       `SELECT * FROM users
@@ -57,7 +57,7 @@ module.exports = (db) => {
       });
   });
 
-  // get followers count for a specific user id
+  // USING get followers count for a specific user id
   router.get("/followers/:id", (req, res) => {
     db.query(
       `SELECT count(*) FROM receiver_followers
@@ -74,7 +74,7 @@ module.exports = (db) => {
       });
   });
 
-  // get total amount of donations for a specific user id
+  // USING get total amount of donations for a specific user id
   router.get("/total_donation/:id", (req, res) => {
     db.query(
       `SELECT requested_money.* , donated_money.requested_money_id as requested_money_id, sum(donated_money.donated_amount) FROM requested_money
@@ -93,7 +93,7 @@ module.exports = (db) => {
       });
   });
 
-  // get donations log for a specific user id
+  // USING get donations log for a specific user id
   router.get("/donationLog/:id", (req, res) => {
     db.query(
       `SELECT donated_money.* , requested_money.user_id as receiver_id, users.username as donor_name FROM donated_money
@@ -106,14 +106,39 @@ module.exports = (db) => {
       .then((data) => {
         const donationLog = data.rows;
         const mappedDonationLog = donationLog.map(
-          ({ id, donor_name, donated_amount, donation_date }) => ({
+          ({ id, donor_name, donated_amount }) => ({
             id,
             donor_name,
             donated_amount,
-            donation_date,
           })
         );
         res.json(mappedDonationLog);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
+  // USING get wishlist items donations log for a specific user id
+  router.get("/wishlistDonationLog/:id", (req, res) => {
+    db.query(
+      `SELECT items_wishlist.id, items_wishlist.item_name, donor_id, is_active, donated_date, items_wishlist.user_id, users.username as item_donor_name FROM items_wishlist
+      JOIN users on items_wishlist.donor_id = users.id
+      WHERE items_wishlist.user_id = $1
+      GROUP BY items_wishlist.id, users.id;`,
+      [req.params.id]
+    )
+      .then((data) => {
+        const wishlistDonationLog = data.rows;
+        console.log(wishlistDonationLog);
+        const mappedwishlistDonationLog = wishlistDonationLog.map(
+          ({ id, item_name, item_donor_name }) => ({
+            id,
+            item_name,
+            item_donor_name,
+          })
+        );
+        res.json(mappedwishlistDonationLog);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

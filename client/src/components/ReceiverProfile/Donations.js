@@ -14,7 +14,7 @@ const StyledPaper = withStyles({
     justifyContent: "center",
     fontFamily: "'Trirong', serif",
     fontWeight: "700",
-    fontSize: "2.5rem",
+    // fontSize: "2.5rem",
     borderRadius: 0,
     maxHeight: 500,
     overflow: "auto",
@@ -35,23 +35,34 @@ const useStyles = makeStyles(() => ({
 
 export default function Donations(props) {
   const classes = useStyles();
-  // console.log("donation props", props);
-  const mappedLog = props.donationLog.map((donationItem) => {
+  console.log("donation props", props);
+  const mappedMoneyLog = props.donationLog.map((donationItem) => {
     return (
       <DonationItem
         key={donationItem.id}
         name={donationItem.donor_name}
         amount={donationItem.donated_amount}
-        date={donationItem.donation_date}
       />
     );
   });
+
+  const mappedItemLog = props.itemLog.map((item) => {
+    return (
+      <DonationItem
+        key={item.id}
+        name={item.item_donor_name}
+        item={item.item_name}
+      />
+    );
+  });
+
   return (
     <div className="donations-section">
       <StyledPaper>
         <div className="donation-items-list">
-          <p className="donations-title">Donations</p>
-          <List className={classes.root}>{mappedLog}</List>
+          <h3 className="donations-title">Donations</h3>
+          <List className={classes.root}>{mappedMoneyLog}</List>
+          <List className={classes.root}>{mappedItemLog}</List>
         </div>
       </StyledPaper>
     </div>

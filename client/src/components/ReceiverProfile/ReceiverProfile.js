@@ -13,7 +13,9 @@ export default function ReceiverProfile() {
   const [userId] = useState(Number(params.id));
   const [user, setUser] = useState();
   const [followersCount, setFollowersCount] = useState();
-  const [donationLog, setDonationLog] = useState();
+  const [donationMoneyLog, setDonationMoneyLog] = useState();
+  const [donationItemLog, setdonationItemLog] = useState();
+  const [wishlist, setWishlist] = useState();
   const [totalDonation, setTotalDonation] = useState({
     id: 0,
     is_active: false,
@@ -22,7 +24,6 @@ export default function ReceiverProfile() {
     sum: 0,
     user_id: 0,
   });
-  const [wishlist, setWishlist] = useState();
 
   useEffect(() => {
     async function getUserData() {
@@ -49,19 +50,27 @@ export default function ReceiverProfile() {
   }, [userId]);
 
   useEffect(() => {
-    async function getDonationLog() {
+    async function getDonationMoneyLog() {
       const res = await axios.get(`/api/users/donationLog/${userId}`);
-      setDonationLog(res.data);
-      console.log("DONATION", res.data);
+      setDonationMoneyLog(res.data);
+      // console.log("DONATION-MONEY", res.data);
     }
-    getDonationLog();
+    getDonationMoneyLog();
+  }, [userId]);
+
+  useEffect(() => {
+    async function getDonationItemLog() {
+      const res = await axios.get(`/api/users/wishlistDonationLog/${userId}`);
+      setdonationItemLog(res.data);
+      // console.log("DONATION-ITEM", res.data);
+    }
+    getDonationItemLog();
   }, [userId]);
 
   useEffect(() => {
     async function getWishlistItems() {
       const res = await axios.get(`/api/wishlist/${userId}`);
       setWishlist(res.data);
-      console.log("WHISHLIST", res.data);
     }
     getWishlistItems();
   }, [userId]);
@@ -81,7 +90,15 @@ export default function ReceiverProfile() {
       </div>
       <div className="wishlist-donations-section">
         {wishlist && <Wishlist wishlist={wishlist} />}
-        {donationLog && <Donations donationLog={donationLog} />}
+        {
+          (donationMoneyLog,
+          donationItemLog && (
+            <Donations
+              donationLog={donationMoneyLog}
+              itemLog={donationItemLog}
+            />
+          ))
+        }
       </div>
     </div>
   );
