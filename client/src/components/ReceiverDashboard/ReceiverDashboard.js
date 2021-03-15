@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../DonorProfile/Header";
+import Header from "./Header";
 import ProgressBar from "./ProgressBar";
 import TotalFollowers from "./TotalFollowers";
 import Wishlist from "./Wishlist";
