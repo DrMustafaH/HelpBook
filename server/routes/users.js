@@ -93,6 +93,33 @@ module.exports = (db) => {
       });
   });
 
+  // get donations log for a specific user id
+  router.get("/donationLog/:id", (req, res) => {
+    db.query(
+      `SELECT donated_money.* , requested_money.user_id as receiver_id, users.username as donor_name FROM donated_money
+      JOIN requested_money on requested_money.id = donated_money.requested_money_id
+      JOIN users on donated_money.user_id = users.id
+      WHERE requested_money.user_id = $1
+      GROUP BY requested_money.id, donated_money.requested_money_id, users.id, donated_money.id;`,
+      [req.params.id]
+    )
+      .then((data) => {
+        const donationLog = data.rows;
+        const mappedDonationLog = donationLog.map(
+          ({ id, donor_name, donated_amount, donation_date }) => ({
+            id,
+            donor_name,
+            donated_amount,
+            donation_date,
+          })
+        );
+        res.json(mappedDonationLog);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
   // Adds a new user to the database
   router.post("/", (req, res) => {
     const username = req.body.username;

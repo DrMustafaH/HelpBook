@@ -18,7 +18,6 @@ const StyledPaper = withStyles({
 })(Paper);
 
 export default function TotalFollowers(props) {
-  console.log("props count", props.count);
   return (
     <div className="total-followers-box">
       <StyledPaper>

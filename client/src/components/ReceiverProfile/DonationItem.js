@@ -1,5 +1,4 @@
 import {
-  List,
   ListItem,
   ListItemText,
   makeStyles,
@@ -8,23 +7,23 @@ import {
 import React from "react";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
-const useStyles = makeStyles(() => ({
-  root: {
-    width: "auto",
-    backgroundColor: "#f0efec",
-    borderRadius: 22,
-    position: "center",
-    padding: 0,
-    marginLeft: 10,
-    marginTop: 0,
-    "&:hover": {
-      backgroundColor: "#dbd6c5",
-    },
-  },
-  inline: {
-    display: "inline",
-  },
-}));
+// const useStyles = makeStyles(() => ({
+//   root: {
+//     width: "auto",
+//     backgroundColor: "#f0efec",
+//     borderRadius: 22,
+//     position: "center",
+//     padding: 0,
+//     marginLeft: 10,
+//     marginTop: 0,
+//     "&:hover": {
+//       backgroundColor: "#dbd6c5",
+//     },
+//   },
+//   inline: {
+//     display: "inline",
+//   },
+// }));
 
 const StyledIconArrow = withStyles({
   root: {
@@ -33,14 +32,13 @@ const StyledIconArrow = withStyles({
   },
 })(ArrowRightIcon);
 
-export default function DonationItem() {
-  const classes = useStyles();
+export default function DonationItem(props) {
   return (
-    <List className={classes.root}>
-      <ListItem alignItems="flex-start">
-        <StyledIconArrow />
-        <ListItemText primary="Quantity - Item name" />
-      </ListItem>
-    </List>
+    <ListItem alignItems="flex-start">
+      <StyledIconArrow />
+      <ListItemText>
+        {props.date.slice(0, 10)} --> {props.name} donated ${props.amount}.
+      </ListItemText>
+    </ListItem>
   );
 }
