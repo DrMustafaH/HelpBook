@@ -1,29 +1,6 @@
-import {
-  ListItem,
-  ListItemText,
-  makeStyles,
-  withStyles,
-} from "@material-ui/core";
+import { ListItem, ListItemText, withStyles } from "@material-ui/core";
 import React from "react";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-
-// const useStyles = makeStyles(() => ({
-//   root: {
-//     width: "auto",
-//     backgroundColor: "#f0efec",
-//     borderRadius: 22,
-//     position: "center",
-//     padding: 0,
-//     marginLeft: 10,
-//     marginTop: 0,
-//     "&:hover": {
-//       backgroundColor: "#dbd6c5",
-//     },
-//   },
-//   inline: {
-//     display: "inline",
-//   },
-// }));
 
 const StyledIconArrow = withStyles({
   root: {
@@ -37,7 +14,7 @@ export default function DonationItem(props) {
     <ListItem alignItems="flex-start">
       <StyledIconArrow />
       <ListItemText>
-        {props.date.slice(0, 10)} --> {props.name} donated ${props.amount}.
+        {props.date.slice(0, 10)} | {props.name} donated ${props.amount}.
       </ListItemText>
     </ListItem>
   );

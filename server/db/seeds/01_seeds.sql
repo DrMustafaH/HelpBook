@@ -564,7 +564,7 @@ VALUES
     8,
     3,
     'water',
-    false,
+    true,
     '2020-09-11 19:18:16',
     null,
     6
@@ -600,16 +600,16 @@ VALUES
     8,
     3,
     'toilet paper',
-    false,
+    true,
     '2021-02-06 21:07:30',
     null,
     2
   ),
   (
-    48,
+    4,
     8,
     'toilet paper',
-    false,
+    true,
     '2020-08-23 13:55:32',
     null,
     8
@@ -618,7 +618,7 @@ VALUES
     10,
     1,
     'toilet paper',
-    false,
+    true,
     '2020-11-06 13:13:50',
     null,
     4
@@ -627,7 +627,7 @@ VALUES
     43,
     7,
     'jackets',
-    false,
+    true,
     '2020-05-24 23:13:56',
     null,
     5
@@ -636,7 +636,7 @@ VALUES
     32,
     5,
     'markers',
-    false,
+    true,
     '2020-06-25 01:36:38',
     null,
     2
@@ -645,7 +645,7 @@ VALUES
     13,
     8,
     'water',
-    false,
+    true,
     '2020-08-16 22:13:16',
     null,
     8
@@ -654,7 +654,7 @@ VALUES
     6,
     1,
     'toilet paper',
-    false,
+    true,
     '2020-02-01 22:39:56',
     null,
     10
@@ -690,7 +690,7 @@ VALUES
     42,
     1,
     'blankets',
-    false,
+    true,
     '2020-10-16 22:24:53',
     null,
     1
@@ -717,7 +717,7 @@ VALUES
     23,
     5,
     'toilet paper',
-    false,
+    true,
     '2020-10-13 07:29:04',
     null,
     8
@@ -726,7 +726,7 @@ VALUES
     45,
     3,
     'canned food',
-    false,
+    true,
     '2020-04-15 12:04:50',
     null,
     4
@@ -735,7 +735,7 @@ VALUES
     47,
     4,
     'toilet paper',
-    false,
+    true,
     '2020-12-23 21:04:20',
     null,
     3
@@ -771,7 +771,7 @@ VALUES
     17,
     5,
     'cat food',
-    false,
+    true,
     '2020-01-25 14:22:59',
     null,
     10
@@ -798,7 +798,7 @@ VALUES
     29,
     1,
     'toilet paper',
-    false,
+    true,
     '2020-10-04 14:43:16',
     null,
     1
@@ -807,7 +807,7 @@ VALUES
     21,
     1,
     'markers',
-    false,
+    true,
     '2020-04-27 17:46:56',
     null,
     4
@@ -816,7 +816,7 @@ VALUES
     16,
     1,
     'canned food',
-    false,
+    true,
     '2020-03-09 00:43:15',
     null,
     3
@@ -825,7 +825,7 @@ VALUES
     5,
     5,
     'blankets',
-    false,
+    true,
     '2020-08-15 13:24:19',
     null,
     6
@@ -852,7 +852,7 @@ VALUES
     33,
     6,
     'canned food',
-    false,
+    true,
     '2020-03-16 16:49:46',
     null,
     7
@@ -861,7 +861,7 @@ VALUES
     7,
     8,
     'canned food',
-    false,
+    true,
     '2020-12-04 10:41:14',
     null,
     8
@@ -870,7 +870,7 @@ VALUES
     48,
     5,
     'cat food',
-    false,
+    true,
     '2020-06-19 07:09:24',
     null,
     7
@@ -879,7 +879,7 @@ VALUES
     10,
     2,
     'blankets',
-    false,
+    true,
     '2021-03-03 00:26:23',
     null,
     6
@@ -906,7 +906,7 @@ VALUES
     1,
     1,
     'dog food',
-    false,
+    true,
     '2020-04-29 09:56:46',
     null,
     9
@@ -924,7 +924,7 @@ VALUES
     13,
     1,
     'puppy pads',
-    false,
+    true,
     '2020-09-16 16:58:25',
     null,
     9
@@ -933,7 +933,7 @@ VALUES
     7,
     7,
     'canned food',
-    false,
+    true,
     '2021-02-23 09:39:32',
     null,
     1
@@ -942,7 +942,7 @@ VALUES
     17,
     1,
     'water',
-    false,
+    true,
     '2020-09-26 23:09:19',
     null,
     10

@@ -24,7 +24,7 @@ module.exports = (db) => {
     )
       .then((data) => {
         const items_wishlist_id = data.rows;
-        res.json({ items_wishlist_id });
+        res.json(items_wishlist_id);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

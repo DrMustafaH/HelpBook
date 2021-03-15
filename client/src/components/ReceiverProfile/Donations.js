@@ -30,16 +30,13 @@ const useStyles = makeStyles(() => ({
     padding: 0,
     marginLeft: 10,
     marginTop: 0,
-    "&:hover": {
-      backgroundColor: "#dbd6c5",
-    },
   },
 }));
 
 export default function Donations(props) {
   const classes = useStyles();
   // console.log("donation props", props);
-  const mappedLog = props.donationLog.map((donationItem, i) => {
+  const mappedLog = props.donationLog.map((donationItem) => {
     return (
       <DonationItem
         key={donationItem.id}

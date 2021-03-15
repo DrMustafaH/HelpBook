@@ -10,7 +10,7 @@ import axios from "axios";
 
 export default function ReceiverProfile() {
   const params = useParams();
-  const [userId, setUserId] = useState(Number(params.id));
+  const [userId] = useState(Number(params.id));
   const [user, setUser] = useState();
   const [followersCount, setFollowersCount] = useState();
   const [donationLog, setDonationLog] = useState();
@@ -22,6 +22,7 @@ export default function ReceiverProfile() {
     sum: 0,
     user_id: 0,
   });
+  const [wishlist, setWishlist] = useState();
 
   useEffect(() => {
     async function getUserData() {
@@ -51,14 +52,20 @@ export default function ReceiverProfile() {
     async function getDonationLog() {
       const res = await axios.get(`/api/users/donationLog/${userId}`);
       setDonationLog(res.data);
-      console.log("RES>DATA", res.data);
+      console.log("DONATION", res.data);
     }
     getDonationLog();
   }, [userId]);
 
-  // console.log("USR", user);
-  // console.log("FLLS", followersCount);
-  // console.log("DONATION", totalDonation);
+  useEffect(() => {
+    async function getWishlistItems() {
+      const res = await axios.get(`/api/wishlist/${userId}`);
+      setWishlist(res.data);
+      console.log("WHISHLIST", res.data);
+    }
+    getWishlistItems();
+  }, [userId]);
+
   if (!user) return <div>User does not exist</div>;
   return (
     <div>
@@ -73,7 +80,7 @@ export default function ReceiverProfile() {
         )}
       </div>
       <div className="wishlist-donations-section">
-        <Wishlist />
+        {wishlist && <Wishlist wishlist={wishlist} />}
         {donationLog && <Donations donationLog={donationLog} />}
       </div>
     </div>

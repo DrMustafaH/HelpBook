@@ -1,5 +1,4 @@
 import {
-  List,
   ListItem,
   ListItemText,
   makeStyles,
@@ -9,31 +8,15 @@ import React from "react";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import EditIcon from "@material-ui/icons/Edit";
 import Icon from "@material-ui/core/Icon";
-
-// refugee <i class="fa fa-globe" aria-hidden="true"></i>
-// women <i class="fa fa-female" aria-hidden="true"></i>
-// health <i class="fa fa-medkit" aria-hidden="true"></i>
-// animals <i class="fa fa-paw" aria-hidden="true"></i>
-// kids import ChildCareIcon from '@material-ui/icons/ChildCare';
-// education <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-// food import FastfoodIcon from '@material-ui/icons/Fastfood';
-// others <i class="fa fa-random" aria-hidden="true"></i>;
+import FastfoodIcon from "@material-ui/icons/Fastfood";
+import ChildCareIcon from "@material-ui/icons/ChildCare";
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: "auto",
-    backgroundColor: "#f0efec",
-    borderRadius: 22,
-    position: "center",
-    padding: 0,
-    marginLeft: 10,
-    marginTop: 0,
     "&:hover": {
       backgroundColor: "#dbd6c5",
+      borderRadius: 22,
     },
-  },
-  inline: {
-    display: "inline",
   },
 }));
 
@@ -56,22 +39,37 @@ const StyledIconDelete = withStyles({
   },
 })(DeleteForeverIcon);
 
-const StyledCategoryIcon = withStyles({
-  root: {
-    marginRight: 20,
-  },
-})(Icon);
-
-export default function WishlistItem() {
+export default function WishlistItem(props) {
   const classes = useStyles();
+  function categoryIcon() {
+    switch (props.category) {
+      case 1:
+        return <Icon className="fa fa-medkit category-item" />;
+      case 2:
+        return <FastfoodIcon className="category-item" />;
+      case 3:
+        return <Icon className="fa fa-globe category-item" />;
+      case 4:
+        return <Icon className="fa fa-graduation-cap category-item" />;
+      case 5:
+        return <Icon className="fa fa-paw category-item" />;
+      case 6:
+        return <ChildCareIcon className="category-item" />;
+      case 7:
+        return <Icon className="fa fa-female category-item" />;
+      default:
+        return <Icon class="fa fa-random category-item" />;
+    }
+  }
+
   return (
-    <List className={classes.root}>
-      <ListItem alignItems="flex-start">
-        <StyledCategoryIcon className="fa fa-globe" aria-hidden="true" />
-        <ListItemText primary="Quantity - Item name" />
-        <StyledIconEdit />
-        <StyledIconDelete />
-      </ListItem>
-    </List>
+    <ListItem alignItems="flex-start" className={classes.root}>
+      {categoryIcon()}
+      <ListItemText>
+        {props.quantity} - {props.itemName}
+      </ListItemText>
+      <StyledIconEdit />
+      <StyledIconDelete />
+    </ListItem>
   );
 }

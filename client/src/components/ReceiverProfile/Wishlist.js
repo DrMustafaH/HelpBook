@@ -1,6 +1,6 @@
 import React from "react";
 import "./Wishlist.scss";
-import { Paper, withStyles } from "@material-ui/core";
+import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import WishlistItem from "./WishlistItem";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 
@@ -22,6 +22,21 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+const useStyles = makeStyles(() => ({
+  root: {
+    width: "auto",
+    backgroundColor: "#f0efec",
+    borderRadius: 22,
+    position: "center",
+    padding: 0,
+    marginLeft: 10,
+    marginTop: 0,
+    // "&:hover": {
+    //   backgroundColor: "#dbd6c5",
+    // },
+  },
+}));
+
 const StyledAddIcon = withStyles({
   root: {
     fontSize: "40px",
@@ -32,7 +47,19 @@ const StyledAddIcon = withStyles({
   },
 })(AddCircleIcon);
 
-export default function Wishlist() {
+export default function Wishlist(props) {
+  const classes = useStyles();
+  const mappedWishList = props.wishlist.map((wishListItem) => {
+    return (
+      <WishlistItem
+        key={wishListItem.id}
+        category={wishListItem.category_id}
+        itemName={wishListItem.item_name}
+        is_active={wishListItem.is_active}
+        quantity={wishListItem.quantity}
+      />
+    );
+  });
   return (
     <div className="wishlist-section">
       <StyledPaper>
@@ -41,11 +68,7 @@ export default function Wishlist() {
           <div>
             <StyledAddIcon className="add-wish-btn" />
           </div>
-          <WishlistItem />
-          <WishlistItem />
-          <WishlistItem />
-          <WishlistItem />
-          <WishlistItem />
+          <List className={classes.root}>{mappedWishList}</List>
         </div>
       </StyledPaper>
     </div>
