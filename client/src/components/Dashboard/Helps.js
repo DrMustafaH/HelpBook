@@ -38,7 +38,7 @@ export default function Helps(props) {
   const history = useHistory();
 
   function onUserSelection(id) {
-    history.push(`/receiver/${id}`);
+    history.push(`/receiverDash/${id}`);
   }
 
   const users_organizations = props.list.map((user, i) => {

@@ -1,0 +1,17 @@
+.total-followers-box {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  margin: 20px 20px 0 20px;
+  p {
+    margin: 0;
+  }
+}
+
+.total-followers {
+  color: #ffff20;
+  margin: 0;
+  font-size: 45px;
+  font-weight: 900;
+  height: 47px;
+}

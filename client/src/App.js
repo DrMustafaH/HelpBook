@@ -8,6 +8,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DonorProfile from "./components/DonorProfile/DonorProfile";
 import ReceiverProfile from "./components/ReceiverProfile/ReceiverProfile";
+import ReceiverDashboard from "./components/ReceiverDashboard/ReceiverDashboard";
 
 const users = [
   {
@@ -61,7 +62,7 @@ const users = [
     category_id: 1,
   },
 ];
-const usertype = [
+const userType = [
   {
     id: 1,
     name: "donor",
@@ -75,7 +76,6 @@ const usertype = [
     name: "receiver_individual",
   },
 ];
-
 //homepage
 function App() {
   // Retreive categories data from local api and set it with useState
@@ -97,12 +97,15 @@ function App() {
           <Route exact path="/dashboard">
             <Dashboard
               users={users}
-              usertype={usertype}
+              userType={userType}
               categories={categories}
             />
           </Route>
           <Route exact path="/receiver/:id">
             <ReceiverProfile />
+          </Route>
+          <Route exact path="/receiverDash/:id">
+            <ReceiverDashboard />
           </Route>
           <Route exact path="/donor">
             <DonorProfile />
