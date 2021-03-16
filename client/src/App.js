@@ -107,7 +107,7 @@ function App() {
           <Route exact path="/receiverDash/:id">
             <ReceiverDashboard />
           </Route>
-          <Route exact path="/donor">
+          <Route exact path="/donor/:id">
             <DonorProfile />
           </Route>
           <Route exact path="/*">
