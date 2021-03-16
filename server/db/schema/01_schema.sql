@@ -2,8 +2,8 @@ DROP TABLE IF EXISTS request_volunteer CASCADE;
 
 DROP TABLE IF EXISTS items_wishlist CASCADE;
 
-
 DROP TABLE IF EXISTS donated_money CASCADE;
+
 DROP TABLE IF EXISTS requested_money CASCADE;
 
 DROP TABLE IF EXISTS receiver_followers CASCADE;

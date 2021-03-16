@@ -15,7 +15,7 @@ export default function ReceiverProfile() {
   const [followersCount, setFollowersCount] = useState();
   const [donationMoneyLog, setDonationMoneyLog] = useState();
   const [donationItemLog, setDonationItemLog] = useState();
-  const [wishlist, setWishlist] = useState();
+
   const [totalDonation, setTotalDonation] = useState({
     id: 0,
     is_active: false,
@@ -53,7 +53,6 @@ export default function ReceiverProfile() {
     async function getDonationMoneyLog() {
       const res = await axios.get(`/api/users/donationLog/${userId}`);
       setDonationMoneyLog(res.data);
-      // console.log("DONATION-MONEY", res.data);
     }
     getDonationMoneyLog();
   }, [userId]);
@@ -62,17 +61,8 @@ export default function ReceiverProfile() {
     async function getDonationItemLog() {
       const res = await axios.get(`/api/users/wishlistDonationLog/${userId}`);
       setDonationItemLog(res.data);
-      // console.log("DONATION-ITEM", res.data);
     }
     getDonationItemLog();
-  }, [userId]);
-
-  useEffect(() => {
-    async function getWishlistItems() {
-      const res = await axios.get(`/api/wishlist/${userId}`);
-      setWishlist(res.data);
-    }
-    getWishlistItems();
   }, [userId]);
 
   if (!user) return <div>User does not exist</div>;
@@ -89,7 +79,7 @@ export default function ReceiverProfile() {
         )}
       </div>
       <div className="wishlist-donations-section">
-        {wishlist && <Wishlist wishlist={wishlist} />}
+        <Wishlist />
         {donationMoneyLog && donationItemLog && (
           <Donations donationLog={donationMoneyLog} itemLog={donationItemLog} />
         )}

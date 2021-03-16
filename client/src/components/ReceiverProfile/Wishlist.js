@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Wishlist.scss";
 import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import WishlistItem from "./WishlistItem";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import AddItemForm from "./AddItemForm";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const StyledPaper = withStyles({
   root: {
@@ -40,7 +42,27 @@ const useStyles = makeStyles(() => ({
 
 export default function Wishlist(props) {
   const classes = useStyles();
-  const mappedWishList = props.wishlist.map((wishListItem) => {
+  const params = useParams();
+  const [userId] = useState(Number(params.id));
+  const [wishlist, setWishlist] = useState([]);
+
+  useEffect(() => {
+    async function getWishlistItems() {
+      const res = await axios.get(`/api/wishlist/${userId}`);
+      setWishlist(res.data);
+    }
+    getWishlistItems();
+  }, [userId]);
+
+  const handleNewWishlist = (newWishlist) => {
+    const copyWishlist = [...wishlist];
+    console.log("newWishlist", newWishlist);
+    console.log("wishlist", wishlist);
+    copyWishlist.push(newWishlist);
+    setWishlist(copyWishlist);
+  };
+
+  const mappedWishList = wishlist.map((wishListItem) => {
     return (
       <WishlistItem
         key={wishListItem.id}
@@ -57,7 +79,7 @@ export default function Wishlist(props) {
         <div className="wishlist-items-list">
           Wish List
           <div>
-            <AddItemForm />
+            <AddItemForm addNewWishlist={handleNewWishlist} />
           </div>
           <List className={classes.root}>{mappedWishList}</List>
         </div>

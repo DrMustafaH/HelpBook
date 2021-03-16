@@ -25,7 +25,7 @@ export default function FollowingSection() {
   return (
     <div className="following-section">
       <StyledPaper>
-        <div>Following:</div>
+        <div>Following</div>
         <div className="list-display">
           <FollowingItem />
           <FollowingItem />

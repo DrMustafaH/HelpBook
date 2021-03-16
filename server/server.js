@@ -20,6 +20,7 @@ db.connect();
 //app uses
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static("public"));
 // app.use("/styles", sass({
 //   src: __dirname + "/styles",

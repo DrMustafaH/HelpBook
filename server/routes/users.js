@@ -74,6 +74,23 @@ module.exports = (db) => {
       });
   });
 
+  // USING get following receivers for a specific user id (donor)
+  router.get("/followers/:id", (req, res) => {
+    db.query(
+      `SELECT * FROM donor_following
+    WHERE user_id = $1
+    ;`,
+      [req.params.id]
+    )
+      .then((data) => {
+        const followersCount = data.rows[0];
+        res.json(followersCount.count);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
   // USING get total amount of donations for a specific user id
   router.get("/total_donation/:id", (req, res) => {
     db.query(

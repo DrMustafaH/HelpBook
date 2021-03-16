@@ -32,10 +32,10 @@ module.exports = (db) => {
   });
 
   // Adds a new item to the wishlist in database
-  router.post("/", (req, res) => {
+  router.post("/:id/add", (req, res) => {
     const user_id = req.params.id;
-    const category_id = req.body.category_id;
-    const item_name = req.body.item_name;
+    const category_id = req.body.category;
+    const item_name = req.body.itemName;
     const is_active = true;
     const entry_date = new Date();
     const donated_date = null;
@@ -43,8 +43,7 @@ module.exports = (db) => {
     const donor_id = null;
 
     db.query(
-      `
-    INSERT INTO items_wishlist
+      `INSERT INTO items_wishlist
     (
       user_id,
       category_id,
@@ -56,7 +55,8 @@ module.exports = (db) => {
       donor_id
     )
     VALUES
-    ($1, $2, $3, $4, $5, $6, $7, $8);
+    ($1, $2, $3, $4, $5, $6, $7, $8)
+    RETURNING *;
     `,
       [
         user_id,
@@ -69,10 +69,13 @@ module.exports = (db) => {
         donor_id,
       ]
     )
-      .then(() => {
+      .then((data) => {
+        console.log("DATA", data.rows);
+        res.send(data.rows);
         res.status(201);
       })
       .catch((err) => {
+        console.log("ERROR", err);
         res.status(500).json({ error: err.message });
       });
   });
