@@ -63,7 +63,6 @@ export default function EditItemForm(props) {
         id: props.id,
       });
       props.editWishlistItem(res.data, props.id);
-      console.log("client res", res.data);
       handleClose();
     }
   }

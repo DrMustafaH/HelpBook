@@ -35,7 +35,6 @@ const useStyles = makeStyles(() => ({
 
 export default function Donations(props) {
   const classes = useStyles();
-  console.log("donation props", props);
   const mappedMoneyLog = props.donationLog.map((donationItem) => {
     return (
       <DonationItem

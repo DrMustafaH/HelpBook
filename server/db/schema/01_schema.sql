@@ -86,7 +86,8 @@ CREATE TABLE donated_money (
 -- eigth
 CREATE TABLE donor_following (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 -- ninth

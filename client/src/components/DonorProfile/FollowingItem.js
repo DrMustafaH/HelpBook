@@ -5,7 +5,6 @@ import {
   ListItemAvatar,
   ListItemText,
   makeStyles,
-  Typography,
   withStyles,
 } from "@material-ui/core";
 import React from "react";
@@ -30,7 +29,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const StyledIconAdd = withStyles({
+const StyledIconRemove = withStyles({
   root: {
     marginTop: 20,
     "&:hover": {
@@ -40,34 +39,16 @@ const StyledIconAdd = withStyles({
   },
 })(RemoveCircleIcon);
 
-export default function HelpItem() {
+export default function FollowingItem(props) {
   const classes = useStyles();
   return (
     <List className={classes.root}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar
-            alt="org-avatar"
-            src="https://robohash.org/autminimadolor.bmp?size=50x50&set=set1"
-          />
+          <Avatar alt="avatar" src={props.avatar} />
         </ListItemAvatar>
-        <ListItemText
-          primary="World Health Organization"
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                Vaccine Day
-              </Typography>
-              {" Need volunteers to help out in vaccine delivery…"}
-            </React.Fragment>
-          }
-        />
-        <StyledIconAdd />
+        <ListItemText primary={props.username} />
+        <StyledIconRemove />
       </ListItem>
     </List>
   );

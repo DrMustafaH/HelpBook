@@ -80,7 +80,6 @@ module.exports = (db) => {
 
   // USING deletes an item from the database (wishlist table)
   router.post("/:id/delete", (req, res) => {
-    console.log("WE ARE HERE", req.body);
     db.query(
       `DELETE FROM items_wishlist
     WHERE id = $1

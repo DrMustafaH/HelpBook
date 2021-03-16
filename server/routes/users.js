@@ -75,16 +75,18 @@ module.exports = (db) => {
   });
 
   // USING get following receivers for a specific user id (donor)
-  router.get("/followers/:id", (req, res) => {
+  router.get("/following/:id", (req, res) => {
     db.query(
-      `SELECT * FROM donor_following
-    WHERE user_id = $1
-    ;`,
+      `SELECT
+      donor_following.id, receiver_id as followed_user_id, user_id as user, users.username as followed_userName, users.avatar as followed_avatar
+      FROM donor_following 
+      JOIN users ON users.id = receiver_id
+      WHERE user_id = $1;`,
       [req.params.id]
     )
       .then((data) => {
-        const followersCount = data.rows[0];
-        res.json(followersCount.count);
+        const followingList = data.rows;
+        res.json(followingList);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
@@ -146,7 +148,6 @@ module.exports = (db) => {
     )
       .then((data) => {
         const wishlistDonationLog = data.rows;
-        console.log(wishlistDonationLog);
         const mappedwishlistDonationLog = wishlistDonationLog.map(
           ({ id, item_name, item_donor_name }) => ({
             id,

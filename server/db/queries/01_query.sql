@@ -14,9 +14,12 @@
 --       JOIN users on items_wishlist.donor_id = users.id
 --       WHERE items_wishlist.user_id = 2
 --       GROUP BY items_wishlist.id, users.id;
+
+-- Get users that are being followed by especific user id
 SELECT
-      *
+      donor_following.id, receiver_id as followed_user_id, user_id as user, users.username as followed_userName, users.avatar as followed_avatar
 FROM
-      donor_following
+      donor_following 
+      JOIN users ON users.id = receiver_id
 WHERE
-      user_id = 2;
+      user_id = 1;
