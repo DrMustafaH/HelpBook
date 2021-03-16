@@ -3,6 +3,7 @@ import "./Wishlist.scss";
 import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import WishlistItem from "./WishlistItem";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import AddItemForm from "./AddItemForm";
 
 const StyledPaper = withStyles({
   root: {
@@ -37,16 +38,6 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const StyledAddIcon = withStyles({
-  root: {
-    fontSize: "40px",
-    "&:hover": {
-      color: "#3891A6",
-      cursor: "pointer",
-    },
-  },
-})(AddCircleIcon);
-
 export default function Wishlist(props) {
   const classes = useStyles();
   const mappedWishList = props.wishlist.map((wishListItem) => {
@@ -66,7 +57,7 @@ export default function Wishlist(props) {
         <div className="wishlist-items-list">
           Wish List
           <div>
-            <StyledAddIcon className="add-wish-btn" />
+            <AddItemForm />
           </div>
           <List className={classes.root}>{mappedWishList}</List>
         </div>
