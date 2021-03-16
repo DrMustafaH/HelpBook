@@ -31,7 +31,7 @@ module.exports = (db) => {
       });
   });
 
-  // Adds a new item to the wishlist in database
+  // USING Adds a new item to the wishlist in database
   router.post("/:id/add", (req, res) => {
     const user_id = req.params.id;
     const category_id = req.body.category;
@@ -74,20 +74,21 @@ module.exports = (db) => {
         res.status(201);
       })
       .catch((err) => {
-        console.log("ERROR", err);
         res.status(500).json({ error: err.message });
       });
   });
 
-  // deletes an item from the database (wishlist table)
-  router.post("/delete", (req, res) => {
+  // USING deletes an item from the database (wishlist table)
+  router.post("/:id/delete", (req, res) => {
+    console.log("WE ARE HERE", req.body);
     db.query(
       `DELETE FROM items_wishlist
-    WHERE id = $1;`,
+    WHERE id = $1
+    RETURNING *;`,
       [req.body.id]
     )
       .then(() => {
-        res.status(200);
+        res.sendStatus(200);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

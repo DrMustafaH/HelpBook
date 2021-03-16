@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Wishlist.scss";
 import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import WishlistItem from "./WishlistItem";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
 import AddItemForm from "./AddItemForm";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -54,20 +53,29 @@ export default function Wishlist(props) {
     getWishlistItems();
   }, [userId]);
 
+  // render the wishlist item after adding a new item
   const handleNewWishlist = (newWishlist) => {
     const copyWishlist = [...wishlist];
     copyWishlist.push(newWishlist);
     setWishlist(copyWishlist);
   };
 
-  const mappedWishList = wishlist.map((wishListItem) => {
+  // Render the wishlist item after deleting an item using filter
+  const GetWishlist = (id) => {
+    const filterWishlist = wishlist.filter((item) => item.id !== id);
+    setWishlist(filterWishlist);
+  };
+
+  const mappedWishList = wishlist.map((wishListItem, i) => {
     return (
       <WishlistItem
-        key={wishListItem.id}
+        key={i}
+        id={wishListItem.id}
         category={wishListItem.category_id}
         itemName={wishListItem.item_name}
         is_active={wishListItem.is_active}
         quantity={wishListItem.quantity}
+        onDelete={GetWishlist}
       />
     );
   });

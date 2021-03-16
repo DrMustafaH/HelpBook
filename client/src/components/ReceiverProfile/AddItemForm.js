@@ -4,12 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import {
-  DialogTitle,
-  FormControl,
-  MenuItem,
-  withStyles,
-} from "@material-ui/core";
+import { DialogTitle, MenuItem, withStyles } from "@material-ui/core";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import axios from "axios";
 import { useParams } from "react-router-dom";

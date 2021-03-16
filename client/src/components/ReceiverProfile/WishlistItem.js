@@ -10,6 +10,8 @@ import EditIcon from "@material-ui/icons/Edit";
 import Icon from "@material-ui/core/Icon";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import ChildCareIcon from "@material-ui/icons/ChildCare";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -40,7 +42,17 @@ const StyledIconDelete = withStyles({
 })(DeleteForeverIcon);
 
 export default function WishlistItem(props) {
+  const params = useParams();
   const classes = useStyles();
+
+  async function handleDelete() {
+    //Axios post to delete wishlist item
+    await axios.post(`/api/wishlist/${params.id}/delete`, {
+      id: props.id,
+    });
+    props.onDelete(props.id);
+  }
+
   function categoryIcon() {
     switch (props.category) {
       case 1:
@@ -69,7 +81,7 @@ export default function WishlistItem(props) {
         {props.quantity} - {props.itemName}
       </ListItemText>
       <StyledIconEdit />
-      <StyledIconDelete />
+      <StyledIconDelete onClick={handleDelete} />
     </ListItem>
   );
 }

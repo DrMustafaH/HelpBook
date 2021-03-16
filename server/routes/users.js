@@ -102,7 +102,6 @@ module.exports = (db) => {
     )
       .then((data) => {
         const totalDonation = data.rows[0];
-        console.log(totalDonation);
         res.json(totalDonation);
       })
       .catch((err) => {
