@@ -6,12 +6,12 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import EditIcon from "@material-ui/icons/Edit";
 import Icon from "@material-ui/core/Icon";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import ChildCareIcon from "@material-ui/icons/ChildCare";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import EditItemForm from "./EditItemForm";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -22,15 +22,6 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const StyledIconEdit = withStyles({
-  root: {
-    marginLeft: 20,
-    "&:hover": {
-      color: "#3891A6",
-      cursor: "pointer",
-    },
-  },
-})(EditIcon);
 const StyledIconDelete = withStyles({
   root: {
     paddingLeft: 10,
@@ -80,7 +71,7 @@ export default function WishlistItem(props) {
       <ListItemText>
         {props.quantity} - {props.itemName}
       </ListItemText>
-      <StyledIconEdit />
+      <EditItemForm id={props.id} editWishlistItem={props.handleEdit} />
       <StyledIconDelete onClick={handleDelete} />
     </ListItem>
   );

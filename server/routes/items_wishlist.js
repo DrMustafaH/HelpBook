@@ -96,13 +96,14 @@ module.exports = (db) => {
   });
 
   //edit a item from the wishlist table in database
-  router.post("/edit", (req, res) => {
+  router.post("/:id/edit", (req, res) => {
     db.query(
       `UPDATE items_wishlist
-    SET item_name = $1, quantity = $2, category_id = $3 WHERE id = $4;`,
-      [req.body.item_name, req.body.quantity, req.body.category_id, req.body.id]
+    SET item_name = $1, quantity = $2, category_id = $3 WHERE id = $4 RETURNING *;`,
+      [req.body.itemName, req.body.quantity, req.body.category, req.body.id]
     )
-      .then(() => {
+      .then((data) => {
+        res.send(data.rows[0]);
         res.status(200);
       })
       .catch((err) => {

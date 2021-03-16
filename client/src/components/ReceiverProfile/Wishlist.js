@@ -60,10 +60,21 @@ export default function Wishlist(props) {
     setWishlist(copyWishlist);
   };
 
-  // Render the wishlist item after deleting an item using filter
+  // Render the wishlist items after deleting an item using filter
   const GetWishlist = (id) => {
     const filterWishlist = wishlist.filter((item) => item.id !== id);
     setWishlist(filterWishlist);
+  };
+
+  //Render the wishlist items after editing an item using map to replace edited item
+  const GetEditedWishlist = (newWishlistItem, id) => {
+    const copyWishlist = [...wishlist];
+    copyWishlist.map((item, i) => {
+      if (item.id === id) {
+        copyWishlist[i] = newWishlistItem;
+      }
+    });
+    setWishlist(copyWishlist);
   };
 
   const mappedWishList = wishlist.map((wishListItem, i) => {
@@ -76,6 +87,7 @@ export default function Wishlist(props) {
         is_active={wishListItem.is_active}
         quantity={wishListItem.quantity}
         onDelete={GetWishlist}
+        handleEdit={GetEditedWishlist}
       />
     );
   });
