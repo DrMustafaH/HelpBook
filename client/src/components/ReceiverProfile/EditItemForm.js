@@ -36,9 +36,9 @@ export default function EditItemForm(props) {
   const [open, setOpen] = useState(false);
   const params = useParams();
   const [formData, setFormData] = useState({
-    itemName: "",
-    quantity: 1,
-    category: 8,
+    itemName: props.itemName,
+    quantity: props.quantity,
+    category: props.category,
   });
 
   // Open and close form when adding a new wishlist item

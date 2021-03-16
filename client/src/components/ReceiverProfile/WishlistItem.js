@@ -71,7 +71,13 @@ export default function WishlistItem(props) {
       <ListItemText>
         {props.quantity} - {props.itemName}
       </ListItemText>
-      <EditItemForm id={props.id} editWishlistItem={props.handleEdit} />
+      <EditItemForm
+        id={props.id}
+        editWishlistItem={props.handleEdit}
+        itemName={props.itemName}
+        category={props.category}
+        quantity={props.quantity}
+      />
       <StyledIconDelete onClick={handleDelete} />
     </ListItem>
   );
