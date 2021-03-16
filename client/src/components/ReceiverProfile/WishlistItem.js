@@ -61,7 +61,7 @@ export default function WishlistItem(props) {
       case 7:
         return <Icon className="fa fa-female category-item" />;
       default:
-        return <Icon class="fa fa-random category-item" />;
+        return <Icon className="fa fa-random category-item" />;
     }
   }
 

@@ -5,6 +5,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import { DialogTitle, MenuItem, withStyles } from "@material-ui/core";
+import Icon from "@material-ui/core/Icon";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import EditIcon from "@material-ui/icons/Edit";
@@ -24,13 +25,14 @@ const categories = [
 
 const StyledIconEdit = withStyles({
   root: {
-    marginLeft: 20,
+    paddingRigth: 50,
+    paddingBottom: 22,
     "&:hover": {
       color: "#3891A6",
       cursor: "pointer",
     },
   },
-})(EditIcon);
+})(Icon);
 
 export default function EditItemForm(props) {
   const [open, setOpen] = useState(false);
@@ -79,8 +81,11 @@ export default function EditItemForm(props) {
   };
 
   return (
-    <svg className="edit-item-form">
-      <StyledIconEdit onClick={handleClickOpen} />
+    <div className="edit-item-form">
+      <StyledIconEdit
+        className="fa fa-pencil-square-o"
+        onClick={handleClickOpen}
+      />
       <Dialog
         open={open}
         onClose={handleClose}
@@ -140,6 +145,6 @@ export default function EditItemForm(props) {
           </Button>
         </DialogActions>
       </Dialog>
-    </svg>
+    </div>
   );
 }
