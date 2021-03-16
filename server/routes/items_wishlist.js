@@ -40,6 +40,7 @@ module.exports = (db) => {
     const entry_date = new Date();
     const donated_date = null;
     const quantity = req.body.quantity;
+    const donor_id = null;
 
     db.query(
       `
@@ -51,10 +52,11 @@ module.exports = (db) => {
       is_active,
       entry_date,
       donated_date,
-      quantity
+      quantity,
+      donor_id
     )
     VALUES
-    ($1, $2, $3, $4, $5, $6, $7);
+    ($1, $2, $3, $4, $5, $6, $7, $8);
     `,
       [
         user_id,
@@ -64,6 +66,7 @@ module.exports = (db) => {
         entry_date,
         donated_date,
         quantity,
+        donor_id,
       ]
     )
       .then(() => {
