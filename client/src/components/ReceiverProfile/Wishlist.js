@@ -56,8 +56,6 @@ export default function Wishlist(props) {
 
   const handleNewWishlist = (newWishlist) => {
     const copyWishlist = [...wishlist];
-    console.log("newWishlist", newWishlist);
-    console.log("wishlist", wishlist);
     copyWishlist.push(newWishlist);
     setWishlist(copyWishlist);
   };

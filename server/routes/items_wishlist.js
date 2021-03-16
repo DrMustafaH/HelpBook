@@ -70,8 +70,7 @@ module.exports = (db) => {
       ]
     )
       .then((data) => {
-        console.log("DATA", data.rows);
-        res.send(data.rows);
+        res.send(data.rows[0]);
         res.status(201);
       })
       .catch((err) => {

@@ -4,9 +4,12 @@ import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import { FormControl, MenuItem, withStyles } from "@material-ui/core";
+import {
+  DialogTitle,
+  FormControl,
+  MenuItem,
+  withStyles,
+} from "@material-ui/core";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -33,41 +36,39 @@ const StyledAddIcon = withStyles({
   },
 })(AddCircleIcon);
 
-export default function AddItemForm({ addNewWishlist }) {
+export default function AddItemForm(props) {
   const [open, setOpen] = useState(false);
   const params = useParams();
   const [formData, setFormData] = useState({
     itemName: "",
-    quantity: 0,
+    quantity: 1,
     category: 8,
   });
 
-  console.log(formData);
-  async function handleSubmit(event) {
-    event.preventDefault();
-    console.log("SUBMIT", event);
-    console.log("form name", formData);
-    if (!formData.itemName || !formData.quantity) {
-      alert("please fill missing form");
-    } else {
-      //submit to api
-      const res = await axios.post(`/api/wishlist/${params.id}/add`, {
-        ...formData,
-      });
-      console.log("response", res);
-      addNewWishlist(res.data[0]);
-      setOpen(false);
-    }
-  }
-
+  // Open and close form when adding a new wishlist item
   const handleClickOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
 
+  // Axios call when creating new wishilist item
+  async function handleSubmit(event) {
+    event.preventDefault();
+    if (!formData.itemName || !formData.quantity) {
+      alert("Please fill missing form");
+    } else {
+      //Send new item to api
+      const res = await axios.post(`/api/wishlist/${params.id}/add`, {
+        ...formData,
+      });
+      props.addNewWishlist(res.data);
+      handleClose();
+    }
+  }
+
+  // handling form inputs to receive data of new wishlist item
   const handleInputName = (e) => {
     setFormData({ ...formData, itemName: e.target.value });
   };
@@ -109,7 +110,7 @@ export default function AddItemForm({ addNewWishlist }) {
               placeholder="Quantity"
               type="number"
               fullWidth
-              InputProps={{ inputProps: { min: 0, max: 50 } }}
+              InputProps={{ inputProps: { min: 1, max: 50 } }}
               InputLabelProps={{
                 shrink: true,
               }}
