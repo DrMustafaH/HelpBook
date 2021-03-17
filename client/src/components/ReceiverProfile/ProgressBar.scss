@@ -1,9 +1,12 @@
 .donations-receiver-button {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
   Button {
     font-family: "Hind Madurai", sans-serif;
     font-weight: 700;
     background-color: #3891a6;
-    margin: 20px;
+    // margin: 20px;
     color: #f0efec;
     font-size: 1rem;
   }

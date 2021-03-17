@@ -4,6 +4,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Button from "@material-ui/core/Button";
 import "./ProgressBar.scss";
 import EditAmountForm from "./EditAmountForm";
+import AddAmountForm from "./AddAmountForm";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -47,6 +48,12 @@ export default function ProgressBar(props) {
     setTotalDonation({ ...totalDonation, requested_amount: newAmount });
   };
 
+  //Render the nuew goal amount after completing the older one
+  const GetNewAmount = (newAmount) => {
+    setTotalDonation({ ...totalDonation, requested_amount: newAmount, sum: 0 });
+  };
+
+  // Get the goal of donations requested by receiver
   useEffect(() => {
     async function getTotalDonations() {
       const res = await axios.get(`/api/users/total_donation/${userId}`);
@@ -68,18 +75,21 @@ export default function ProgressBar(props) {
         />
       </div>
       <div className="donations-receiver-button">
-        <EditAmountForm
-          disabled={totalDonation.requested_amount == totalDonation.sum}
-          requested_amount={totalDonation.requested_amount}
-          id={totalDonation.id}
-          onEdit={GetEditedAmount}
-        />
-        <Button
-          variant="contained"
+        {totalDonation.requested_amount != 0 && (
+          <EditAmountForm
+            disabled={totalDonation.requested_amount == totalDonation.sum}
+            requested_amount={totalDonation.requested_amount}
+            id={totalDonation.id}
+            onEdit={GetEditedAmount}
+          />
+        )}
+        <AddAmountForm
           disabled={totalDonation.requested_amount != totalDonation.sum}
-        >
-          Add New Goal
-        </Button>
+          requested_amount={totalDonation.requested_amount}
+          sum={totalDonation.sum}
+          id={totalDonation.id}
+          onAdd={GetNewAmount}
+        />
       </div>
     </div>
   );

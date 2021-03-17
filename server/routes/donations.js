@@ -79,22 +79,17 @@ module.exports = (db) => {
       });
   });
 
-  // Set a donation amount/target in database
-  router.post("/receiver", (req, res) => {
-    const user_id = req.body.user_id;
-    const is_active = true;
-    const requested_amount = req.body.requested_amount;
-
+  // USING Add a donation amount/target in database (by actually updated a single entry as each receiver can ask for 1 donation goal at a specific time period)
+  router.post("/receiver/:id/add", (req, res) => {
     db.query(
       `
-        INSERT INTO requested_money
-        (user_id, is_active, requested_amount)
-        VALUES
-        ($1, $2, $3);
+      UPDATE requested_money
+      SET requested_amount = $1 WHERE id = $2 RETURNING *;
         `,
-      [user_id, is_active, requested_amount]
+      [req.body.requested_amount, req.body.id]
     )
-      .then(() => {
+      .then((data) => {
+        res.send(data.rows[0]);
         res.status(201);
       })
       .catch((err) => {

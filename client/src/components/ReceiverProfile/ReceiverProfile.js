@@ -54,13 +54,7 @@ export default function ReceiverProfile() {
       <Header username={user.username} avatar={user.avatar} />
       <div className="receiver-followers">
         {followersCount && <TotalFollowers count={followersCount} />}
-        {/* {totalDonation && ( */}
-        <ProgressBar
-        // id={totalDonation.id}
-        // sum={totalDonation.sum}
-        // requested_amount={totalDonation.requested_amount}
-        />
-        {/* )} */}
+        <ProgressBar />
       </div>
       <div className="wishlist-donations-section">
         <Wishlist />
