@@ -102,14 +102,15 @@ module.exports = (db) => {
       });
   });
 
-  //edit requested donation amount
-  router.post("/receiver/edit", (req, res) => {
+  //USING edit requested donation amount
+  router.post("/receiver/:id/edit", (req, res) => {
     db.query(
       `UPDATE requested_money
-          SET requested_amount = $1 WHERE id = $2;`,
+          SET requested_amount = $1 WHERE id = $2 RETURNING *;`,
       [req.body.requested_amount, req.body.id]
     )
-      .then(() => {
+      .then((data) => {
+        res.send(data.rows[0]);
         res.status(200);
       })
       .catch((err) => {

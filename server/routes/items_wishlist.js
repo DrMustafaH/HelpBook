@@ -94,7 +94,7 @@ module.exports = (db) => {
       });
   });
 
-  //edit a item from the wishlist table in database
+  //USING edit a item from the wishlist table in database
   router.post("/:id/edit", (req, res) => {
     db.query(
       `UPDATE items_wishlist
