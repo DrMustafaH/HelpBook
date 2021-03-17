@@ -37,13 +37,23 @@ export default function FollowingSection() {
     getFollowingList();
   }, [userId]);
 
+  // Render the following users list after unfollowing a user using filter
+  const getUpdatedFollowing = (id) => {
+    const filteredFollowingList = followingList.filter(
+      (user) => user.id !== id
+    );
+    setFollowingList(filteredFollowingList);
+  };
+
   // map function over the followingList state to output each user
   const mappedFollowingList = followingList.map((user, i) => {
     return (
       <FollowingItem
         key={i}
+        id={user.id}
         avatar={user.followed_avatar}
         username={user.followed_username}
+        onUnfollow={getUpdatedFollowing}
       />
     );
   });

@@ -9,6 +9,8 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -40,6 +42,15 @@ const StyledIconRemove = withStyles({
 })(RemoveCircleIcon);
 
 export default function FollowingItem(props) {
+  const params = useParams();
+  //Axios post to delete following user item
+  async function handleUnfollow() {
+    await axios.post(`/api/users/following/${params.id}/delete`, {
+      id: props.id,
+    });
+    props.onUnfollow(props.id);
+  }
+
   const classes = useStyles();
   return (
     <List className={classes.root}>
@@ -48,7 +59,7 @@ export default function FollowingItem(props) {
           <Avatar alt="avatar" src={props.avatar} />
         </ListItemAvatar>
         <ListItemText primary={props.username} />
-        <StyledIconRemove />
+        <StyledIconRemove onClick={handleUnfollow} />
       </ListItem>
     </List>
   );

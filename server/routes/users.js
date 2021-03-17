@@ -162,6 +162,22 @@ module.exports = (db) => {
       });
   });
 
+  // USING deletes an item from the database (donor_following table)
+  router.post("/following/:id/delete", (req, res) => {
+    db.query(
+      `DELETE FROM donor_following
+    WHERE id = $1
+    RETURNING *;`,
+      [req.body.id]
+    )
+      .then(() => {
+        res.sendStatus(200);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
   // Adds a new user to the database
   router.post("/", (req, res) => {
     const username = req.body.username;

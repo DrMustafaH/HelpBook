@@ -53,7 +53,6 @@ export default function ReceiverDashboard() {
     async function getDonationMoneyLog() {
       const res = await axios.get(`/api/users/donationLog/${userId}`);
       setDonationMoneyLog(res.data);
-      // console.log("DONATION-MONEY", res.data);
     }
     getDonationMoneyLog();
   }, [userId]);
@@ -62,7 +61,6 @@ export default function ReceiverDashboard() {
     async function getDonationItemLog() {
       const res = await axios.get(`/api/users/wishlistDonationLog/${userId}`);
       setDonationItemLog(res.data);
-      // console.log("DONATION-ITEM", res.data);
     }
     getDonationItemLog();
   }, [userId]);
