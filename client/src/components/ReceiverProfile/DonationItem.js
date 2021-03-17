@@ -15,12 +15,12 @@ export default function DonationItem(props) {
       <StyledIconArrow />
       {!props.amount && (
         <ListItemText>
-          {props.name} donated: {props.item}
+          {props.name} donated: {props.item}.
         </ListItemText>
       )}
       {!props.item && (
         <ListItemText>
-          {props.name} donated: ${props.amount}
+          {props.name} donated: ${props.amount}.
         </ListItemText>
       )}
     </ListItem>

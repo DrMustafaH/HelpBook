@@ -40,8 +40,19 @@ export default function ProgressBar(props) {
         />
       </div>
       <div className="donations-receiver-button">
-        <Button variant="contained">Edit Amount</Button>
-        <Button variant="contained">Add New Goal</Button>
+        <Button
+          variant="contained"
+          disabled={props.requested_amount == props.sum}
+        >
+          Edit Amount
+        </Button>
+
+        <Button
+          variant="contained"
+          disabled={props.requested_amount != props.sum}
+        >
+          Add New Goal
+        </Button>
       </div>
     </div>
   );
