@@ -9,6 +9,9 @@ export default function Navbar() {
   function handleLoginClick() {
     history.push("/login");
   }
+  function handleRegisterClick() {
+    history.push("/register");
+  }
 
   function handleHomeClick() {
     history.push("/");
@@ -26,7 +29,9 @@ export default function Navbar() {
         <a className="login-signup-links" onClick={handleLoginClick}>
           LOGIN
         </a>
-        <a className="login-signup-links">SIGN UP</a>
+        <a className="login-signup-links" onClick={handleRegisterClick}>
+          REGISTER
+        </a>
       </div>
     </nav>
   );

@@ -1,0 +1,47 @@
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.registration-section {
+  // margin: 20px;
+  Button {
+    font-family: "Hind Madurai", sans-serif;
+    font-weight: 700;
+    background-color: #3891a6;
+    margin: 20px;
+    color: #f0efec;
+    font-size: 1.15rem;
+    margin: 30px 0 100px 0;
+  }
+  Button:hover {
+    background-color: #0e212f;
+  }
+  .registration-heading {
+    font-family: "Trirong", serif;
+    margin-bottom: 50px;
+  }
+}
+
+.no-account-mssg {
+  font-size: 14px;
+  font-style: italic;
+}
+.no-account-mssg:hover {
+  color: #3891a6;
+  text-decoration: underline;
+}
+
+.MuiInput-underline:after {
+  border-bottom: 2px solid #0e212f !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #0e212f !important;
+}
+
+Button.user-type-registration {
+  background-color: #0e212f;
+  margin: 10px;
+  font-size: 14px;
+}

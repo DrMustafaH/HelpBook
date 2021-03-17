@@ -10,6 +10,7 @@ import DonorProfile from "./components/DonorProfile/DonorProfile";
 import ReceiverProfile from "./components/ReceiverProfile/ReceiverProfile";
 import ReceiverDashboard from "./components/ReceiverDashboard/ReceiverDashboard";
 import Login from "./components/Login/Login";
+import Register from "./components/Login/Register";
 
 const users = [
   {
@@ -113,6 +114,9 @@ function App() {
           </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
           </Route>
           <Route exact path="/*">
             <h1>PAGE NOT FOUND</h1>
