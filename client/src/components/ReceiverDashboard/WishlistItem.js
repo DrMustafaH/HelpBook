@@ -9,6 +9,7 @@ import React from "react";
 import Icon from "@material-ui/core/Icon";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import ChildCareIcon from "@material-ui/icons/ChildCare";
+import DonateItemForm from "./DonateItemForm";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -19,20 +20,20 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const StyledButton = withStyles({
-  root: {
-    paddingLeft: 10,
-    borderRadius: 22,
-    padding: "0 8px 0 0",
-    marginTop: 4,
-    "&:hover": {
-      backgroundColor: "#0E212F",
-      color: "#f0efec",
-      cursor: "pointer",
-      fontWeight: "700",
-    },
-  },
-})(Button);
+// const StyledButton = withStyles({
+//   root: {
+//     paddingLeft: 10,
+//     borderRadius: 22,
+//     padding: "0 8px 0 0",
+//     marginTop: 4,
+//     "&:hover": {
+//       backgroundColor: "#0E212F",
+//       color: "#f0efec",
+//       cursor: "pointer",
+//       fontWeight: "700",
+//     },
+//   },
+// })(Button);
 
 export default function WishlistItem(props) {
   const classes = useStyles();
@@ -63,7 +64,13 @@ export default function WishlistItem(props) {
       <ListItemText>
         {props.quantity} - {props.itemName}
       </ListItemText>
-      <StyledButton variant="outlined">Donate</StyledButton>
+      <DonateItemForm
+      // id={props.id}
+      // editWishlistItem={props.handleEdit}
+      // itemName={props.itemName}
+      // category={props.category}
+      // quantity={props.quantity}
+      />
     </ListItem>
   );
 }
