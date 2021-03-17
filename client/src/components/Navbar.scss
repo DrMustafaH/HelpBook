@@ -1,18 +1,26 @@
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
-  img{
-    width:100px;
-    height:100px;
+  img {
+    width: 100px;
+    height: 100px;
   }
 
-  ul{
+  .home-link:hover {
+    cursor: pointer;
+  }
+
+  .login-signup {
     display: flex;
     list-style-type: none;
     font-weight: 900;
     font-size: 20px;
-    li{
+    .login-signup-links {
       margin: 20px;
+    }
+    .login-signup-links:hover {
+      color: #3891a6;
+      cursor: pointer;
     }
   }
 }

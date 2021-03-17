@@ -48,7 +48,7 @@ export default function ProgressBar(props) {
     setTotalDonation({ ...totalDonation, requested_amount: newAmount });
   };
 
-  //Render the nuew goal amount after completing the older one
+  //Render the new goal amount after completing the older one
   const GetNewAmount = (newAmount) => {
     setTotalDonation({ ...totalDonation, requested_amount: newAmount, sum: 0 });
   };
