@@ -8,10 +8,8 @@ import { DialogTitle, MenuItem, withStyles } from "@material-ui/core";
 import Icon from "@material-ui/core/Icon";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import EditIcon from "@material-ui/icons/Edit";
 import "./Wishlist.scss";
 
-// const [userId] = useState(Number(params.id));
 const categories = [
   { value: 1, label: "Health" },
   { value: 2, label: "Food Banks" },
