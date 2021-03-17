@@ -1,17 +1,7 @@
 import React from "react";
 import "./ActivityFeed.scss";
-
-import {
-  Grid,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  makeStyles,
-  Paper,
-  withStyles,
-} from "@material-ui/core";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import ActivityFeedItem from "./ActivityFeedItem";
+import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 
 const StyledPaper = withStyles({
   root: {
@@ -28,45 +18,48 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
-    height: 5,
+    width: "auto",
+    backgroundColor: "#f0efec",
+    borderRadius: 22,
+    position: "center",
+    padding: 0,
+    marginLeft: 10,
+    marginTop: 0,
   },
 }));
 
-const StyledIconArrow = withStyles({
-  root: {
-    color: "#0E212F",
-    fontSize: "30px",
-  },
-})(ArrowRightIcon);
-
-export default function FollowingSection() {
+export default function ActivityFeed(props) {
   const classes = useStyles();
+  const mappedMoneyLog = props.moneyLog.map((moneyItem) => {
+    return (
+      <ActivityFeedItem
+        key={moneyItem.id}
+        name={moneyItem.receiver_name}
+        amount={moneyItem.donated_amount}
+      />
+    );
+  });
+
+  const mappedItemLog = props.itemLog.map((item) => {
+    return (
+      <ActivityFeedItem
+        key={item.id}
+        receiver_name={item.item_receiver}
+        item={item.item_name}
+      />
+    );
+  });
+
   return (
     <div className="activity-feed-section">
       <StyledPaper>
-        <h1 className="activity-feed-header">Activity Feed</h1>
-        <Grid>
-          <div className={classes.demo}>
-            <List>
-              <ListItem className={classes.root}>
-                <ListItemIcon>
-                  <StyledIconArrow />
-                </ListItemIcon>
-                <ListItemText primary="Activity 1" />
-              </ListItem>
-            </List>
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <StyledIconArrow />
-                </ListItemIcon>
-                <ListItemText primary="Activity 2" />
-              </ListItem>
-            </List>
-          </div>
-        </Grid>
+        <div className="donated-items-list">
+          <h1 className="activity-feed-header">Activity Feed</h1>
+          <List className={classes.root}>{mappedMoneyLog}</List>
+          <List className={classes.root}>{mappedItemLog}</List>
+        </div>
       </StyledPaper>
     </div>
   );

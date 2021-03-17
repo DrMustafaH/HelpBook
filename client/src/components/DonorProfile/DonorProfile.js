@@ -12,6 +12,8 @@ export default function DonorProfile() {
   const params = useParams();
   const [userId] = useState(Number(params.id));
   const [user, setUser] = useState();
+  const [donationMoneyLog, setDonationMoneyLog] = useState([]);
+  const [donationItemLog, setDonationItemLog] = useState([]);
 
   useEffect(() => {
     async function getUserData() {
@@ -21,6 +23,22 @@ export default function DonorProfile() {
     getUserData();
   }, [userId]);
 
+  useEffect(() => {
+    async function getDonationMoneyLog() {
+      const res = await axios.get(`/api/users/activityMoneyLog/${userId}`);
+      setDonationMoneyLog(res.data);
+    }
+    getDonationMoneyLog();
+  }, [userId]);
+
+  useEffect(() => {
+    async function getDonationItemLog() {
+      const res = await axios.get(`/api/users/wishlistActivityLog/${userId}`);
+      setDonationItemLog(res.data);
+    }
+    getDonationItemLog();
+  }, [userId]);
+
   if (!user) return <div>loading...</div>;
   return (
     <div>
@@ -28,7 +46,7 @@ export default function DonorProfile() {
       <FollowingSection />
       <div className="two-columns">
         <ScheduledVolunteering />
-        <ActivityFeed />
+        <ActivityFeed moneyLog={donationMoneyLog} itemLog={donationItemLog} />
       </div>
       <Recommendations />
     </div>

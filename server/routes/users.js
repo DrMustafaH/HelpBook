@@ -162,7 +162,7 @@ module.exports = (db) => {
       });
   });
 
-  // USING deletes an item from the database (donor_following table)
+  // USING deletes an following item from the database (donor_following table)
   router.post("/following/:id/delete", (req, res) => {
     db.query(
       `DELETE FROM donor_following
@@ -172,6 +172,57 @@ module.exports = (db) => {
     )
       .then(() => {
         res.sendStatus(200);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
+  // USING get donations Activity log in donor profile for a specific user id
+  router.get("/activityMoneyLog/:id", (req, res) => {
+    db.query(
+      `SELECT donated_money.* , requested_money.user_id as receiver_id, users.username as receiver_name FROM donated_money
+        JOIN requested_money on requested_money.id = donated_money.requested_money_id
+        JOIN users on requested_money.user_id = users.id
+        WHERE donated_money.user_id = $1
+        GROUP BY requested_money.id, donated_money.requested_money_id, users.id, donated_money.id;`,
+      [req.params.id]
+    )
+      .then((data) => {
+        const activityMoneyLog = data.rows;
+        const mappedActivityMoneyLog = activityMoneyLog.map(
+          ({ id, donated_amount, receiver_name }) => ({
+            id,
+            receiver_name,
+            donated_amount,
+          })
+        );
+        res.json(mappedActivityMoneyLog);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
+  // USING get wishlist items donated activity feed by a specific user
+  router.get("/wishlistActivityLog/:id", (req, res) => {
+    db.query(
+      `SELECT items_wishlist.id, items_wishlist.item_name, donor_id as receiver, is_active, donated_date, items_wishlist.user_id, users.username as item_receiver FROM items_wishlist
+      JOIN users on items_wishlist.donor_id = users.id
+      WHERE items_wishlist.user_id = $1
+      GROUP BY items_wishlist.id, users.id;`,
+      [req.params.id]
+    )
+      .then((data) => {
+        const wishlistActivityLog = data.rows;
+        const mappedWishlistActivityLog = wishlistActivityLog.map(
+          ({ id, item_name, item_receiver }) => ({
+            id,
+            item_name,
+            item_receiver,
+          })
+        );
+        res.json(mappedWishlistActivityLog);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
