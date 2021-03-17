@@ -1,7 +1,12 @@
 .donations-receiver-button {
   display: flex;
   justify-content: space-around;
-  width: 80%;
+  // width: 80%;
+}
+
+.edit-item-form {
+  width: 182px !important;
+  height: auto;
   Button {
     font-family: "Hind Madurai", sans-serif;
     font-weight: 700;
