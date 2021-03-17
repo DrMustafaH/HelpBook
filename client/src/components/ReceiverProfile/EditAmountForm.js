@@ -41,7 +41,7 @@ export default function EditAmountForm(props) {
   };
 
   return (
-    <div className="edit-item-form">
+    <div className="edit-amount-form">
       <Button
         className="donations-receiver-button"
         variant="contained"
