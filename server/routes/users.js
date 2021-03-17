@@ -117,7 +117,7 @@ module.exports = (db) => {
       `SELECT donated_money.* , requested_money.user_id as receiver_id, users.username as donor_name FROM donated_money
       JOIN requested_money on requested_money.id = donated_money.requested_money_id
       JOIN users on donated_money.user_id = users.id
-      WHERE requested_money.user_id = $1
+      WHERE requested_money.user_id = $1 AND donated_amount != 0
       GROUP BY requested_money.id, donated_money.requested_money_id, users.id, donated_money.id;`,
       [req.params.id]
     )
