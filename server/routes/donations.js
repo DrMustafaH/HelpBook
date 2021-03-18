@@ -79,6 +79,32 @@ module.exports = (db) => {
       });
   });
 
+  // USING add a donation to donated_money and then get total amount donated to a specific receiver
+  router.post("/donor/:id/new", (req, res) => {
+    console.log("SERVER@", req.body);
+    const user_id = req.body.user_id;
+    const donation_date = req.body.donation_date;
+    const donated_amount = req.body.donated_amount;
+    const requested_money_id = req.body.requested_money_id;
+
+    db.query(
+      `INSERT INTO donated_money(user_id,
+        donation_date,
+        donated_amount, 
+        requested_money_id) VALUES ($1, $2, $3, $4) RETURNING *;`,
+      [user_id, donation_date, donated_amount, requested_money_id]
+    )
+
+      .then((data) => {
+        const newDonation = data.rows[0];
+        res.send(newDonation);
+        res.status(201);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
   // USING Add a donation amount/target in database (by actually updated a single entry as each receiver can ask for 1 donation goal at a specific time period)
   router.post("/receiver/:id/add", (req, res) => {
     db.query(
