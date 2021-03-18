@@ -25,6 +25,19 @@ export default function ReceiverDashboard() {
     user_id: 0,
   });
 
+  // Function to add a new donation to the total donations
+  const addNewDonation = (addedAmount, id) => {
+    const copyTotalDonation = { ...totalDonation };
+    setTotalDonation(...copyTotalDonation, {
+      id: id,
+      is_active: true,
+      requested_money: totalDonation.requested_money,
+      requested_money_id: totalDonation.requested_money_id,
+      sum: totalDonation.sum + addedAmount,
+      user_id: userId,
+    });
+  };
+
   useEffect(() => {
     async function getUserData() {
       const res = await axios.get(`/api/users/${userId}`);
@@ -83,6 +96,8 @@ export default function ReceiverDashboard() {
           <ProgressBar
             sum={totalDonation.sum}
             requested_amount={totalDonation.requested_amount}
+            requested_money_id={totalDonation.requested_money_id}
+            addNewDonation={addNewDonation}
           />
         )}
       </div>
