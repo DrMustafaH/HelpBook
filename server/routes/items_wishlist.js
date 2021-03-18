@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 const router = express.Router();
 
-// middle to check if a token is there in the header
+// middleware to check if a token is there in the header
 app.use(function (req, res, next) {
   if (!req.headers.authorization) {
     return res.status(403).json({ error: "No credentials sent!" });

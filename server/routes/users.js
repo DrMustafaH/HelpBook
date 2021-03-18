@@ -1,5 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const jwt = require("jsonwebtoken");
+const app = express();
+
+// middleware to check if a token is there in the header
+app.use(function (req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(403).json({ error: "No credentials sent!" });
+  }
+  next();
+});
 
 module.exports = (db) => {
   // get all users
@@ -162,20 +172,26 @@ module.exports = (db) => {
       });
   });
 
-  // USING deletes an following item from the database (donor_following table)
+  // USING deletes an following user (item) from the database (donor_following table)
   router.post("/following/:id/delete", (req, res) => {
-    db.query(
-      `DELETE FROM donor_following
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    // if the token contains the authenticated user information
+    if (decoded.userId == req.params.id && decoded.typeId === 1) {
+      // allow user(donor) to unfollow another user (recevier)
+      db.query(
+        `DELETE FROM donor_following
     WHERE id = $1
     RETURNING *;`,
-      [req.body.id]
-    )
-      .then(() => {
-        res.sendStatus(200);
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
+        [req.body.id]
+      )
+        .then(() => {
+          res.sendStatus(200);
+        })
+        .catch((err) => {
+          res.status(500).json({ error: err.message });
+        });
+    }
   });
 
   // USING get donations Activity log in donor profile for a specific user id
