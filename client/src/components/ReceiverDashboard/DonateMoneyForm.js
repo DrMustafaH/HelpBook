@@ -44,7 +44,13 @@ export default function DonateMoneyForm(props) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const params = useParams();
-  const [formData, setFormData] = useState({});
+  const [userId] = useState(Number(params.id));
+  const [formData, setFormData] = useState({
+    user_id: 0,
+    donation_date: new Date(),
+    donated_amount: 0,
+    requested_money_id: 0,
+  });
   const [amountEntered, setAmountEntered] = useState();
 
   // Open and close form when adding a new wishlist item
@@ -56,18 +62,19 @@ export default function DonateMoneyForm(props) {
     setOpen(false);
   };
 
-  // // Axios call when creating new wishilist item
-  async function handleSubmit(event) {
-    // event.preventDefault();
+  // Axios call when a new amount is donated
+  async function handleSubmit() {
     if (!amountEntered) {
       alert("Please fill missing form");
     } else {
-      //Send new item to api
-      // const res = await axios.post(`/api/wishlist/${params.id}/edit`, {
-      //   ...formData,
-      //   id: props.id,
-      // });
-      // props.editWishlistItem(res.data, props.id);
+      const res = await axios.post(`/api/donations/donor/${userId}/new`, {
+        ...formData,
+        user_id: userId,
+        donation_date: new Date(),
+        donated_amount: amountEntered,
+        requested_money_id: props.requested_money_id,
+      });
+      props.addNewDonation(res.data, props.id);
       handleClose();
     }
   }
@@ -121,7 +128,7 @@ export default function DonateMoneyForm(props) {
                     <br />
                     <div>
                       <Elements stripe={stripePromise}>
-                        <CardForm />
+                        <CardForm handleSubmit={handleSubmit} />
                       </Elements>
                     </div>
                   </CardContent>

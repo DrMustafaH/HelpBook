@@ -26,7 +26,7 @@ const useOptions = () => {
   return options;
 };
 
-const CardForm = () => {
+const CardForm = (props) => {
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
@@ -50,7 +50,12 @@ const CardForm = () => {
         Card details
         <CardElement options={options} />
       </label>
-      <button className="pay-form-btn" type="submit" disabled={!stripe}>
+      <button
+        className="pay-form-btn"
+        type="submit"
+        disabled={!stripe}
+        onClick={props.handleSubmit}
+      >
         Donate
       </button>
     </form>

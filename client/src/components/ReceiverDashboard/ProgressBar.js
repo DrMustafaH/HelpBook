@@ -39,7 +39,10 @@ export default function ProgressBar(props) {
           value={(props.sum / props.requested_amount) * 100}
         />
       </div>
-      <DonateMoneyForm />
+      <DonateMoneyForm
+        requested_money_id={props.requested_money_id}
+        addNewDonation={props.addNewDonation}
+      />
     </div>
   );
 }
