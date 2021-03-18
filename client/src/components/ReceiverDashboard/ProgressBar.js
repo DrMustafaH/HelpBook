@@ -1,8 +1,8 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import Button from "@material-ui/core/Button";
 import "./ProgressBar.scss";
+import DonateMoneyForm from "./DonateMoneyForm";
 
 const BorderLinearProgress = withStyles((theme) => ({
   root: {
@@ -39,9 +39,7 @@ export default function ProgressBar(props) {
           value={(props.sum / props.requested_amount) * 100}
         />
       </div>
-      <div className="donations-receiver-button">
-        <Button variant="contained">Donate</Button>
-      </div>
+      <DonateMoneyForm />
     </div>
   );
 }
