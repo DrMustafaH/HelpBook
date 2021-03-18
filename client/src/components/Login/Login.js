@@ -45,7 +45,7 @@ export default function Login() {
         const res2 = await axios.post(`/login/${res.data.id}`);
         console.log(res2.data);
         const token = res2.data;
-        localStorage.setItem("token", token);
+        localStorage.setItem("token", token.token);
       }
       getLoginToken();
       if (res.data.type_id == 1) {
@@ -109,7 +109,7 @@ export default function Login() {
           Don't have an account yet? Register here
         </a>
       </div>
-      <Button onClick={handleSubmit} variant="contained">
+      <Button variant="contained" onClick={handleSubmit}>
         Login
       </Button>
     </div>

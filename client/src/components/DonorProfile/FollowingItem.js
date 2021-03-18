@@ -45,12 +45,20 @@ export default function FollowingItem(props) {
   const params = useParams();
   //Axios post to delete following user item
   async function handleUnfollow() {
-    await axios.post(`/api/users/following/${params.id}/delete`, {
-      id: props.id,
-    });
+    await axios.post(
+      `/api/users/following/${params.id}/delete`,
+      {
+        id: props.id,
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      }
+    );
     props.onUnfollow(props.id);
   }
-
+  console.log("Object", JSON.stringify(localStorage.getItem("token")));
   const classes = useStyles();
   return (
     <List className={classes.root}>
