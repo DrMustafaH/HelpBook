@@ -1,6 +1,6 @@
 // load .env data into process.env
 require("dotenv").config();
-
+const jwt = require("jsonwebtoken");
 // Web server config
 const PORT = process.env.PORT || 8000;
 const ENV = process.env.ENV || "development";
@@ -47,8 +47,28 @@ app.use("/api/donations", donationsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/usertype", typesRoutes(db));
 
-app.get("/", (req, res) => {
-  // res.render("index");
+app.post("/login", (req, res) => {
+  // res.render("login");
+  // req.body;
+  // db.query(
+  //   `SELECT * FROM users
+  // WHERE id = $1
+  // ;`,
+  //   [req.params.id]
+  // )
+  //   .then((data) => {
+  //     const users = data.rows;
+  //     res.json(users);
+  //   })
+  //   .catch((err) => {
+  //     res.status(500).json({ error: err.message });
+  //   });
+  //check if user exist
+  let userRecord = { username: "hello", id: 1 };
+  const token = jwt.sign({ userId: userRecord.id }, "secret");
+  console.log(token);
+  console.log(req.body);
+  res.send({ token: token });
 });
 
 app.listen(PORT, () => {

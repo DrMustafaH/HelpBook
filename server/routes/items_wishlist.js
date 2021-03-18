@@ -1,4 +1,7 @@
 const express = require("express");
+const { decode } = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
+
 const router = express.Router();
 
 module.exports = (db) => {
@@ -80,11 +83,16 @@ module.exports = (db) => {
 
   // USING deletes an item from the database (wishlist table)
   router.post("/:id/delete", (req, res) => {
+    if (req.headers.authorization) {
+      const token = req.headers.authorization.split(" ")[1];
+      const decoded = jwt.verify(token, "secret");
+      console.log("decoded", decoded);
+    }
     db.query(
       `DELETE FROM items_wishlist
     WHERE id = $1
     RETURNING *;`,
-      [req.body.id]
+      [req.body.id, req.body.user_id]
     )
       .then(() => {
         res.sendStatus(200);
