@@ -57,14 +57,13 @@ app.post("/login/:id", (req, res) => {
   )
     .then((data) => {
       const user = data.rows[0];
-      res.send(user);
       // Issue a token for the found user and send the token
       const token = jwt.sign(
         { userId: user.id, typeId: user.type_id, username: user.username },
         process.env.TOKEN_SECRET
       );
+      res.send({ token: token });
       console.log("TOKEN", token);
-      // res.send({ token: token });
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });

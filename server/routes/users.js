@@ -24,17 +24,34 @@ module.exports = (db) => {
       });
   });
 
+  // USING get a user from a specific id - used for the TOKEN authentication within client side -
+  router.post("/fetchUser", (req, res) => {
+    db.query(
+      `SELECT id , type_id FROM users
+    WHERE username = $1
+    ;`,
+      [req.body.username]
+    )
+      .then((data) => {
+        const user = data.rows[0];
+        res.send(user);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
   // USING get a user from a specific id
   router.get("/:id", (req, res) => {
     db.query(
-      `SELECT id, username, avatar, type_id FROM users
+      `SELECT * FROM users
     WHERE id = $1
     ;`,
       [req.params.id]
     )
       .then((data) => {
-        const users = data.rows;
-        res.json(users);
+        const user = data.rows[0];
+        res.send(user);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
