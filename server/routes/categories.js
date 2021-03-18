@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-  // get all categories
+  // USING get all categories
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM categories;`)
       .then((data) => {

@@ -1,5 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const jwt = require("jsonwebtoken");
+const app = express();
+
+// middle to check if a token is there in the header
+app.use(function (req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(403).json({ error: "No credentials sent!" });
+  }
+  next();
+});
 
 module.exports = (db) => {
   /////// DONORS ROUTES /////
@@ -81,62 +91,77 @@ module.exports = (db) => {
 
   // USING add a donation to donated_money and then get total amount donated to a specific receiver
   router.post("/donor/:id/new", (req, res) => {
-    console.log("SERVER@", req.body);
     const user_id = req.body.user_id;
     const donation_date = req.body.donation_date;
     const donated_amount = req.body.donated_amount;
     const requested_money_id = req.body.requested_money_id;
-
-    db.query(
-      `INSERT INTO donated_money(user_id,
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    // if the token contains the authenticated user information
+    if (decoded.userId == req.params.id && decoded.typeId === 1) {
+      // allow user(donor) to add a donation
+      db.query(
+        `INSERT INTO donated_money(user_id,
         donation_date,
         donated_amount, 
         requested_money_id) VALUES ($1, $2, $3, $4) RETURNING *;`,
-      [user_id, donation_date, donated_amount, requested_money_id]
-    )
-
-      .then((data) => {
-        const newDonation = data.rows[0];
-        res.send(newDonation);
-        res.status(201);
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
+        [user_id, donation_date, donated_amount, requested_money_id]
+      )
+        .then((data) => {
+          const newDonation = data.rows[0];
+          res.send(newDonation);
+          res.status(201);
+        })
+        .catch((err) => {
+          res.status(500).json({ error: err.message });
+        });
+    }
   });
 
-  // USING Add a donation amount/target in database (by actually updated a single entry as each receiver can ask for 1 donation goal at a specific time period)
+  // USING Add a new donation amount/target in database (by actually updating a single entry as each receiver can ask for 1 donation goal at a specific time period)
   router.post("/receiver/:id/add", (req, res) => {
-    db.query(
-      `
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    // if the token contains the authenticated user information
+    if (decoded.userId == req.params.id && decoded.typeId === 2) {
+      // allow user (receiver organization) to add a new donation goal
+      db.query(
+        `
       UPDATE requested_money
       SET requested_amount = $1 WHERE id = $2 RETURNING *;
         `,
-      [req.body.requested_amount, req.body.id]
-    )
-      .then((data) => {
-        res.send(data.rows[0]);
-        res.status(201);
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
+        [req.body.requested_amount, req.body.id]
+      )
+        .then((data) => {
+          res.send(data.rows[0]);
+          res.status(201);
+        })
+        .catch((err) => {
+          res.status(500).json({ error: err.message });
+        });
+    }
   });
 
   //USING edit requested donation amount
   router.post("/receiver/:id/edit", (req, res) => {
-    db.query(
-      `UPDATE requested_money
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    // if the token contains the authenticated user information
+    if (decoded.userId == req.params.id && decoded.typeId === 2) {
+      // allow user (receiver organization) to edit a donation goal
+      db.query(
+        `UPDATE requested_money
           SET requested_amount = $1 WHERE id = $2 RETURNING *;`,
-      [req.body.requested_amount, req.body.id]
-    )
-      .then((data) => {
-        res.send(data.rows[0]);
-        res.status(200);
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
+        [req.body.requested_amount, req.body.id]
+      )
+        .then((data) => {
+          res.send(data.rows[0]);
+          res.status(200);
+        })
+        .catch((err) => {
+          res.status(500).json({ error: err.message });
+        });
+    }
   });
 
   return router;

@@ -52,9 +52,16 @@ module.exports = (db) => {
     const donated_date = null;
     const quantity = req.body.quantity;
     const donor_id = null;
-
-    db.query(
-      `INSERT INTO items_wishlist
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    // if the token contains the authenticated user information
+    if (
+      decoded.userId == req.params.id &&
+      (decoded.typeId === 2 || decoded.typeId === 3)
+    ) {
+      // allow user to add item action
+      db.query(
+        `INSERT INTO items_wishlist
     (
       user_id,
       category_id,
@@ -69,24 +76,25 @@ module.exports = (db) => {
     ($1, $2, $3, $4, $5, $6, $7, $8)
     RETURNING *;
     `,
-      [
-        user_id,
-        category_id,
-        item_name,
-        is_active,
-        entry_date,
-        donated_date,
-        quantity,
-        donor_id,
-      ]
-    )
-      .then((data) => {
-        res.send(data.rows[0]);
-        res.status(201);
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
+        [
+          user_id,
+          category_id,
+          item_name,
+          is_active,
+          entry_date,
+          donated_date,
+          quantity,
+          donor_id,
+        ]
+      )
+        .then((data) => {
+          res.send(data.rows[0]);
+          res.status(201);
+        })
+        .catch((err) => {
+          res.status(500).json({ error: err.message });
+        });
+    }
   });
 
   // USING deletes an item from the database (wishlist table)
