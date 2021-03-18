@@ -47,28 +47,28 @@ app.use("/api/donations", donationsRoutes(db));
 app.use("/api/categories", categoriesRoutes(db));
 app.use("/api/usertype", typesRoutes(db));
 
-app.post("/login", (req, res) => {
-  // res.render("login");
-  // req.body;
-  // db.query(
-  //   `SELECT * FROM users
-  // WHERE id = $1
-  // ;`,
-  //   [req.params.id]
-  // )
-  //   .then((data) => {
-  //     const users = data.rows;
-  //     res.json(users);
-  //   })
-  //   .catch((err) => {
-  //     res.status(500).json({ error: err.message });
-  //   });
-  //check if user exist
-  let userRecord = { username: "hello", id: 1 };
-  const token = jwt.sign({ userId: userRecord.id }, "secret");
-  console.log(token);
-  console.log(req.body);
-  res.send({ token: token });
+app.post("/login/:id", (req, res) => {
+  // a query to get a user by a specific id from the database
+  db.query(
+    `SELECT * FROM users
+  WHERE id = $1
+  ;`,
+    [req.params.id]
+  )
+    .then((data) => {
+      const user = data.rows[0];
+      res.send(user);
+      // Issue a token for the found user and send the token
+      const token = jwt.sign(
+        { userId: user.id, typeId: user.type_id, username: user.username },
+        process.env.TOKEN_SECRET
+      );
+      console.log("TOKEN", token);
+      // res.send({ token: token });
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
 });
 
 app.listen(PORT, () => {
