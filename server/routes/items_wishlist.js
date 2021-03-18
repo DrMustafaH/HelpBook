@@ -1,8 +1,16 @@
 const express = require("express");
 const { decode } = require("jsonwebtoken");
 const jwt = require("jsonwebtoken");
-
+const app = express();
 const router = express.Router();
+
+// middle to check if a token is there in the header
+app.use(function (req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(403).json({ error: "No credentials sent!" });
+  }
+  next();
+});
 
 module.exports = (db) => {
   // get all items wishlist
@@ -83,58 +91,52 @@ module.exports = (db) => {
 
   // USING deletes an item from the database (wishlist table)
   router.post("/:id/delete", (req, res) => {
-    // if statement to check if a token is there in the header
-    if (req.headers.authorization) {
-      const token = req.headers.authorization.split(" ")[1];
-      const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
-      // if the token contains the authenticated user information
-      if (
-        decoded.userId == req.body.user_id &&
-        (decoded.typeId === 2 || decoded.typeId === 3)
-      ) {
-        // allow user to perform delete action
-        db.query(
-          `DELETE FROM items_wishlist
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    // if the token contains the authenticated user information
+    if (
+      decoded.userId == req.body.user_id &&
+      (decoded.typeId === 2 || decoded.typeId === 3)
+    ) {
+      // allow user to perform delete action
+      db.query(
+        `DELETE FROM items_wishlist
     WHERE id = $1 AND user_id = $2
     RETURNING *;`,
-          [req.body.id, req.body.user_id]
-        )
-          .then(() => {
-            res.sendStatus(200);
-            console.log("DELETED");
-          })
-          .catch((err) => {
-            res.status(500).json({ error: err.message });
-          });
-      }
+        [req.body.id, req.body.user_id]
+      )
+        .then(() => {
+          res.sendStatus(200);
+          console.log("DELETED");
+        })
+        .catch((err) => {
+          res.status(500).json({ error: err.message });
+        });
     }
   });
 
   //USING edit a item from the wishlist table in database
   router.post("/:id/edit", (req, res) => {
-    // if statement to check if a token is there in the header
-    if (req.headers.authorization) {
-      const token = req.headers.authorization.split(" ")[1];
-      const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
-      // if the token contains the authenticated user information
-      if (
-        decoded.userId == req.body.user_id &&
-        (decoded.typeId === 2 || decoded.typeId === 3)
-      ) {
-        // allow user to perform edit action
-        db.query(
-          `UPDATE items_wishlist
+    // if the token contains the authenticated user information
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    if (
+      decoded.userId == req.body.user_id &&
+      (decoded.typeId === 2 || decoded.typeId === 3)
+    ) {
+      // allow user to perform edit action
+      db.query(
+        `UPDATE items_wishlist
     SET item_name = $1, quantity = $2, category_id = $3 WHERE id = $4 RETURNING *;`,
-          [req.body.itemName, req.body.quantity, req.body.category, req.body.id]
-        )
-          .then((data) => {
-            res.send(data.rows[0]);
-            res.status(200);
-          })
-          .catch((err) => {
-            res.status(500).json({ error: err.message });
-          });
-      }
+        [req.body.itemName, req.body.quantity, req.body.category, req.body.id]
+      )
+        .then((data) => {
+          res.send(data.rows[0]);
+          res.status(200);
+        })
+        .catch((err) => {
+          res.status(500).json({ error: err.message });
+        });
     }
   });
 
