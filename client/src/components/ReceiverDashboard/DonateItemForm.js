@@ -10,11 +10,9 @@ import {
   CardContent,
   DialogTitle,
   makeStyles,
-  MenuItem,
   Typography,
   withStyles,
 } from "@material-ui/core";
-import Icon from "@material-ui/core/Icon";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./Wishlist.scss";
@@ -56,9 +54,7 @@ export default function EditItemForm(props) {
   const [open, setOpen] = useState(false);
   const params = useParams();
   const [formData, setFormData] = useState({
-    itemName: props.itemName,
     quantity: props.quantity,
-    category: props.category,
   });
   const [acceptTerms, setAcceptTerms] = useState(false);
 
@@ -70,6 +66,7 @@ export default function EditItemForm(props) {
   const handleClickOpen = () => {
     setOpen(true);
     setAcceptTerms(false);
+    setFormData({ quantity: props.quantity });
   };
   const handleClose = () => {
     setOpen(false);
@@ -93,7 +90,6 @@ export default function EditItemForm(props) {
 
   // handling form inputs to receive data of new wishlist item
   const handleInputQuantity = (e) => {
-    // add form validation here
     setFormData({ ...formData, quantity: Number(e.target.value) });
   };
 
@@ -122,7 +118,7 @@ export default function EditItemForm(props) {
                 shrink: true,
               }}
               value={formData.quantity}
-              // onChange={handleInputQuantity}
+              onChange={handleInputQuantity}
             />
             <br />
             <br />
