@@ -24,6 +24,7 @@ const StyledButton = withStyles({
     borderRadius: 22,
     padding: "0 8px 0 0",
     marginTop: 4,
+    fontFamily: "'Hind Madurai', sans-serif",
     "&:hover": {
       backgroundColor: "#0E212F",
       color: "#f0efec",
@@ -36,17 +37,13 @@ const StyledButton = withStyles({
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    backgroundColor: "#f0efec",
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
+  typography: {
+    fontFamily: "'Hind Madurai', sans-serif",
   },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
+  terms: {
+    padding: "0 20px 0 20px",
   },
 });
 
@@ -102,7 +99,7 @@ export default function EditItemForm(props) {
   };
 
   return (
-    <div className="edit-item-form">
+    <div>
       <StyledButton variant="outlined" onClick={handleClickOpen}>
         Donate
       </StyledButton>
@@ -136,18 +133,26 @@ export default function EditItemForm(props) {
               <Card className={classes.root}>
                 <CardContent>
                   <Typography
-                    className={classes.title}
+                    className={classes.typography}
                     color="textSecondary"
                     gutterBottom
                   >
                     Please Read
                   </Typography>
-                  <Typography variant="h5" component="h2">
+                  <Typography
+                    variant="h5"
+                    component="h2"
+                    className={classes.typography}
+                  >
                     Drop-off Instructions
                   </Typography>
                   <br />
                   <br />
-                  <Typography variant="body2" component="p">
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.typography}
+                  >
                     Please drop the items donated to the our office address as
                     shown in the map below:
                     <br />
@@ -162,7 +167,7 @@ export default function EditItemForm(props) {
                     if not delivered this action will be reversed
                   </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions className={classes.terms}>
                   <td>
                     <input
                       type="checkbox"
@@ -170,7 +175,9 @@ export default function EditItemForm(props) {
                       onClick={onSelect}
                     />
                   </td>
-                  <Typography>I Accept Terms</Typography>
+                  <Typography className={classes.typography}>
+                    I Accept the terms.
+                  </Typography>
                 </CardActions>
               </Card>
             </div>

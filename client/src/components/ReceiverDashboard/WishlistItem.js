@@ -7,9 +7,21 @@ import DonateItemForm from "./DonateItemForm";
 
 const useStyles = makeStyles(() => ({
   root: {
+    width: "auto",
+    backgroundColor: "#f0efec",
+    position: "center",
+    padding: "0 20px",
+    display: "flex",
+    alignItems: "center",
+    fontFamily: "'Hind Madurai', sans-serif",
     "&:hover": {
+      borderRadius: 25,
       backgroundColor: "#dbd6c5",
-      borderRadius: 22,
+      cursor: "pointer",
+      // borderRadius: 25,
+      // backgroundColor: "#0E212F",
+      // cursor: "pointer",
+      // color: "#f0efec",
     },
   },
 }));

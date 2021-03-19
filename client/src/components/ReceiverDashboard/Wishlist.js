@@ -8,13 +8,10 @@ const StyledPaper = withStyles({
     background: "#f0efec",
     height: 500,
     width: "100%",
-    margin: "0 10px 10px 0",
     color: "#0E212F",
-    display: "flex",
-    justifyContent: "center",
     fontFamily: "'Trirong', serif",
     fontWeight: "700",
-    fontSize: "2.5rem",
+    fontSize: "2rem",
     borderRadius: 0,
     maxHeight: 500,
     overflow: "auto",
@@ -27,12 +24,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#f0efec",
     borderRadius: 22,
     position: "center",
-    padding: 0,
-    marginLeft: 10,
-    marginTop: 0,
-    // "&:hover": {
-    //   backgroundColor: "#dbd6c5",
-    // },
+    padding: "0 20px 20px 20px",
   },
 }));
 
@@ -52,10 +44,12 @@ export default function Wishlist(props) {
   return (
     <div className="wishlist-section">
       <StyledPaper>
-        <div className="wishlist-items-list">
+        {/* <div className="wishlist-items-list">
           <h3 className="wishlist-title">Wish List</h3>
           <List className={classes.root}>{mappedWishList}</List>
-        </div>
+        </div> */}
+        <h3 className="wishlist-title">Wish List</h3>
+        <List className={classes.root}>{mappedWishList}</List>
       </StyledPaper>
     </div>
   );

@@ -21,7 +21,11 @@
   font-size: 40px;
 }
 
-input[type=checkbox]{
+input[type="checkbox"] {
   -webkit-transform: scale(1.6);
   transform: scale(1.6);
+}
+
+.MuiFormLabel-root {
+  font-family: "Hind Madurai", sans-serif !important;
 }

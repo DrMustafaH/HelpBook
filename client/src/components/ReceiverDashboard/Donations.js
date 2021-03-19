@@ -14,7 +14,7 @@ const StyledPaper = withStyles({
     justifyContent: "center",
     fontFamily: "'Trirong', serif",
     fontWeight: "700",
-    // fontSize: "2.5rem",
+    // fontSize: "2rem",
     borderRadius: 0,
     maxHeight: 500,
     overflow: "auto",

@@ -16,7 +16,7 @@ export default function LandingSection() {
         {/* <img className="hand-img" src="images/hand.png"></img> */}
         <img
           className="make-a-difference"
-          src="images/Make-a-difference.png"
+          src="images/makeadifference.png"
         ></img>
       </div>
       {/* <div className="landing-msg">
