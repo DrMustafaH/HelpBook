@@ -44,7 +44,7 @@ export default function DonorProfile() {
     <div>
       <Header username={user.username} avatar={user.avatar} />
       <FollowingSection />
-      <div className="two-columns">
+      <div className="volunteering-feed">
         <ScheduledVolunteering />
         <ActivityFeed moneyLog={donationMoneyLog} itemLog={donationItemLog} />
       </div>

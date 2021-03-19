@@ -6,13 +6,15 @@ import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
-    height: 400,
+    height: 350,
     width: "100%",
     color: "#0E212F",
     display: "flex",
     flexDirection: "column",
     fontFamily: "'Trirong', serif",
-    borderRadius: 0,
+    fontWeight: "700",
+    fontSize: "2.5rem",
+    paddingTop: "20px",
     maxHeight: 500,
     overflow: "auto",
   },
@@ -22,11 +24,6 @@ const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
     backgroundColor: "#f0efec",
-    borderRadius: 22,
-    position: "center",
-    padding: 0,
-    marginLeft: 10,
-    marginTop: 0,
   },
 }));
 
@@ -56,7 +53,8 @@ export default function ActivityFeed(props) {
     <div className="activity-feed-section">
       <StyledPaper>
         <div className="donated-items-list">
-          <h1 className="activity-feed-header">Activity Feed</h1>
+          {/* <h1 className="activity-feed-header">Activity Feed</h1> */}
+          Activity Feed
           <List className={classes.root}>{mappedMoneyLog}</List>
           <List className={classes.root}>{mappedItemLog}</List>
         </div>

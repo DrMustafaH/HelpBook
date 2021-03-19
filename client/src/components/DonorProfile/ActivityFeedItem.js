@@ -11,7 +11,7 @@ const StyledIconArrow = withStyles({
 
 export default function ActivityFeedItem(props) {
   return (
-    <ListItem alignItems="flex-start">
+    <ListItem>
       <StyledIconArrow />
       {!props.item && (
         <ListItemText>

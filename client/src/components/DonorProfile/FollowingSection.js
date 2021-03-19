@@ -10,7 +10,7 @@ const StyledPaper = withStyles({
     background: "#f0efec",
     height: 400,
     width: "100%",
-    margin: "50px 10px 10px 10px",
+    margin: "20px 0",
     color: "#0E212F",
     display: "flex",
     flexDirection: "column",
@@ -27,18 +27,8 @@ const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
     backgroundColor: "#f0efec",
-    borderRadius: 22,
     position: "center",
-    padding: 0,
-    marginLeft: 10,
-    // "&:hover": {
-    //   backgroundColor: "#dbd6c5",
-    //   cursor: "pointer",
-    // },
-  },
-  inline: {
-    display: "inline",
-    fontFamily: "'Hind Madurai', sans-serif",
+    padding: "20px 50px",
   },
 }));
 

@@ -15,26 +15,20 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   root: {
-    // width: "auto",
-    // backgroundColor: "#f0efec",
-    // position: "center",
-    // padding: 0,
-    // marginLeft: 10,
+    padding: "10px 20px",
     "&:hover": {
       borderRadius: 22,
       backgroundColor: "#dbd6c5",
       cursor: "pointer",
     },
   },
-  // inline: {
-  //   display: "inline",
-  //   fontFamily: "'Hind Madurai', sans-serif",
-  // },
+  avatar: {
+    border: "1px solid #0E212F",
+  },
 }));
 
 const StyledIconRemove = withStyles({
   root: {
-    marginTop: 20,
     "&:hover": {
       color: "#3891A6",
       cursor: "pointer",
@@ -68,9 +62,9 @@ export default function FollowingItem(props) {
   }
 
   return (
-    <ListItem alignItems="flex-start" className={classes.root}>
+    <ListItem className={classes.root}>
       <ListItemAvatar onClick={handleClick}>
-        <Avatar alt="avatar" src={props.avatar} />
+        <Avatar alt="avatar" src={props.avatar} className={classes.avatar} />
       </ListItemAvatar>
       <ListItemText primary={props.username} onClick={handleClick} />
       <StyledIconRemove onClick={handleUnfollow} />
