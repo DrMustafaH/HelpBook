@@ -212,7 +212,6 @@ module.exports = (db) => {
 
   // USING adds a following user (item) to the database (donor_following table)
   router.post("/following/:id/add", authorize, (req, res) => {
-    console.log("REQPARAMS", req.params.id, "- REQBODY", req.body.user_id);
     const token = req.headers.authorization.split(" ")[1];
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
     // if the token contains the authenticated user information
