@@ -10,7 +10,8 @@ export default function Navbar() {
     history.push("/login");
   }
   function handleLogoutClick() {
-    history.push("/logout");
+    localStorage.clear();
+    history.push("/");
   }
   function handleRegisterClick() {
     history.push("/register");
@@ -29,12 +30,16 @@ export default function Navbar() {
         />
       </a>
       <div className="login-signup">
-        <a className="login-signup-links" onClick={handleLoginClick}>
-          LOGIN
-        </a>
-        <a className="login-signup-links" onClick={handleLogoutClick}>
-          LOGOUT
-        </a>
+        {!("token" in localStorage) && (
+          <a className="login-signup-links" onClick={handleLoginClick}>
+            LOGIN
+          </a>
+        )}
+        {"token" in localStorage && (
+          <a className="login-signup-links" onClick={handleLogoutClick}>
+            LOGOUT
+          </a>
+        )}
         <a className="login-signup-links" onClick={handleRegisterClick}>
           REGISTER
         </a>
