@@ -10,6 +10,7 @@ import axios from "axios";
 import { withStyles, useStyles } from "@material-ui/core";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import jwt_decode from "jwt-decode";
+import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 
 const token = localStorage.getItem("token");
 const decoded = jwt_decode(token);
@@ -43,6 +44,7 @@ export default function ReceiverDashboard() {
     sum: 0,
     user_id: 0,
   });
+  const [disableBtn, setDisableBtn] = useState(true);
 
   // Function to add a new donation to the total donations
   const addNewDonation = (addedAmount, id) => {
@@ -118,15 +120,33 @@ export default function ReceiverDashboard() {
         },
       }
     );
+    setDisableBtn(false);
   }
-  // const classes = useStyles();
+  const StyledIconRemove = withStyles({
+    root: {
+      marginTop: 20,
+      height: 35,
+      width: 35,
+      marginRight: 100,
+      "&:hover": {
+        color: "#3891A6",
+        cursor: "pointer",
+      },
+    },
+  })(RemoveCircleIcon);
+
+  // display back the follow icon (does not remove from database)
+  const handleUnFollowStyle = () => {
+    setDisableBtn(true);
+  };
 
   if (!user) return <div>User does not exist</div>;
   return (
     <div>
       <div className="header-receiver-dash">
         <Header username={user.username} avatar={user.avatar}></Header>
-        <StyledIconAdd onClick={handleFollow} />
+        {disableBtn && <StyledIconAdd onClick={handleFollow} />}
+        {!disableBtn && <StyledIconRemove onClick={handleUnFollowStyle} />}
       </div>
       <div className="receiver-followers">
         {followersCount && <TotalFollowers count={followersCount} />}
