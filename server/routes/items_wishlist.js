@@ -103,7 +103,7 @@ module.exports = (db) => {
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
     // if the token contains the authenticated user information
     if (
-      decoded.userId == req.body.user_id &&
+      decoded.userId == req.params.id &&
       (decoded.typeId === 2 || decoded.typeId === 3)
     ) {
       // allow user to perform delete action
@@ -129,7 +129,7 @@ module.exports = (db) => {
     const token = req.headers.authorization.split(" ")[1];
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
     if (
-      decoded.userId == req.body.user_id &&
+      decoded.userId == req.params.id &&
       (decoded.typeId === 2 || decoded.typeId === 3)
     ) {
       // allow user to perform edit action

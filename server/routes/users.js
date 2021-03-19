@@ -4,13 +4,12 @@ const jwt = require("jsonwebtoken");
 const app = express();
 
 // middleware to check if a token is there in the header
-app.use(function (req, res, next) {
+const authorize = function (req, res, next) {
   if (!req.headers.authorization) {
     return res.status(403).json({ error: "No credentials sent!" });
   }
   next();
-});
-
+};
 module.exports = (db) => {
   // get all users
   router.get("/", (req, res) => {
@@ -190,10 +189,11 @@ module.exports = (db) => {
   });
 
   // USING deletes an following user (item) from the database (donor_following table)
-  router.post("/following/:id/delete", (req, res) => {
+  router.post("/following/:id/delete", authorize, (req, res) => {
     const token = req.headers.authorization.split(" ")[1];
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
     // if the token contains the authenticated user information
+    console.log("REQ BODY", req.body);
     if (decoded.userId == req.params.id && decoded.typeId === 1) {
       // allow user(donor) to unfollow another user (recevier)
       db.query(

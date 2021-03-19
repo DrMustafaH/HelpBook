@@ -43,6 +43,7 @@ export default function AddItemForm(props) {
   // Open and close form when adding a new wishlist item
   const handleClickOpen = () => {
     setOpen(true);
+    setFormData({ itemName: "", quantity: 1, category: 8 });
   };
   const handleClose = () => {
     setOpen(false);
@@ -55,9 +56,17 @@ export default function AddItemForm(props) {
       alert("Please fill missing form");
     } else {
       //Send new item to api
-      const res = await axios.post(`/api/wishlist/${params.id}/add`, {
-        ...formData,
-      });
+      const res = await axios.post(
+        `/api/wishlist/${params.id}/add`,
+        {
+          ...formData,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       props.addNewWishlist(res.data);
       handleClose();
     }

@@ -28,10 +28,18 @@ export default function AddAmountForm(props) {
 
   // Axios call to edit donation amount
   async function handleSubmit(event) {
-    const res = await axios.post(`/api/donations/receiver/${params.id}/add`, {
-      ...formData,
-      id: props.id,
-    });
+    const res = await axios.post(
+      `/api/donations/receiver/${params.id}/add`,
+      {
+        ...formData,
+        id: props.id,
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      }
+    );
     props.onAdd(res.data.requested_amount);
     handleClose();
   }

@@ -56,10 +56,18 @@ export default function EditItemForm(props) {
       alert("Please fill missing form");
     } else {
       //Send new item to api
-      const res = await axios.post(`/api/wishlist/${params.id}/edit`, {
-        ...formData,
-        id: props.id,
-      });
+      const res = await axios.post(
+        `/api/wishlist/${params.id}/edit`,
+        {
+          ...formData,
+          id: props.id,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       props.editWishlistItem(res.data, props.id);
       handleClose();
     }

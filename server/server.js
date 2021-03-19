@@ -70,6 +70,10 @@ app.post("/login/:id", (req, res) => {
     });
 });
 
+app.get("/", (req, res) => {
+  // res.render("index");
+});
+
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
