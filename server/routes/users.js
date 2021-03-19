@@ -86,12 +86,15 @@ module.exports = (db) => {
   // USING get followers count for a specific user id
   router.get("/followers/:id", (req, res) => {
     db.query(
-      `SELECT count(*) FROM receiver_followers
-    WHERE user_id = $1
+      `SELECT count(receiver_followers.user_id)  FROM donor_following
+      JOIN receiver_followers ON receiver_followers.id = donor_following.receiver_id
+    WHERE receiver_id = $1
+    
     ;`,
       [req.params.id]
     )
       .then((data) => {
+        console.log("SERVER", data.rows);
         const followersCount = data.rows[0];
         res.json(followersCount.count);
       })

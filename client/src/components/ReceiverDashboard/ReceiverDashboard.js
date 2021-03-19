@@ -12,8 +12,11 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import jwt_decode from "jwt-decode";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 
-const token = localStorage.getItem("token");
-const decoded = jwt_decode(token);
+// let decoded;
+// if ("token" in localStorage) {
+//   const token = localStorage.getItem("token");
+//   decoded = jwt_decode(token);
+// }
 
 const StyledIconAdd = withStyles({
   root: {
@@ -122,6 +125,8 @@ export default function ReceiverDashboard() {
 
   //Axios post to follow a user
   async function handleFollow() {
+    const token = localStorage.getItem("token");
+    const decoded = jwt_decode(token);
     await axios.post(
       `/api/users/following/${userId}/add`,
       {
