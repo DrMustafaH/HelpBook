@@ -46,6 +46,7 @@ export default function Helps(props) {
       return (
         <HelpItem
           key={i}
+          id={user.id}
           avatar={user.avatar}
           username={user.username}
           category_id={user.category_id}
@@ -60,6 +61,7 @@ export default function Helps(props) {
       return (
         <HelpItem
           key={i}
+          id={user.id}
           avatar={user.avatar}
           username={user.username}
           category_id={user.category_id}

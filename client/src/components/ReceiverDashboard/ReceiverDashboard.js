@@ -28,6 +28,19 @@ const StyledIconAdd = withStyles({
   },
 })(PersonAddIcon);
 
+const StyledIconRemove = withStyles({
+  root: {
+    marginTop: 20,
+    height: 35,
+    width: 35,
+    marginRight: 100,
+    "&:hover": {
+      color: "#3891A6",
+      cursor: "pointer",
+    },
+  },
+})(RemoveCircleIcon);
+
 export default function ReceiverDashboard() {
   const params = useParams();
   const [userId] = useState(Number(params.id));
@@ -122,18 +135,6 @@ export default function ReceiverDashboard() {
     );
     setDisableBtn(false);
   }
-  const StyledIconRemove = withStyles({
-    root: {
-      marginTop: 20,
-      height: 35,
-      width: 35,
-      marginRight: 100,
-      "&:hover": {
-        color: "#3891A6",
-        cursor: "pointer",
-      },
-    },
-  })(RemoveCircleIcon);
 
   // display back the follow icon (does not remove from database)
   const handleUnFollowStyle = () => {
