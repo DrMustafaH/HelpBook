@@ -1,5 +1,6 @@
 import {
   Avatar,
+  FormHelperText,
   ListItem,
   ListItemAvatar,
   ListItemText,
@@ -11,6 +12,7 @@ import axios from "axios";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import jwt_decode from "jwt-decode";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
+import { red } from "@material-ui/core/colors";
 
 // let decoded;
 
@@ -23,22 +25,27 @@ const useStyles = makeStyles((props) => ({
   root: {
     width: "auto",
     backgroundColor: "#f0efec",
-    borderRadius: 22,
     position: "center",
-    padding: 0,
-    marginLeft: 10,
+    padding: "5px 0",
+    padding: "20 40px",
+    display: "flex",
+    alignItems: "center",
     "&:hover": {
+      borderRadius: 25,
       backgroundColor: "#dbd6c5",
       cursor: "pointer",
+      // borderRadius: 25,
+      // backgroundColor: "#0E212F",
+      // cursor: "pointer",
+      // color: "#f0efec",
     },
   },
-  inline: {
-    display: "inline",
+  avatar: {
+    border: "1px solid #0E212F",
   },
 }));
 const StyledIconAdd = withStyles({
   root: {
-    marginTop: 20,
     "&:hover": {
       color: "#3891A6",
       cursor: "pointer",
@@ -48,7 +55,6 @@ const StyledIconAdd = withStyles({
 
 const StyledIconRemove = withStyles({
   root: {
-    marginTop: 20,
     "&:hover": {
       color: "#3891A6",
       cursor: "pointer",
@@ -86,7 +92,11 @@ export default function HelpItem(props) {
   return (
     <ListItem className={classes.root} alignItems="flex-start">
       <ListItemAvatar onClick={() => props.onUserSelection()}>
-        <Avatar alt="org-avatar" src={props.avatar} />
+        <Avatar
+          className={classes.avatar}
+          alt="org-avatar"
+          src={props.avatar}
+        />
       </ListItemAvatar>
       <ListItemText
         primary={props.username}

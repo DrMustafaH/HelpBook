@@ -8,11 +8,9 @@ const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
     height: 500,
-    width: "45%",
+    width: "50%",
     margin: "50px 10px 10px 10px",
     color: "#0E212F",
-    display: "flex",
-    justifyContent: "center",
     fontFamily: "'Trirong', serif",
     fontWeight: "700",
     fontSize: "2.5rem",
@@ -28,8 +26,7 @@ const useStyles = makeStyles((props) => ({
     backgroundColor: "#f0efec",
     borderRadius: 22,
     position: "center",
-    padding: 0,
-    marginLeft: 10,
+    padding: 20,
   },
 }));
 
