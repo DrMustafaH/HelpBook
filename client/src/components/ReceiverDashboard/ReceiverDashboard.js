@@ -41,7 +41,7 @@ export default function ReceiverDashboard() {
   useEffect(() => {
     async function getUserData() {
       const res = await axios.get(`/api/users/${userId}`);
-      setUser(res.data[0]);
+      setUser(res.data);
     }
     getUserData();
   }, [userId]);

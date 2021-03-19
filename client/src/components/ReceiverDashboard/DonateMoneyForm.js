@@ -16,6 +16,7 @@ import { useParams } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CardForm from "./CardForm";
+import { useHistory } from "react-router-dom";
 import "./Wishlist.scss";
 import "./ProgressBar.scss";
 import "./CardStyling.scss";
@@ -52,11 +53,15 @@ export default function DonateMoneyForm(props) {
     requested_money_id: 0,
   });
   const [amountEntered, setAmountEntered] = useState();
+  const history = useHistory();
 
   // Open and close form when adding a new wishlist item
   const handleClickOpen = () => {
-    setOpen(true);
-    // setAcceptTerms(false);
+    if ("token" in localStorage) {
+      setOpen(true);
+    } else {
+      history.push(`/login`);
+    }
   };
   const handleClose = () => {
     setOpen(false);

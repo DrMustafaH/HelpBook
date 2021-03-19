@@ -16,6 +16,7 @@ import {
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./Wishlist.scss";
+import { useHistory } from "react-router-dom";
 
 const StyledButton = withStyles({
   root: {
@@ -57,6 +58,7 @@ export default function EditItemForm(props) {
     quantity: props.quantity,
   });
   const [acceptTerms, setAcceptTerms] = useState(false);
+  const history = useHistory();
 
   const onSelect = () => {
     acceptTerms ? setAcceptTerms(false) : setAcceptTerms(true);
@@ -64,10 +66,16 @@ export default function EditItemForm(props) {
 
   // Open and close form when adding a new wishlist item
   const handleClickOpen = () => {
-    setOpen(true);
-    setAcceptTerms(false);
-    setFormData({ quantity: props.quantity });
+    // if (localStorage.getItem("token") === "true") {
+    if ("token" in localStorage) {
+      setOpen(true);
+      setAcceptTerms(false);
+      setFormData({ quantity: props.quantity });
+    } else {
+      history.push(`/login`);
+    }
   };
+
   const handleClose = () => {
     setOpen(false);
   };
