@@ -1,36 +1,45 @@
-.landing-section{
+.landing-section {
   background-color: #f0efec;
-  img{
-    width: 300px;
-    height: 300px;
-  }
-  Button{
-    font-family:'Hind Madurai', sans-serif;
+  padding: 30px 0;
+  Button {
+    font-family: "Hind Madurai", sans-serif;
     font-weight: 700;
-    background-color: #3891A6;
-    margin:20px;
+    background-color: #3891a6;
+    margin: 20px;
     color: #f0efec;
     font-size: 1.15rem;
   }
-  Button:hover{
-    background-color: #0E212F;
+  Button:hover {
+    background-color: #0e212f;
   }
 }
 
-.landing-msg{
-display: flex;
-flex-direction: column;
-font-size: 80px;
-font-family: 'Montserrat', sans-serif;
-font-weight: 900;
-margin: 10px;
-color: #ffff20;
- p{
-  margin: 10px;
- }
+// .landing-msg{
+// display: flex;
+// flex-direction: column;
+// font-size: 80px;
+// font-family: 'Montserrat', sans-serif;
+// font-weight: 900;
+// margin: 10px;
+// color: #ffff20;
+//  p{
+//   margin: 10px;
+//  }
+// }
+
+.landing-msg {
+  // border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+}
+.make-a-difference {
+  padding: 10% 10% 0 10%;
+}
+.hand-img {
+  width: 70%;
 }
 
-.landing-msg-helpbook{
-font-size: 50px;
-color: #0E212F;
+.landing-msg-helpbook {
+  font-size: 50px;
+  color: #0e212f;
 }

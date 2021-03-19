@@ -12,14 +12,17 @@ export default function LandingSection() {
 
   return (
     <div className="landing-section">
-      <img
-        alt="logo"
-        src="https://i.pinimg.com/originals/a5/e0/2a/a5e02a5a141f2a2a7b588edf7b467f45.jpg"
-      />
       <div className="landing-msg">
+        {/* <img className="hand-img" src="images/hand.png"></img> */}
+        <img
+          className="make-a-difference"
+          src="images/Make-a-difference.png"
+        ></img>
+      </div>
+      {/* <div className="landing-msg">
         <p className="landing-msg-helpbook">HelpBook</p>
         <p>MAKE A DIFFERENCE</p>
-      </div>
+      </div> */}
       <div>
         <Button variant="contained">I Need Help</Button>
         <Button variant="contained" onClick={handleClick}>
