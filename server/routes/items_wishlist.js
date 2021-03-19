@@ -115,7 +115,6 @@ module.exports = (db) => {
       )
         .then(() => {
           res.sendStatus(200);
-          console.log("DELETED");
         })
         .catch((err) => {
           res.status(500).json({ error: err.message });

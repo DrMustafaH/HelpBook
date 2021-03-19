@@ -34,16 +34,12 @@ export default function Login() {
     if (!userInfo.username || !userInfo.password) {
       alert("Please fill missing form");
     } else {
-      // console.log("USERINFO username", userInfo.username);
-      // console.log("USERINFO", userInfo);
       const res = await axios.post(`api/users/fetchUser`, {
         username: userInfo.username,
         password: userInfo.password,
       });
-      // console.log("RES DATA",res.data);
       async function getLoginToken() {
         const res2 = await axios.post(`/login/${res.data.id}`);
-        console.log(res2.data);
         const token = res2.data;
         localStorage.setItem("token", token.token);
       }

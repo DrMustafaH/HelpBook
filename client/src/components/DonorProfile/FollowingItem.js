@@ -58,7 +58,6 @@ export default function FollowingItem(props) {
     );
     props.onUnfollow(props.id);
   }
-  console.log("Object", JSON.stringify(localStorage.getItem("token")));
   const classes = useStyles();
   return (
     <List className={classes.root}>

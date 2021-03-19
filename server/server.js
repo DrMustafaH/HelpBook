@@ -63,15 +63,10 @@ app.post("/login/:id", (req, res) => {
         process.env.TOKEN_SECRET
       );
       res.send({ token: token });
-      console.log("TOKEN", token);
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
-});
-
-app.get("/", (req, res) => {
-  // res.render("index");
 });
 
 app.listen(PORT, () => {

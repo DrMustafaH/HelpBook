@@ -37,7 +37,6 @@ export default function WishlistItem(props) {
   const classes = useStyles();
 
   async function handleDelete() {
-    console.log("CLIC");
     //Axios post to delete wishlist item
     await axios.post(
       `/api/wishlist/${params.id}/delete`,

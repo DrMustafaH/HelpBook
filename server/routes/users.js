@@ -193,7 +193,6 @@ module.exports = (db) => {
     const token = req.headers.authorization.split(" ")[1];
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
     // if the token contains the authenticated user information
-    console.log("REQ BODY", req.body);
     if (decoded.userId == req.params.id && decoded.typeId === 1) {
       // allow user(donor) to unfollow another user (recevier)
       db.query(
