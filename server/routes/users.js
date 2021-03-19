@@ -210,6 +210,29 @@ module.exports = (db) => {
     }
   });
 
+  // USING adds a following user (item) to the database (donor_following table)
+  router.post("/following/:id/add", authorize, (req, res) => {
+    console.log("REQPARAMS", req.params.id, "- REQBODY", req.body.user_id);
+    const token = req.headers.authorization.split(" ")[1];
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+    // if the token contains the authenticated user information
+    if (decoded.userId == req.body.user_id && decoded.typeId === 1) {
+      // allow user(donor) to unfollow another user (recevier)
+      db.query(
+        `INSERT INTO donor_following (user_id, receiver_id) VALUES ($1, $2)
+    RETURNING *;`,
+        [req.body.user_id, req.params.id]
+      )
+        .then((data) => {
+          res.send(data.rows[0]);
+          res.status(201);
+        })
+        .catch((err) => {
+          res.status(500).json({ error: err.message });
+        });
+    }
+  });
+
   // USING get donations Activity log in donor profile for a specific user id
   router.get("/activityMoneyLog/:id", (req, res) => {
     db.query(

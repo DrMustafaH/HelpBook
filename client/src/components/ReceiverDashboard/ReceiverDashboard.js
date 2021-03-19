@@ -7,6 +7,26 @@ import Donations from "./Donations";
 import "./ReceiverDashboard.scss";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { withStyles, useStyles } from "@material-ui/core";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import jwt_decode from "jwt-decode";
+
+const token = localStorage.getItem("token");
+const decoded = jwt_decode(token);
+console.log("TOKEN", decoded);
+
+const StyledIconAdd = withStyles({
+  root: {
+    marginTop: 20,
+    height: 35,
+    width: 35,
+    marginRight: 100,
+    "&:hover": {
+      color: "#3891A6",
+      cursor: "pointer",
+    },
+  },
+})(PersonAddIcon);
 
 export default function ReceiverDashboard() {
   const params = useParams();
@@ -86,10 +106,30 @@ export default function ReceiverDashboard() {
     getWishlistItems();
   }, [userId]);
 
+  //Axios post to follow a user
+  async function handleFollow() {
+    await axios.post(
+      `/api/users/following/${userId}/add`,
+      {
+        user_id: decoded.userId,
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      }
+    );
+    // props.onFollow(props.id);
+  }
+  // const classes = useStyles();
+
   if (!user) return <div>User does not exist</div>;
   return (
     <div>
-      <Header username={user.username} avatar={user.avatar} />
+      <div className="header-receiver-dash">
+        <Header username={user.username} avatar={user.avatar}></Header>
+        <StyledIconAdd onClick={handleFollow} />
+      </div>
       <div className="receiver-followers">
         {followersCount && <TotalFollowers count={followersCount} />}
         {totalDonation && (
