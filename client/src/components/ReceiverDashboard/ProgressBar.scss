@@ -7,7 +7,21 @@
     color: #f0efec;
     font-size: 1rem;
   }
+
   Button:hover {
     background-color: #3891a6;
   }
+}
+
+// Payment details card layout
+.MuiButton-textPrimary {
+  color: #0e212f !important;
+  font-family: "Hind Madurai", sans-serif !important;
+}
+.MuiTypography-h6 {
+  font-family: "Trirong", serif !important;
+  color: #0e212f !important;
+}
+.MuiInputBase-root {
+  font-family: "Hind Madurai", sans-serif !important;
 }

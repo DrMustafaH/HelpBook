@@ -25,19 +25,23 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
-    width: 500,
+    backgroundColor: "#f0efec",
+    fontFamily: "'Hind Madurai', sans-serif",
+    minWidth: "500px",
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
+  // bullet: {
+  //   display: "inline-block",
+  //   margin: "0 2px",
+  //   transform: "scale(0.8)",
+  // },
+  // title: {
+  //   fontSize: 14,
+  // },
+  // pos: {
+  //   marginBottom: 12,
+  // },
+  dialogBox: {
+    maxWidth: "900px",
   },
 });
 
@@ -90,7 +94,7 @@ export default function DonateMoneyForm(props) {
   };
 
   return (
-    <div className="edit-item-form">
+    <div>
       <div className="donations-receiver-button">
         <Button variant="contained" onClick={handleClickOpen}>
           Donate
@@ -102,7 +106,7 @@ export default function DonateMoneyForm(props) {
         aria-labelledby="form-dialog-title"
       >
         <DialogTitle id="form-dialog-title">Donate Money</DialogTitle>
-        <DialogContent>
+        <DialogContent className={classes.dialogBox}>
           <form required autoComplete="off">
             <TextField
               required
@@ -126,7 +130,7 @@ export default function DonateMoneyForm(props) {
               {amountEntered && (
                 <Card className={classes.root}>
                   <CardContent>
-                    <Typography variant="h5" component="h2">
+                    <Typography variant="h6" component="h2">
                       Payment Details
                     </Typography>
                     <br />

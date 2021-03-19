@@ -7,9 +7,9 @@ import DonateMoneyForm from "./DonateMoneyForm";
 const BorderLinearProgress = withStyles((theme) => ({
   root: {
     height: 30,
-    width: "auto",
-    maxWidth: "1065px",
-    margin: "0 50px",
+    // width: "auto",
+    // maxWidth: "1065px",
+    // margin: "0 50px",
   },
   colorPrimary: {
     backgroundColor: "#f0efec",
