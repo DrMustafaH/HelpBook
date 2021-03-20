@@ -23,17 +23,27 @@
     cursor: pointer;
   }
 
-  .login-signup {
+  .nav-links {
     display: flex;
     list-style-type: none;
     font-weight: 900;
     font-size: 20px;
-    .login-signup-links {
-      margin: 20px;
-    }
-    .login-signup-links:hover {
-      color: #3891a6;
-      cursor: pointer;
-    }
   }
+}
+.nav-links-text {
+  margin: 20px;
+}
+.nav-links-text:hover {
+  color: #3891a6;
+  cursor: pointer;
+}
+
+.profile-dashboard {
+  display: flex;
+  align-content: space-between;
+  // p {
+  //   font-family: "Hind Madurai", sans-serif;
+  //   font-size: 20px;
+  //   font-weight: 900;
+  // }
 }

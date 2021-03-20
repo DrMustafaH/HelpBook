@@ -27,25 +27,47 @@ export default function Navbar(props) {
     history.push("/");
   }
 
+  // function to route user to homepage when app logo clicked
+  function handleDashboardClick() {
+    history.push("/dashboard");
+  }
+
+  // function to route user to homepage when app logo clicked
+  function handleProfileClick() {
+    history.push("/");
+  }
+
   return (
     <nav className="navbar">
       <div className="home-link" onClick={handleHomeClick}>
         <img alt="logo" className="logo-img" src="images/LogoHB.png"></img>
         <h1 onClick={handleHomeClick}>HelpBook</h1>
       </div>
-      <div className="login-signup">
+      {props.isLoggedIn ? (
+        <div className="nav-links">
+          <div className="nav-links-text" onClick={handleDashboardClick}>
+            DASHBOARD
+          </div>
+          <div className="nav-links-text" onClick={handleProfileClick}>
+            MY PROFILE
+          </div>
+        </div>
+      ) : null}
+      <div className="nav-links">
         {!props.isLoggedIn ? (
-          <div className="login-signup-links" onClick={handleLoginClick}>
+          <div className="nav-links-text" onClick={handleLoginClick}>
             LOGIN
           </div>
         ) : (
-          <div className="login-signup-links" onClick={handleLogoutClick}>
+          <div className="nav-links-text" onClick={handleLogoutClick}>
             LOGOUT
           </div>
         )}
-        <div className="login-signup-links" onClick={handleRegisterClick}>
-          REGISTER
-        </div>
+        {!props.isLoggedIn ? (
+          <div className="nav-links-text" onClick={handleRegisterClick}>
+            REGISTER
+          </div>
+        ) : null}
       </div>
     </nav>
   );
