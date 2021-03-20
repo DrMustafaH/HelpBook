@@ -13,7 +13,7 @@ export default function LandingSection() {
   return (
     <div className="landing-section">
       <div className="landing-msg">
-        {/* <img className="hand-img" src="images/hand.png"></img> */}
+        <img className="hand-img" src="images/hand.png"></img>
         <img
           className="make-a-difference"
           src="images/make_a_difference.png"
