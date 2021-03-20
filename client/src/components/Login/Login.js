@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import "./Login.scss";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import "./Login.scss";
 
+// makestyles method to style the whole ScheduledVolunteering section
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -20,30 +20,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Login component
 export default function Login() {
-  const params = useParams();
-  const [userId] = useState(Number(params.id));
+  // States used in the Login component
   const [userInfo, setUserInfo] = useState({
     username: "",
     password: "",
   });
   const history = useHistory();
+  const classes = useStyles();
 
+  //Async function that on clicking the login button to perform several axios calls
   async function handleSubmit(event) {
     event.preventDefault();
+    // Form validation if nothing is entered in login feilds it will alert user to fill it
     if (!userInfo.username || !userInfo.password) {
-      alert("Please fill missing form");
+      alert("Please the missing feilds in form");
     } else {
+      // Axios POST call to fetch a specific user from users database using username and password entered in login form
       const res = await axios.post(`api/users/fetchUser`, {
         username: userInfo.username,
         password: userInfo.password,
       });
+      // Async function that issues a token to the logged in user using an axios POST call and store token in localStorage
       async function getLoginToken() {
         const res2 = await axios.post(`/login/${res.data.id}`);
         const token = res2.data;
         localStorage.setItem("token", token.token);
       }
       getLoginToken();
+      // Condition to route the user according the type_id of the user
       if (res.data.type_id == 1) {
         history.push(`/donor/${res.data.id}`);
       } else {
@@ -52,19 +58,16 @@ export default function Login() {
     }
   }
 
-  // handleClose();
-
-  // handling form inputs to receive data of user by username
+  // function to handle form inputs to receive data of user by username
   const handleInputUsername = (e) => {
     setUserInfo({ ...userInfo, username: e.target.value });
   };
 
-  // handling form inputs to receive data of user by password
+  // function to handle form inputs to receive data of user by password
   const handleInputPassword = (e) => {
     setUserInfo({ ...userInfo, password: e.target.value });
   };
 
-  const classes = useStyles();
   return (
     <div className="login-section">
       <div>
@@ -101,7 +104,7 @@ export default function Login() {
             />
           </div>
         </form>
-        <a className="no-account-mssg">
+        <a href="/register" className="no-account-mssg">
           Don't have an account yet? Register here
         </a>
       </div>

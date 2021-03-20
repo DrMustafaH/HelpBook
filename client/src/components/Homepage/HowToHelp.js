@@ -1,6 +1,7 @@
 import React from "react";
 import "./HowToHelp.scss";
 
+// HowToHelp component
 export default function HowToHelp() {
   return (
     <div className="how-to-help-section">

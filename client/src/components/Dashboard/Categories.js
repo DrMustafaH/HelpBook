@@ -1,7 +1,8 @@
 import React from "react";
-import "./Categories.scss";
 import { Paper, withStyles } from "@material-ui/core";
+import "./Categories.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#0E212F",
@@ -24,11 +25,14 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+// Categories Component
 export default function Categories(props) {
+  // function to handle the click of a category in the dashboard to be selected
   function handleClick(category) {
     props.setCategory(category);
   }
 
+  // map function to render each category from the category table
   const categories = props.categories.map((category, i) => {
     return (
       <StyledPaper

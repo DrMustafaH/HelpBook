@@ -1,7 +1,8 @@
-import { ListItem, ListItemText, withStyles } from "@material-ui/core";
 import React from "react";
+import { ListItem, ListItemText, withStyles } from "@material-ui/core";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
+// withstyles method to style the ArrowRightIcon MUI react componect and assign a new name to it (StyledIconArrow)
 const StyledIconArrow = withStyles({
   root: {
     color: "#0E212F",
@@ -9,6 +10,7 @@ const StyledIconArrow = withStyles({
   },
 })(ArrowRightIcon);
 
+// ActivityFeedItem component
 export default function ActivityFeedItem(props) {
   return (
     <ListItem>

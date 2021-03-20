@@ -1,3 +1,5 @@
+// code for the stripe credit card form
+
 import { useEffect, useState } from "react";
 
 export default function useResponsiveFontSize() {

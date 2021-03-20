@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import FollowingItem from "./FollowingItem";
-import "./FollowingSection.scss";
 import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import FollowingItem from "./FollowingItem";
+import "./FollowingSection.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
@@ -23,6 +24,7 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+// makestyles method to style the whole following section
 const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
@@ -32,13 +34,15 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// FollowingSection component
 export default function FollowingSection() {
+  // States used in the FollowingSection component
   const classes = useStyles();
   const params = useParams();
   const [userId] = useState(Number(params.id));
   const [followingList, setFollowingList] = useState([]);
 
-  // axios call to get the following list of a user by the id
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user's following list by using the userId by an axios GET call
   useEffect(() => {
     async function getFollowingList() {
       const res = await axios.get(`/api/users/following/${userId}`);
@@ -47,7 +51,7 @@ export default function FollowingSection() {
     getFollowingList();
   }, [userId]);
 
-  // Render the following users list after unfollowing a user using filter
+  // Function called when unfollow button clicked to render the following list after unfollowing a user using filter to filtered out the unfollowed user
   const getUpdatedFollowing = (id) => {
     const filteredFollowingList = followingList.filter(
       (user) => user.id !== id
@@ -55,7 +59,7 @@ export default function FollowingSection() {
     setFollowingList(filteredFollowingList);
   };
 
-  // map function over the followingList state to output each user
+  // map function to render all followed users (receivers) who are followed by the logged in user (donor)
   const mappedFollowingList = followingList.map((user, i) => {
     return (
       <FollowingItem

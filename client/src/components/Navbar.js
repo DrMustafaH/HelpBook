@@ -1,22 +1,28 @@
 import React from "react";
-import "./Navbar.scss";
-// import Login from "./Login/Login";
 import { useHistory } from "react-router-dom";
+import "./Navbar.scss";
 
+// Navbar component
 export default function Navbar() {
   const history = useHistory();
 
+  // function to route user to login page when login is clicked
   function handleLoginClick() {
     history.push("/login");
   }
+
+  // function to route user to homepage when logout is clicked and token is cleared from localstorage
   function handleLogoutClick() {
     localStorage.clear();
     history.push("/");
   }
+
+  // function to route user to registration page when register is clicked
   function handleRegisterClick() {
     history.push("/register");
   }
 
+  // function to route user to homepage when app logo clicked
   function handleHomeClick() {
     history.push("/");
   }
@@ -24,25 +30,24 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="home-link">
-        <a onClick={handleHomeClick}>
-          <img className="logo-img" src="images/LogoHB.png"></img>
-        </a>
+      <div className="home-link" onClick={handleHomeClick}>
+          <img alt="logo" className="logo-img" src="images/LogoHB.png"></img>
         <h1 onClick={handleHomeClick}>HelpBook</h1>
       </div>
       <div className="login-signup">
         {!("token" in localStorage) && (
-          <a className="login-signup-links" onClick={handleLoginClick}>
+          <div className="login-signup-links" onClick={handleLoginClick}>
             LOGIN
-          </a>
+          </div>
         )}
         {"token" in localStorage && (
-          <a className="login-signup-links" onClick={handleLogoutClick}>
+          <div className="login-signup-links" onClick={handleLogoutClick}>
             LOGOUT
-          </a>
+          </div>
         )}
-        <a className="login-signup-links" onClick={handleRegisterClick}>
+        <div className="login-signup-links" onClick={handleRegisterClick}>
           REGISTER
-        </a>
+        </div>
       </div>
     </nav>
   );

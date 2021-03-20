@@ -1,8 +1,9 @@
 import React from "react";
-import "./Donations.scss";
 import { List, Paper, withStyles, makeStyles } from "@material-ui/core";
 import DonationItem from "./DonationItem";
+import "./Donations.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
@@ -14,13 +15,13 @@ const StyledPaper = withStyles({
     justifyContent: "center",
     fontFamily: "'Trirong', serif",
     fontWeight: "700",
-    // fontSize: "2.5rem",
     borderRadius: 0,
     maxHeight: 500,
     overflow: "auto",
   },
 })(Paper);
 
+// makestyles method to style the whole donations log section
 const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
@@ -33,8 +34,10 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// Donations component
 export default function Donations(props) {
   const classes = useStyles();
+  // map all money donations made to show on Donations section
   const mappedMoneyLog = props.donationLog.map((donationItem) => {
     return (
       <DonationItem
@@ -44,7 +47,7 @@ export default function Donations(props) {
       />
     );
   });
-
+  // map all item donations made to show on Donations section
   const mappedItemLog = props.itemLog.map((item) => {
     return (
       <DonationItem

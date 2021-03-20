@@ -1,16 +1,18 @@
 import { React, useState } from "react";
+import { DialogTitle } from "@material-ui/core";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import { DialogTitle } from "@material-ui/core";
-import axios from "axios";
-import { useParams } from "react-router-dom";
 import "./Wishlist.scss";
 import "./ProgressBar.scss";
 
+// AddAmountForm component
 export default function AddAmountForm(props) {
+  // States used in the AddAmountForm component
   const [open, setOpen] = useState(false);
   const params = useParams();
   const [formData, setFormData] = useState({
@@ -26,8 +28,8 @@ export default function AddAmountForm(props) {
     setOpen(false);
   };
 
-  // Axios call to edit donation amount
-  async function handleSubmit(event) {
+  //Async function that uses Token and accordingly makes an axios POST call to set a donation goal to the user depending on the user id taken from params
+  async function handleSubmit() {
     const res = await axios.post(
       `/api/donations/receiver/${params.id}/add`,
       {
@@ -44,7 +46,7 @@ export default function AddAmountForm(props) {
     handleClose();
   }
 
-  // handling form inputs to receive data of new donation
+  // handling form inputs by user to receive data of new donation goal
   const handleInputNumber = (e) => {
     setFormData({ ...formData, requested_amount: e.target.value });
   };

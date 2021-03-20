@@ -1,18 +1,18 @@
+import React from "react";
 import {
   Avatar,
-  List,
   ListItem,
   ListItemAvatar,
   ListItemText,
   makeStyles,
   withStyles,
 } from "@material-ui/core";
-import React from "react";
-import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
+import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 
+// makestyles method to style the user followed item in the following list
 const useStyles = makeStyles(() => ({
   root: {
     padding: "10px 20px",
@@ -27,6 +27,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// withstyles method to style the RemoveCircleIcon MUI react componect and assign a new name to it (StyledIconRemove)
 const StyledIconRemove = withStyles({
   root: {
     "&:hover": {
@@ -36,11 +37,14 @@ const StyledIconRemove = withStyles({
   },
 })(RemoveCircleIcon);
 
+// FollowingItem component
 export default function FollowingItem(props) {
+  // States used in the FollowingItem component
   const history = useHistory();
   const params = useParams();
+  const classes = useStyles();
 
-  //Axios post to delete following user item
+  //Async function that uses Token and accordingly makes an axios POST call to unfollow a user (receiver) by clicking the unfollow button in the FollowingItem and the item will be removed from list and the database
   async function handleUnfollow() {
     await axios.post(
       `/api/users/following/${params.id}/delete`,
@@ -55,8 +59,8 @@ export default function FollowingItem(props) {
     );
     props.onUnfollow(props.id);
   }
-  const classes = useStyles();
 
+  // A handleClick function that directs to user (donor) to the other user (receiver) profile by clicking on the followingItem of that specific user
   function handleClick() {
     history.push(`/receiverDash/${props.user_id}`);
   }

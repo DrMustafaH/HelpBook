@@ -78,10 +78,12 @@ const userType = [
     name: "receiver_individual",
   },
 ];
-//homepage
+
+// App component
 function App() {
-  // Retreive categories data from local api and set it with useState
   const [categories, setCategories] = useState([]);
+
+  // useEffect to be evoked everytime app refreshed to retreive categories data from local api and set it to state
   useEffect(() => {
     axios.get("/api/categories").then((res) => {
       setCategories(res.data);

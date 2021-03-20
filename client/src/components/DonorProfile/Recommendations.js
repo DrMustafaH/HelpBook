@@ -1,7 +1,8 @@
 import React from "react";
-import "./Recommendations.scss";
 import { Paper, withStyles } from "@material-ui/core";
+import "./Recommendations.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     width: "100%",
@@ -14,7 +15,8 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
-export default function Header() {
+// Recommendation section
+export default function Recommendations() {
   return (
     <div className="recommendations-section">
       <StyledPaper>

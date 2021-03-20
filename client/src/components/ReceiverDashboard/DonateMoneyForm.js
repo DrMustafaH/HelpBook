@@ -1,9 +1,7 @@
 import { React, useState } from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -11,46 +9,41 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import axios from "axios";
-import { useParams } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
 import CardForm from "./CardForm";
-import { useHistory } from "react-router-dom";
 import "./Wishlist.scss";
 import "./ProgressBar.scss";
 import "./CardStyling.scss";
 
+// load stripe by using key in the env file
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
+// makestyles method to style the whole donateMoneyForm section
 const useStyles = makeStyles({
   root: {
     backgroundColor: "#f0efec",
     fontFamily: "'Hind Madurai', sans-serif",
     minWidth: "500px",
   },
-  // bullet: {
-  //   display: "inline-block",
-  //   margin: "0 2px",
-  //   transform: "scale(0.8)",
-  // },
-  // title: {
-  //   fontSize: 14,
-  // },
-  // pos: {
-  //   marginBottom: 12,
-  // },
   dialogBox: {
     maxWidth: "900px",
   },
 });
 
+// DonateMoneyForm component
 export default function DonateMoneyForm(props) {
+  // States used in the DonateMoneyForm component
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const params = useParams();
   const [userId] = useState(Number(params.id));
-  const [formData, setFormData] = useState({
+  const [formData] = useState({
     user_id: 0,
     donation_date: new Date(),
     donated_amount: 0,
@@ -59,23 +52,29 @@ export default function DonateMoneyForm(props) {
   const [amountEntered, setAmountEntered] = useState();
   const history = useHistory();
 
-  // Open and close form when adding a new wishlist item
+  // show donatemoneyform when donate button clicked
   const handleClickOpen = () => {
+    // allow user to donate only if logged in, if not then user is directed to
     if ("token" in localStorage) {
       setOpen(true);
+      setAmountEntered();
     } else {
       history.push(`/login`);
     }
   };
+
+  // Function to close the donatemoneyform when invoked
   const handleClose = () => {
     setOpen(false);
   };
 
-  // Axios call when a new amount is donated
+  // Async function to be evoked when donate button is clicked in DonateMoneyForm
   async function handleSubmit() {
+    // if no quantity is entered user is alerted to do so
     if (!amountEntered) {
-      alert("Please fill missing form");
+      alert("Please the missing feilds in form");
     } else {
+      // Axios POST call to add a donation and get summed to the total money donated to the user (receiver)
       const res = await axios.post(`/api/donations/donor/${userId}/new`, {
         ...formData,
         user_id: userId,
@@ -88,7 +87,7 @@ export default function DonateMoneyForm(props) {
     }
   }
 
-  // handling amount inputs to receive data of amount to be donated
+  // handling amount input by user to receive data of amount to be donated
   const handleInputAmount = (e) => {
     setAmountEntered(e.target.value);
   };

@@ -3,6 +3,7 @@ import "./Wishlist.scss";
 import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import WishlistItem from "./WishlistItem";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
@@ -18,6 +19,7 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+// makestyles method to style the whole Wishlist section
 const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
@@ -28,8 +30,10 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// Wishlist component
 export default function Wishlist(props) {
   const classes = useStyles();
+  // map all wishlist items of the user
   const mappedWishList = props.wishlist.map((wishListItem) => {
     return (
       <WishlistItem

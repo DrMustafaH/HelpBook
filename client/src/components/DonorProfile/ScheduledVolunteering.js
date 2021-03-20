@@ -1,6 +1,5 @@
 import React from "react";
 import "./ScheduledVolunteering.scss";
-
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import {
   List,
@@ -35,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// ScheduledVolunteering component
 export default function ScheduledVolunteering() {
   const classes = useStyles();
 

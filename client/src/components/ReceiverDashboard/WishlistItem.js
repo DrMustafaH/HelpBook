@@ -5,6 +5,7 @@ import FastfoodIcon from "@material-ui/icons/Fastfood";
 import ChildCareIcon from "@material-ui/icons/ChildCare";
 import DonateItemForm from "./DonateItemForm";
 
+// makestyles method to style the whole Wishlist item section
 const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
@@ -26,8 +27,11 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// WishlistItem component
 export default function WishlistItem(props) {
   const classes = useStyles();
+
+  // Function to switch icon according to category of item
   function categoryIcon() {
     switch (props.category) {
       case 1:

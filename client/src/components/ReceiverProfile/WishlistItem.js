@@ -1,18 +1,19 @@
+import React from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import {
   ListItem,
   ListItemText,
   makeStyles,
   withStyles,
 } from "@material-ui/core";
-import React from "react";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import Icon from "@material-ui/core/Icon";
-import FastfoodIcon from "@material-ui/icons/Fastfood";
 import ChildCareIcon from "@material-ui/icons/ChildCare";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import FastfoodIcon from "@material-ui/icons/Fastfood";
+import Icon from "@material-ui/core/Icon";
 import EditItemForm from "./EditItemForm";
 
+// makestyles method to style the whole Wishlist item
 const useStyles = makeStyles(() => ({
   root: {
     "&:hover": {
@@ -22,6 +23,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// withstyles method to style the DeleteForeverIcon MUI react componect and assign a new name to it (StyledIconDelete)
 const StyledIconDelete = withStyles({
   root: {
     paddingLeft: 10,
@@ -32,12 +34,15 @@ const StyledIconDelete = withStyles({
   },
 })(DeleteForeverIcon);
 
+// WishListItem component
 export default function WishlistItem(props) {
+  // States used in the WishlistItem component
   const params = useParams();
   const classes = useStyles();
 
+  // Async function to be evoked when delete button is clicked in wishlist item
   async function handleDelete() {
-    //Axios post to delete wishlist item
+    // Axios POST call to delete a wishlist item in the database
     await axios.post(
       `/api/wishlist/${params.id}/delete`,
       {
@@ -52,6 +57,7 @@ export default function WishlistItem(props) {
     props.onDelete(props.id);
   }
 
+  // Function to switch icon according to category of item
   function categoryIcon() {
     switch (props.category) {
       case 1:

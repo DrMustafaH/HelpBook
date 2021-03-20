@@ -2,6 +2,7 @@ import { ListItem, ListItemText, withStyles } from "@material-ui/core";
 import React from "react";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
+// withstyles method to style the ArrowRightIcon MUI react componect and assign a new name to it (StyledIconArrow)
 const StyledIconArrow = withStyles({
   root: {
     color: "#0E212F",
@@ -9,6 +10,7 @@ const StyledIconArrow = withStyles({
   },
 })(ArrowRightIcon);
 
+// DonationItem component
 export default function DonationItem(props) {
   return (
     <ListItem alignItems="flex-start">

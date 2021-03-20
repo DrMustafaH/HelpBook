@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { useParams } from "react-router-dom";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import Button from "@material-ui/core/Button";
-import "./ProgressBar.scss";
 import EditAmountForm from "./EditAmountForm";
 import AddAmountForm from "./AddAmountForm";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import "./ProgressBar.scss";
 
-const BorderLinearProgress = withStyles((theme) => ({
+// withstyles method to style the Icon MUI react componect and assign a new name to it (StyledIconEdit)
+const BorderLinearProgress = withStyles(() => ({
   root: {
     height: 30,
     width: "auto",
@@ -24,13 +24,16 @@ const BorderLinearProgress = withStyles((theme) => ({
   },
 }))(LinearProgress);
 
+// makestyles method to style the whole progress bar section
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
   },
 });
 
-export default function ProgressBar(props) {
+// ProgressBar component
+export default function ProgressBar() {
+  // States used in the ProgressBar component
   const classes = useStyles();
   const params = useParams();
   const [userId] = useState(Number(params.id));
@@ -53,7 +56,7 @@ export default function ProgressBar(props) {
     setTotalDonation({ ...totalDonation, requested_amount: newAmount, sum: 0 });
   };
 
-  // Get the goal of donations requested by receiver
+  // A useEffect that activates on every time the userId state (in the params) changes to get the total donations made by using the userId by an axios GET call
   useEffect(() => {
     async function getTotalDonations() {
       const res = await axios.get(`/api/users/total_donation/${userId}`);

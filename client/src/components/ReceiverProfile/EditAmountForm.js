@@ -1,23 +1,25 @@
 import { React, useState } from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { DialogTitle } from "@material-ui/core";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import { DialogTitle } from "@material-ui/core";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import "./Wishlist.scss";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
 import "./ProgressBar.scss";
+import "./Wishlist.scss";
 
+// EditAmountForm component
 export default function EditAmountForm(props) {
+  // States used in the EditAmountForm component
   const [open, setOpen] = useState(false);
   const params = useParams();
   const [formData, setFormData] = useState({
     requested_amount: props.requested_amount,
   });
 
-  // Open and close form when adding a new wishlist item
+  // Open and close form when editing donation amount
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -25,8 +27,9 @@ export default function EditAmountForm(props) {
     setOpen(false);
   };
 
-  // Axios call to edit donation amount
-  async function handleSubmit(event) {
+  // Async function to be evoked when edit amount button is clicked in money donations progress bar section
+  async function handleSubmit() {
+    // Axios POST call using Token to edit amount goal of user (receiver) by using specific user id in params
     const res = await axios.post(
       `/api/donations/receiver/${params.id}/edit`,
       {
@@ -43,7 +46,7 @@ export default function EditAmountForm(props) {
     handleClose();
   }
 
-  // handling form inputs to receive data of new wishlist item
+  // handling form inputs to receive data of edit donation amount goal
   const handleInputNumber = (e) => {
     setFormData({ ...formData, requested_amount: e.target.value });
   };

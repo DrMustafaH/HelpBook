@@ -1,13 +1,20 @@
 import React from "react";
-import "./LandingSection.scss";
-import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import "./LandingSection.scss";
 
+// LandingSection component
 export default function LandingSection() {
   const history = useHistory();
 
-  function handleClick() {
+  // Function to direct user to dashboard when "I Want To Help" button is clicked
+  function handleClickWantToHelp() {
     history.push("/dashboard");
+  }
+
+  // Function to direct user to dashboard when "I Need Help" button is clicked
+  function handleClickNeedHelp() {
+    history.push("/Login");
   }
 
   return (
@@ -24,8 +31,10 @@ export default function LandingSection() {
         <p>MAKE A DIFFERENCE</p>
       </div> */}
       <div>
-        <Button variant="contained">I Need Help</Button>
-        <Button variant="contained" onClick={handleClick}>
+        <Button variant="contained" onClick={handleClickNeedHelp}>
+          I Need Help
+        </Button>
+        <Button variant="contained" onClick={handleClickWantToHelp}>
           I Want To Help
         </Button>
       </div>

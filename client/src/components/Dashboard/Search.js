@@ -1,8 +1,9 @@
 import React from "react";
-import "./Search.scss";
 import { IconButton, InputBase, Paper } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
+import "./Search.scss";
 
+// Search component
 export default function Search() {
   const fieldStyle = { width: "70%" };
   return (

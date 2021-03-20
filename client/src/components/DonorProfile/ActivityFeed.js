@@ -1,8 +1,9 @@
 import React from "react";
-import "./ActivityFeed.scss";
-import ActivityFeedItem from "./ActivityFeedItem";
 import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
+import ActivityFeedItem from "./ActivityFeedItem";
+import "./ActivityFeed.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
@@ -20,6 +21,7 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+// makestyles method to style the whole Activity feed
 const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
@@ -27,8 +29,10 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// ActivityFeed component
 export default function ActivityFeed(props) {
   const classes = useStyles();
+  // map all money donations made to show on activity feed
   const mappedMoneyLog = props.moneyLog.map((moneyItem) => {
     return (
       <ActivityFeedItem
@@ -38,7 +42,7 @@ export default function ActivityFeed(props) {
       />
     );
   });
-
+  // map all donation items made to show on activity feed
   const mappedItemLog = props.itemLog.map((item) => {
     return (
       <ActivityFeedItem
