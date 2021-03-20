@@ -2,7 +2,7 @@ import React from "react";
 import { Paper, withStyles } from "@material-ui/core";
 import "./Recommendations.scss";
 
-// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
+// withstyles method to style the Paper MUI react component and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     width: "100%",
