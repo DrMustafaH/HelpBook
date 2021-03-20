@@ -69,19 +69,28 @@ export default function DonateMoneyForm(props) {
   };
 
   // Async function to be evoked when donate button is clicked in DonateMoneyForm
-  async function handleSubmit() {
+  async function handleSubmit(event) {
+    // event.preventDefault();
     // if no quantity is entered user is alerted to do so
     if (!amountEntered) {
       alert("Please the missing feilds in form");
     } else {
       // Axios POST call to add a donation and get summed to the total money donated to the user (receiver)
-      const res = await axios.post(`/api/donations/donor/${userId}/new`, {
-        ...formData,
-        user_id: userId,
-        donation_date: new Date(),
-        donated_amount: amountEntered,
-        requested_money_id: props.requested_money_id,
-      });
+      const res = await axios.post(
+        `/api/donations/donor/${userId}/new`,
+        {
+          ...formData,
+          user_id: userId,
+          donation_date: new Date(),
+          donated_amount: amountEntered,
+          requested_money_id: props.requested_money_id,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       props.addNewDonation(res.data, props.id);
       handleClose();
     }

@@ -48,7 +48,7 @@ function App() {
 
   // useEffect to be evoked everytime app refreshed to retrieve user types data from local api and set it to state
   useEffect(() => {
-    axios.get("/api/types").then((res) => {
+    axios.get("/api/usertype").then((res) => {
       setUserType(res.data);
     });
   }, []);

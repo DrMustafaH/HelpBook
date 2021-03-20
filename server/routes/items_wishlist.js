@@ -14,16 +14,16 @@ app.use(function (req, res, next) {
 
 module.exports = (db) => {
   // get all items wishlist
-  router.get("/", (req, res) => {
-    db.query(`SELECT * FROM items_wishlist;`)
-      .then((data) => {
-        const items_wishlist = data.rows;
-        res.json({ items_wishlist });
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
-  });
+  // router.get("/", (req, res) => {
+  //   db.query(`SELECT * FROM items_wishlist;`)
+  //     .then((data) => {
+  //       const items_wishlist = data.rows;
+  //       res.json({ items_wishlist });
+  //     })
+  //     .catch((err) => {
+  //       res.status(500).json({ error: err.message });
+  //     });
+  // });
 
   // USING retrieves all the items wishlist from a user id
   router.get("/:id", (req, res) => {
@@ -148,19 +148,19 @@ module.exports = (db) => {
   });
 
   // marks a item as inactive/donated
-  router.post("/donated", (req, res) => {
-    db.query(
-      `UPDATE items_wishlist SET is_active = FALSE
-      WHERE id = $1`,
-      [req.body.id]
-    )
-      .then(() => {
-        res.status(200);
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
-  });
+  // router.post("/donated", (req, res) => {
+  //   db.query(
+  //     `UPDATE items_wishlist SET is_active = FALSE
+  //     WHERE id = $1`,
+  //     [req.body.id]
+  //   )
+  //     .then(() => {
+  //       res.status(200);
+  //     })
+  //     .catch((err) => {
+  //       res.status(500).json({ error: err.message });
+  //     });
+  // });
 
   return router;
 };
