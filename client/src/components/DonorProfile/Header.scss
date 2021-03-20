@@ -1,12 +1,14 @@
-.profile-header {
+.donor-profile-header {
   display: flex;
   align-items: center;
+  width: 80%;
+  margin: auto;
+  padding: 40px 0;
   img {
     height: 100px;
     border-radius: 50%;
     border: 1px solid #0e212f;
   }
-  margin: 20px 10%;
 }
 
 .profile-greeting {

@@ -15,4 +15,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  img {
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #0e212f;
+  }
 }

@@ -15,10 +15,8 @@ import "./ReceiverDashboard.scss";
 // withstyles method to style the PersonAddIcon MUI react componect and assign a new name to it (StyledIconAdd)
 const StyledIconAdd = withStyles({
   root: {
-    marginTop: 20,
     height: 35,
     width: 35,
-    marginRight: 100,
     "&:hover": {
       color: "#3891A6",
       cursor: "pointer",
@@ -29,10 +27,8 @@ const StyledIconAdd = withStyles({
 // withstyles method to style the RemoveCircleIcon MUI react componect and assign a new name to it (StyledIconRemove)
 const StyledIconRemove = withStyles({
   root: {
-    marginTop: 20,
     height: 35,
     width: 35,
-    marginRight: 100,
     "&:hover": {
       color: "#3891A6",
       cursor: "pointer",
