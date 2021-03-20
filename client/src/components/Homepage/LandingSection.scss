@@ -1,6 +1,7 @@
 .landing-section {
   background-color: #f0efec;
   padding: 30px 0;
+  margin-top: 130px;
   Button {
     font-family: "Hind Madurai", sans-serif;
     font-weight: 700;
@@ -8,6 +9,7 @@
     margin: 20px;
     color: #f0efec;
     font-size: 1.15rem;
+    position: inherit;
   }
   Button:hover {
     background-color: #0e212f;
