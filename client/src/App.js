@@ -14,9 +14,23 @@ import Register from "./components/Login/Register";
 
 // App component
 function App() {
+  // States used in App component
   const [categories, setCategories] = useState([]);
   const [users, setUsers] = useState([]);
   const [userType, setUserType] = useState([]);
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
+  // handle login when clicked to store token in localstorage and to set token value to token
+  const handleLogin = (token) => {
+    localStorage.setItem("token", token);
+    setToken(localStorage.getItem("token"));
+  };
+
+  // handle logout when clicked to clear the localstorage and to set token value to null
+  const handleLogout = () => {
+    localStorage.clear();
+    setToken(null);
+  };
 
   // useEffect to be evoked everytime app refreshed to retrieve categories data from local api and set it to state
   useEffect(() => {
@@ -42,7 +56,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar isLoggedIn={token} logout={handleLogout} />
         <Switch>
           <Route exact path="/">
             <HomePage />
@@ -64,7 +78,7 @@ function App() {
             <DonorProfile />
           </Route>
           <Route exact path="/login">
-            <Login />
+            <Login setToken={handleLogin} />
           </Route>
           <Route exact path="/register">
             <Register />
