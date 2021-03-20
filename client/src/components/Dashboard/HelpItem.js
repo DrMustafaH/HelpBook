@@ -18,8 +18,7 @@ const useStyles = makeStyles(() => ({
     width: "auto",
     backgroundColor: "#f0efec",
     position: "center",
-    padding: "5px 0",
-    padding: "20 40px",
+    padding: "5px 40px",
     display: "flex",
     alignItems: "center",
     "&:hover": {
@@ -30,10 +29,11 @@ const useStyles = makeStyles(() => ({
   },
   avatar: {
     border: "1px solid #0E212F",
+    marginTop: 0,
   },
 }));
 
-// withstyles method to style the PersonAddIcon MUI react componect and assign a new name to it (StyledIconAdd)
+// withstyles method to style the PersonAddIcon MUI react component and assign a new name to it (StyledIconAdd)
 const StyledIconAdd = withStyles({
   root: {
     "&:hover": {
@@ -43,7 +43,7 @@ const StyledIconAdd = withStyles({
   },
 })(PersonAddIcon);
 
-// withstyles method to style the RemoveCircleIcon MUI react componet and assign a new name to it (StyledIconRemove)
+// withstyles method to style the RemoveCircleIcon MUI react component and assign a new name to it (StyledIconRemove)
 const StyledIconRemove = withStyles({
   root: {
     "&:hover": {
