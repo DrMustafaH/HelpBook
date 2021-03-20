@@ -29,9 +29,8 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="home-link">
       <div className="home-link" onClick={handleHomeClick}>
-          <img alt="logo" className="logo-img" src="images/LogoHB.png"></img>
+        <img alt="logo" className="logo-img" src="images/LogoHB.png"></img>
         <h1 onClick={handleHomeClick}>HelpBook</h1>
       </div>
       <div className="login-signup">
