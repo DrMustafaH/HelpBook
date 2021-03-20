@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./Navbar.scss";
 
 // Navbar component
-export default function Navbar() {
+export default function Navbar(props) {
   const history = useHistory();
 
   // function to route user to login page when login is clicked
@@ -13,7 +13,8 @@ export default function Navbar() {
 
   // function to route user to homepage when logout is clicked and token is cleared from localstorage
   function handleLogoutClick() {
-    localStorage.clear();
+    props.logout();
+
     history.push("/");
   }
 
@@ -34,12 +35,11 @@ export default function Navbar() {
         <h1 onClick={handleHomeClick}>HelpBook</h1>
       </div>
       <div className="login-signup">
-        {!("token" in localStorage) && (
+        {!props.isLoggedIn ? (
           <div className="login-signup-links" onClick={handleLoginClick}>
             LOGIN
           </div>
-        )}
-        {"token" in localStorage && (
+        ) : (
           <div className="login-signup-links" onClick={handleLogoutClick}>
             LOGOUT
           </div>

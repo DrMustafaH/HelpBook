@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // Login component
-export default function Login() {
+export default function Login(props) {
   // States used in the Login component
   const [userInfo, setUserInfo] = useState({
     username: "",
@@ -45,8 +45,9 @@ export default function Login() {
       // Async function that issues a token to the logged in user using an axios POST call and store token in localStorage
       async function getLoginToken() {
         const res2 = await axios.post(`/login/${res.data.id}`);
-        const token = res2.data;
-        localStorage.setItem("token", token.token);
+        const { token } = res2.data;
+
+        props.setToken(token);
       }
       getLoginToken();
       // Condition to route the user according the type_id of the user

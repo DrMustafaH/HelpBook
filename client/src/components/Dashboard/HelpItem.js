@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Avatar,
-  FormHelperText,
   ListItem,
   ListItemAvatar,
   ListItemText,
@@ -11,7 +10,6 @@ import {
 import axios from "axios";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
-import { red } from "@material-ui/core/colors";
 import jwt_decode from "jwt-decode";
 
 // makestyles method to style each helplist items
