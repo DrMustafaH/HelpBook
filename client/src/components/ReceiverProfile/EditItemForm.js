@@ -1,15 +1,16 @@
 import { React, useState } from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { DialogTitle, MenuItem, withStyles } from "@material-ui/core";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import { DialogTitle, MenuItem, withStyles } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
 import Icon from "@material-ui/core/Icon";
-import axios from "axios";
-import { useParams } from "react-router-dom";
 import "./Wishlist.scss";
 
+// categories to map on for the select menu in the edit item form
 const categories = [
   { value: 1, label: "Health" },
   { value: 2, label: "Food Banks" },
@@ -21,6 +22,7 @@ const categories = [
   { value: 8, label: "Others" },
 ];
 
+// withstyles method to style the Icon MUI react componect and assign a new name to it (StyledIconEdit)
 const StyledIconEdit = withStyles({
   root: {
     paddingRigth: 50,
@@ -32,7 +34,9 @@ const StyledIconEdit = withStyles({
   },
 })(Icon);
 
+// EditItemForm component
 export default function EditItemForm(props) {
+  // States used in the EditItemForm component
   const [open, setOpen] = useState(false);
   const params = useParams();
   const [formData, setFormData] = useState({
@@ -41,7 +45,7 @@ export default function EditItemForm(props) {
     category: props.category,
   });
 
-  // Open and close form when adding a new wishlist item
+  // Open and close form when editing a wishlist item
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -49,13 +53,13 @@ export default function EditItemForm(props) {
     setOpen(false);
   };
 
-  // // Axios call when creating new wishilist item
-  async function handleSubmit(event) {
-    // event.preventDefault();
+  // Async function to be evoked when edit item button is clicked in items wishlist section
+  async function handleSubmit() {
+    // if no quantity or itemName is entered user is alerted to do so
     if (!formData.itemName || !formData.quantity) {
-      alert("Please fill missing form");
+      alert("Please the missing feilds in form");
     } else {
-      //Send new item to api
+      // Axios POST call using Token to edit item in the wishlist of user (receiver) by using specific user id in params
       const res = await axios.post(
         `/api/wishlist/${params.id}/edit`,
         {
@@ -73,12 +77,11 @@ export default function EditItemForm(props) {
     }
   }
 
-  // handling form inputs to receive data of new wishlist item
+  // handling form inputs to receive data of edit wishlist item
   const handleInputName = (e) => {
     setFormData({ ...formData, itemName: e.target.value });
   };
   const handleInputQuantity = (e) => {
-    // add form validation here
     setFormData({ ...formData, quantity: Number(e.target.value) });
   };
   const handleInputCategory = (e) => {
@@ -100,7 +103,6 @@ export default function EditItemForm(props) {
         <DialogContent>
           <form required autoComplete="off">
             <TextField
-              // autoFocus
               required
               margin="dense"
               id="name"
@@ -130,7 +132,6 @@ export default function EditItemForm(props) {
               label="Category"
               fullWidth
               value={formData.category}
-              // helperText="All fields are mandatory"
               onChange={handleInputCategory}
             >
               {categories.map((option) => (

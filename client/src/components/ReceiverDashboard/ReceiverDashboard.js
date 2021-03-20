@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import ProgressBar from "./ProgressBar";
-import TotalFollowers from "./TotalFollowers";
-import Wishlist from "./Wishlist";
-import Donations from "./Donations";
-import "./ReceiverDashboard.scss";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { withStyles, useStyles } from "@material-ui/core";
-import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import jwt_decode from "jwt-decode";
+import { withStyles } from "@material-ui/core";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
+import TotalFollowers from "./TotalFollowers";
+import ProgressBar from "./ProgressBar";
+import Donations from "./Donations";
+import Wishlist from "./Wishlist";
+import Header from "./Header";
+import "./ReceiverDashboard.scss";
 
-// let decoded;
-// if ("token" in localStorage) {
-//   const token = localStorage.getItem("token");
-//   decoded = jwt_decode(token);
-// }
-
+// withstyles method to style the PersonAddIcon MUI react componect and assign a new name to it (StyledIconAdd)
 const StyledIconAdd = withStyles({
   root: {
     marginTop: 20,
@@ -31,6 +26,7 @@ const StyledIconAdd = withStyles({
   },
 })(PersonAddIcon);
 
+// withstyles method to style the RemoveCircleIcon MUI react componect and assign a new name to it (StyledIconRemove)
 const StyledIconRemove = withStyles({
   root: {
     marginTop: 20,
@@ -44,7 +40,9 @@ const StyledIconRemove = withStyles({
   },
 })(RemoveCircleIcon);
 
+// ReceiverDashboard component
 export default function ReceiverDashboard() {
+  // States used in the ReceiverDashboard component
   const params = useParams();
   const [userId] = useState(Number(params.id));
   const [user, setUser] = useState();
@@ -62,7 +60,7 @@ export default function ReceiverDashboard() {
   });
   const [disableBtn, setDisableBtn] = useState(true);
 
-  // Function to add a new donation to the total donations
+  // Function to add a new donation made to the total donations sum
   const addNewDonation = (addedAmount, id) => {
     const copyTotalDonation = { ...totalDonation };
     setTotalDonation(...copyTotalDonation, {
@@ -75,6 +73,7 @@ export default function ReceiverDashboard() {
     });
   };
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user information by using the userId by an axios GET call
   useEffect(() => {
     async function getUserData() {
       const res = await axios.get(`/api/users/${userId}`);
@@ -83,6 +82,7 @@ export default function ReceiverDashboard() {
     getUserData();
   }, [userId]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user's (receiver) followers count by using the userId by an axios GET call
   useEffect(() => {
     async function getFollowersCount() {
       const res = await axios.get(`/api/users/followers/${userId}`);
@@ -91,6 +91,7 @@ export default function ReceiverDashboard() {
     getFollowersCount();
   }, [userId]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the total donations made to the user (receiver) by using the userId by an axios GET call
   useEffect(() => {
     async function getTotalDonations() {
       const res = await axios.get(`/api/users/total_donation/${userId}`);
@@ -99,6 +100,7 @@ export default function ReceiverDashboard() {
     getTotalDonations();
   }, [userId]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user donations log by using the userId by an axios GET call
   useEffect(() => {
     async function getDonationMoneyLog() {
       const res = await axios.get(`/api/users/donationLog/${userId}`);
@@ -107,6 +109,7 @@ export default function ReceiverDashboard() {
     getDonationMoneyLog();
   }, [userId]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user wishlist items donation log by using the userId by an axios GET call
   useEffect(() => {
     async function getDonationItemLog() {
       const res = await axios.get(`/api/users/wishlistDonationLog/${userId}`);
@@ -115,6 +118,7 @@ export default function ReceiverDashboard() {
     getDonationItemLog();
   }, [userId]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user wishlist by using the userId by an axios GET call
   useEffect(() => {
     async function getWishlistItems() {
       const res = await axios.get(`/api/wishlist/${userId}`);
@@ -123,10 +127,11 @@ export default function ReceiverDashboard() {
     getWishlistItems();
   }, [userId]);
 
-  //Axios post to follow a user
+  // Async function to be evoked when follow button is clicked by a user (donor) in receiverDashboard
   async function handleFollow() {
     const token = localStorage.getItem("token");
     const decoded = jwt_decode(token);
+    // Axios POST using Token to add followed user (receiver) to following list in user profile (donor)
     await axios.post(
       `/api/users/following/${userId}/add`,
       {
@@ -138,15 +143,17 @@ export default function ReceiverDashboard() {
         },
       }
     );
+    // Change follow button to unfollow button
     setDisableBtn(false);
   }
 
-  // display back the follow icon (does not remove from database)
+  // display back the follow icon after the unfollow icon (does not remove from database)
   const handleUnFollowStyle = () => {
     setDisableBtn(true);
   };
 
-  if (!user) return <div>User does not exist</div>;
+  // condition if no user in state then the following will render
+  if (!user) return <h4>User does not exist</h4>;
   return (
     <div>
       <div className="header-receiver-dash">

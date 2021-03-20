@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./Wishlist.scss";
+import axios from "axios";
 import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import WishlistItem from "./WishlistItem";
 import AddItemForm from "./AddItemForm";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import "./Wishlist.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
@@ -24,6 +25,7 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+// makestyles method to style the whole Wishlist section
 const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
@@ -33,18 +35,18 @@ const useStyles = makeStyles(() => ({
     padding: 0,
     marginLeft: 10,
     marginTop: 0,
-    // "&:hover": {
-    //   backgroundColor: "#dbd6c5",
-    // },
   },
 }));
 
-export default function Wishlist(props) {
+// Wishlist component
+export default function Wishlist() {
+  // States used in the Wishlist component
   const classes = useStyles();
   const params = useParams();
   const [userId] = useState(Number(params.id));
   const [wishlist, setWishlist] = useState([]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user's (receiver) wishlist item by using the userId by an axios GET call
   useEffect(() => {
     async function getWishlistItems() {
       const res = await axios.get(`/api/wishlist/${userId}`);
@@ -53,7 +55,7 @@ export default function Wishlist(props) {
     getWishlistItems();
   }, [userId]);
 
-  // render the wishlist item after adding a new item
+  // Render the wishlist item after adding a new item
   const handleNewWishlist = (newWishlist) => {
     const copyWishlist = [...wishlist];
     copyWishlist.push(newWishlist);
@@ -77,6 +79,7 @@ export default function Wishlist(props) {
     setWishlist(copyWishlist);
   };
 
+  // map all wishlist items of the user
   const mappedWishList = wishlist.map((wishListItem, i) => {
     return (
       <WishlistItem
@@ -91,6 +94,7 @@ export default function Wishlist(props) {
       />
     );
   });
+
   return (
     <div className="wishlist-section">
       <StyledPaper>

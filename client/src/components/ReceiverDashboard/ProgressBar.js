@@ -1,10 +1,11 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import "./ProgressBar.scss";
 import DonateMoneyForm from "./DonateMoneyForm";
+import "./ProgressBar.scss";
 
-const BorderLinearProgress = withStyles((theme) => ({
+// withstyles method to style the LinearProgress MUI react componect and assign a new name to it (BorderLinearProgress)
+const BorderLinearProgress = withStyles(() => ({
   root: {
     height: 30,
     width: "auto",
@@ -26,6 +27,7 @@ const useStyles = makeStyles({
   },
 });
 
+// ProgressBar component
 export default function ProgressBar(props) {
   const classes = useStyles();
   return (

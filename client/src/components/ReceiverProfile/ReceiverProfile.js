@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import Header from "../DonorProfile/Header";
 import ProgressBar from "./ProgressBar";
 import TotalFollowers from "./TotalFollowers";
 import Wishlist from "./Wishlist";
 import Donations from "./Donations";
 import "./ReceiverProfile.scss";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 
+// ReceiverProfile component
 export default function ReceiverProfile() {
+  // States used in the ReceiverProfile component
   const params = useParams();
   const [userId] = useState(Number(params.id));
   const [user, setUser] = useState();
@@ -16,6 +18,7 @@ export default function ReceiverProfile() {
   const [donationMoneyLog, setDonationMoneyLog] = useState();
   const [donationItemLog, setDonationItemLog] = useState();
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user information by using the userId by an axios GET call
   useEffect(() => {
     async function getUserData() {
       const res = await axios.get(`/api/users/${userId}`);
@@ -24,6 +27,7 @@ export default function ReceiverProfile() {
     getUserData();
   }, [userId]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user's (receiver) followers count by using the userId by an axios GET call
   useEffect(() => {
     async function getFollowersCount() {
       const res = await axios.get(`/api/users/followers/${userId}`);
@@ -32,6 +36,7 @@ export default function ReceiverProfile() {
     getFollowersCount();
   }, [userId]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user donations log by using the userId by an axios GET call
   useEffect(() => {
     async function getDonationMoneyLog() {
       const res = await axios.get(`/api/users/donationLog/${userId}`);
@@ -40,6 +45,7 @@ export default function ReceiverProfile() {
     getDonationMoneyLog();
   }, [userId]);
 
+  // A useEffect that activates on every time the userId state (in the params) changes to get the user wishlist items donation log by using the userId by an axios GET call
   useEffect(() => {
     async function getDonationItemLog() {
       const res = await axios.get(`/api/users/wishlistDonationLog/${userId}`);
@@ -48,7 +54,8 @@ export default function ReceiverProfile() {
     getDonationItemLog();
   }, [userId]);
 
-  if (!user) return <div>User does not exist</div>;
+  // condition if no user in state then the following will render
+  if (!user) return <h4>User does not exist</h4>;
   return (
     <div>
       <Header username={user.username} avatar={user.avatar} />

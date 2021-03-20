@@ -1,9 +1,9 @@
 import React from "react";
+import { List, ListItem, ListItemText, Divider } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import "./ScheduledVolunteering.scss";
 
-import { makeStyles } from "@material-ui/core/styles";
-import { List, ListItem, ListItemText, Divider } from "@material-ui/core";
-
+// makestyles method to style the whole ScheduledVolunteering section
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// ScheduledVolunteering component
 export default function ScheduledVolunteering() {
   const classes = useStyles();
 

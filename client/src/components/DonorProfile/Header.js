@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.scss";
 
+// Header component
 export default function Header(props) {
   return (
     <div className="profile-header">

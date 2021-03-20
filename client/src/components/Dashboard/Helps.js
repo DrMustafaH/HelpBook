@@ -1,9 +1,10 @@
 import React from "react";
-import "./Helps.scss";
+import { useHistory } from "react-router-dom";
 import { List, makeStyles, Paper, withStyles } from "@material-ui/core";
 import HelpItem from "./HelpItem";
-import { useHistory } from "react-router-dom";
+import "./Helps.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
@@ -22,7 +23,8 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
-const useStyles = makeStyles((props) => ({
+// makestyles method to style the whole help list
+const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
     backgroundColor: "#f0efec",
@@ -33,14 +35,17 @@ const useStyles = makeStyles((props) => ({
   },
 }));
 
+// Helps react component
 export default function Helps(props) {
   const classes = useStyles();
   const history = useHistory();
 
+  // function to route user (donor) to other user (recevier) dashboard when clicked on user in helplist
   function onUserSelection(id) {
     history.push(`/receiverDash/${id}`);
   }
 
+  // map function to render all helpitems of users who are of an organization type to show in the organization helps list
   const users_organizations = props.list.map((user, i) => {
     if (user.type_id === 2) {
       return (
@@ -56,6 +61,7 @@ export default function Helps(props) {
       );
     }
   });
+  // map function to render all helpitems of users who are of an individual type to show in the individual helps list
   const users_individuals = props.list.map((user, i) => {
     if (user.type_id === 3) {
       return (

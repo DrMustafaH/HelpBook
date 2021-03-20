@@ -4,6 +4,7 @@ import AboutUs from "./AboutUs";
 import Information from "./Information";
 import HowToHelp from "./HowToHelp";
 
+// Homepage component
 export default function HomePage() {
   return (
     <div>

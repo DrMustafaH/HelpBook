@@ -1,6 +1,7 @@
 import React from "react";
 import "./AboutUs.scss";
 
+// AboutUs component
 export default function AboutUs() {
   return (
     <div>

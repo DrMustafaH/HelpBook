@@ -1,9 +1,4 @@
 import { React, useState } from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
 import {
   Card,
   CardActions,
@@ -13,11 +8,15 @@ import {
   Typography,
   withStyles,
 } from "@material-ui/core";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import "./Wishlist.scss";
 import { useHistory } from "react-router-dom";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import "./Wishlist.scss";
 
+// withstyles method to style the Button MUI react componect and assign a new name to it (StyledButton)
 const StyledButton = withStyles({
   root: {
     paddingLeft: 10,
@@ -33,40 +32,32 @@ const StyledButton = withStyles({
   },
 })(Button);
 
+// makestyles method to style the whole donateItemForm section
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
 });
 
-export default function EditItemForm(props) {
+// DonateItemForm component
+export default function DonatedItemForm(props) {
+  // States used in the DonateItemForm component
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const params = useParams();
   const [formData, setFormData] = useState({
     quantity: props.quantity,
   });
   const [acceptTerms, setAcceptTerms] = useState(false);
   const history = useHistory();
 
+  // function to control the acceptTerms tick box to be ticked or not on click by altering state
   const onSelect = () => {
     acceptTerms ? setAcceptTerms(false) : setAcceptTerms(true);
   };
 
-  // Open and close form when adding a new wishlist item
+  // show donateitemform when donate button clicked
   const handleClickOpen = () => {
-    // if (localStorage.getItem("token") === "true") {
+    // allow user to donate only if logged in, if not then user is directed to
     if ("token" in localStorage) {
       setOpen(true);
       setAcceptTerms(false);
@@ -76,27 +67,21 @@ export default function EditItemForm(props) {
     }
   };
 
+  // Function to close the donateItemForm when invoked
   const handleClose = () => {
     setOpen(false);
   };
 
-  // // Axios call when creating new wishilist item
-  async function handleSubmit(event) {
-    // event.preventDefault();
+  // Function to close the donateItemForm when submitted and if no quantity is entered user is alerted to do so
+  const handleSubmit = () => {
     if (!formData.quantity) {
-      alert("Please fill missing form");
+      alert("Please the missing feilds in form");
     } else {
-      //Send new item to api
-      // const res = await axios.post(`/api/wishlist/${params.id}/edit`, {
-      //   ...formData,
-      //   id: props.id,
-      // });
-      // props.editWishlistItem(res.data, props.id);
       handleClose();
     }
-  }
+  };
 
-  // handling form inputs to receive data of new wishlist item
+  // Function to take the inputed quantity by user
   const handleInputQuantity = (e) => {
     setFormData({ ...formData, quantity: Number(e.target.value) });
   };
@@ -152,6 +137,7 @@ export default function EditItemForm(props) {
                     shown in the map below:
                     <br />
                     <iframe
+                      title="map"
                       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10410.979079181036!2d-123.1149943!3d49.2812333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcf2dfb0f48c8a056!2sLighthouse%20Labs!5e0!3m2!1sen!2sca!4v1616012208908!5m2!1sen!2sca"
                       width="auto"
                       height="auto"

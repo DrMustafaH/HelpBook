@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Avatar,
   ListItem,
@@ -6,20 +7,13 @@ import {
   makeStyles,
   withStyles,
 } from "@material-ui/core";
-import React, { useState } from "react";
 import axios from "axios";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
-import jwt_decode from "jwt-decode";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
+import jwt_decode from "jwt-decode";
 
-// let decoded;
-
-// if ("token" in localStorage) {
-//   const token = localStorage.getItem("token");
-//   decoded = jwt_decode(token);
-// }
-
-const useStyles = makeStyles((props) => ({
+// makestyles method to style each helplist items
+const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
     backgroundColor: "#f0efec",
@@ -36,6 +30,8 @@ const useStyles = makeStyles((props) => ({
     display: "inline",
   },
 }));
+
+// withstyles method to style the PersonAddIcon MUI react componect and assign a new name to it (StyledIconAdd)
 const StyledIconAdd = withStyles({
   root: {
     marginTop: 20,
@@ -46,6 +42,7 @@ const StyledIconAdd = withStyles({
   },
 })(PersonAddIcon);
 
+// withstyles method to style the RemoveCircleIcon MUI react componet and assign a new name to it (StyledIconRemove)
 const StyledIconRemove = withStyles({
   root: {
     marginTop: 20,
@@ -56,11 +53,12 @@ const StyledIconRemove = withStyles({
   },
 })(RemoveCircleIcon);
 
+// HelpItem component
 export default function HelpItem(props) {
   const [disableBtn, setDisableBtn] = useState(true);
   const classes = useStyles();
 
-  //Axios post to follow a user
+  // Async function that uses Token and accordingly makes an axios POST call to follow a user (receiver) by clicking the add button in the helpItem and change button look on success of follow
   async function handleFollow() {
     const token = localStorage.getItem("token");
     const decoded = jwt_decode(token);
@@ -78,7 +76,7 @@ export default function HelpItem(props) {
     setDisableBtn(false);
   }
 
-  // display back the follow icon (does not remove from database)
+  // Handle a second click on the follow/unfollow button to turn it back to the follow look but this does not remove entry from database
   const handleUnFollowStyle = () => {
     setDisableBtn(true);
   };

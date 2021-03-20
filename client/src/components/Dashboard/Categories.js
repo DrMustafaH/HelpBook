@@ -1,7 +1,8 @@
 import React from "react";
-import "./Categories.scss";
 import { Paper, withStyles } from "@material-ui/core";
+import "./Categories.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#0E212F",
@@ -24,18 +25,15 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+// Categories Component
 export default function Categories(props) {
+  // function to handle the click of a category in the dashboard to be selected
   function handleClick(category) {
     props.setCategory(category);
   }
 
-  // async getUserByCategory(){
-  //   const res = await axios(`/users/category/${ID}`);
-  //     res.json();
-  // }
-
+  // map function to render each category from the category table
   const categories = props.categories.map((category, i) => {
-    // if (i < 4) {
     return (
       <StyledPaper
         key={i}
@@ -45,21 +43,8 @@ export default function Categories(props) {
         {category.name}
       </StyledPaper>
     );
-    // }
   });
-  // const categories2 = props.categories.map((category, i) => {
-  // if (i > 3 && i < 8) {
-  //     return (
-  //       <StyledPaper
-  //         key={i}
-  //         category_id={category.id}
-  //         onClick={(e) => handleClick(e, category.id)}
-  //       >
-  //         {category.name}
-  //       </StyledPaper>
-  //     );
-  //   }
-  // });
+
   return (
     <div className="categories-section">
       <div className="first-four">{categories}</div>

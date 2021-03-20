@@ -1,7 +1,8 @@
 import React from "react";
-import "./NewsLog.scss";
 import { Paper, withStyles } from "@material-ui/core";
+import "./NewsLog.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     height: 300,

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Information.scss";
 
+// Information component
 export default function Information() {
   return (
     <div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Paper, withStyles } from "@material-ui/core";
 import "./TotalFollowers.scss";
 
+// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
     background: "#0E212F",
@@ -17,6 +18,7 @@ const StyledPaper = withStyles({
   },
 })(Paper);
 
+// TotalFollowers component
 export default function TotalFollowers(props) {
   return (
     <div className="total-followers-box">
