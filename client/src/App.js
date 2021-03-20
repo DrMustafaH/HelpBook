@@ -12,81 +12,30 @@ import ReceiverDashboard from "./components/ReceiverDashboard/ReceiverDashboard"
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 
-const users = [
-  {
-    id: 1,
-    username: "helloWorld",
-    email: "hello@world.com",
-    password: "helloworld",
-    type_id: 1,
-    avatar:
-      "https://avatars.dicebear.com/v2/female/f3f1f083c911e25d5350659901780358.svg",
-    category_id: 2,
-  },
-  {
-    id: 2,
-    username: "World Heath Organization",
-    email: "who@example.com",
-    password: "password",
-    type_id: 2,
-    avatar:
-      "https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=robohash&r=x",
-    category_id: null,
-  },
-  {
-    id: 3,
-    username: "share food bank",
-    email: "sfb@example.com",
-    password: "password",
-    type_id: 2,
-    avatar:
-      "https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=retro&r=x",
-    category_id: null,
-  },
-  {
-    id: 4,
-    username: "JoeD",
-    email: "joe@example.com",
-    password: "password",
-    type_id: 1,
-    avatar:
-      "https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=monsterid&r=x",
-    category_id: null,
-  },
-  {
-    id: 5,
-    username: "MrDave",
-    email: "dave@example.com",
-    password: "password",
-    type_id: 3,
-    avatar:
-      "https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=retro&r=x",
-    category_id: 1,
-  },
-];
-const userType = [
-  {
-    id: 1,
-    name: "donor",
-  },
-  {
-    id: 2,
-    name: "receiver_organization",
-  },
-  {
-    id: 3,
-    name: "receiver_individual",
-  },
-];
-
 // App component
 function App() {
   const [categories, setCategories] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [userType, setUserType] = useState([]);
 
-  // useEffect to be evoked everytime app refreshed to retreive categories data from local api and set it to state
+  // useEffect to be evoked everytime app refreshed to retrieve categories data from local api and set it to state
   useEffect(() => {
     axios.get("/api/categories").then((res) => {
       setCategories(res.data);
+    });
+  }, []);
+
+  // useEffect to be evoked everytime app refreshed to retrieve users data from local api and set it to state
+  useEffect(() => {
+    axios.get("/api/users").then((res) => {
+      setUsers(res.data);
+    });
+  }, []);
+
+  // useEffect to be evoked everytime app refreshed to retrieve user types data from local api and set it to state
+  useEffect(() => {
+    axios.get("/api/types").then((res) => {
+      setUserType(res.data);
     });
   }, []);
 
