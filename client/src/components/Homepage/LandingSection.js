@@ -26,10 +26,6 @@ export default function LandingSection() {
           src="images/make_a_difference.png"
         ></img>
       </div>
-      {/* <div className="landing-msg">
-        <p className="landing-msg-helpbook">HelpBook</p>
-        <p>MAKE A DIFFERENCE</p>
-      </div> */}
       <div>
         <Button variant="contained" onClick={handleClickNeedHelp}>
           I Need Help
