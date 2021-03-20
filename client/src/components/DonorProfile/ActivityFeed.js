@@ -13,7 +13,7 @@ const StyledPaper = withStyles({
     flexDirection: "column",
     fontFamily: "'Trirong', serif",
     fontWeight: "700",
-    fontSize: "2.5rem",
+    fontSize: "2rem",
     paddingTop: "20px",
     maxHeight: 500,
     overflow: "auto",
