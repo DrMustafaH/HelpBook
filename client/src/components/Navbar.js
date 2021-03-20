@@ -14,7 +14,6 @@ export default function Navbar(props) {
   // function to route user to homepage when logout is clicked and token is cleared from localstorage
   function handleLogoutClick() {
     props.logout();
-
     history.push("/");
   }
 

@@ -46,7 +46,6 @@ export default function Login(props) {
       async function getLoginToken() {
         const res2 = await axios.post(`/login/${res.data.id}`);
         const { token } = res2.data;
-
         props.setToken(token);
       }
       getLoginToken();

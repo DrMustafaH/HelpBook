@@ -14,6 +14,7 @@ import Register from "./components/Login/Register";
 
 // App component
 function App() {
+  // States used in App component
   const [categories, setCategories] = useState([]);
   const [users, setUsers] = useState([]);
   const [userType, setUserType] = useState([]);
