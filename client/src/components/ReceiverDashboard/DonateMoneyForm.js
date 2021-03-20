@@ -9,6 +9,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import jwt_decode from "jwt-decode";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -70,6 +71,8 @@ export default function DonateMoneyForm(props) {
 
   // Async function to be evoked when donate button is clicked in DonateMoneyForm
   async function handleSubmit(event) {
+    const token = localStorage.getItem("token");
+    const decoded = jwt_decode(token);
     // event.preventDefault();
     // if no quantity is entered user is alerted to do so
     if (!amountEntered) {
@@ -77,10 +80,10 @@ export default function DonateMoneyForm(props) {
     } else {
       // Axios POST call to add a donation and get summed to the total money donated to the user (receiver)
       const res = await axios.post(
-        `/api/donations/donor/${userId}/new`,
+        `/api/donations/donor/${decoded.userId}/new`,
         {
           ...formData,
-          user_id: userId,
+          user_id: decoded.userId,
           donation_date: new Date(),
           donated_amount: amountEntered,
           requested_money_id: props.requested_money_id,
