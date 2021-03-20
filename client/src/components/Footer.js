@@ -13,7 +13,9 @@ export default function Footer() {
         <i className="fa fa-phone-square" aria-hidden="true"></i>
         <i className="fa fa-envelope" aria-hidden="true"></i>
       </div>
-      <p>Copyright © 2021 HelpBook Inc. All rights reserved.</p>
+      <p className="copyrights">
+        Copyright © 2021 HelpBook Inc. All rights reserved.
+      </p>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 .footer-section {
-  background-color: #f0efec;
-  padding: 50px 0;
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
+  border-top: 1px solid #f0efec;
   i {
     padding: 0 10px;
   }
@@ -9,4 +11,9 @@
     font-size: 20px;
     cursor: pointer;
   }
+}
+
+.copyrights {
+  font-size: 12px;
+  font-style: italic;
 }
