@@ -25,7 +25,7 @@ module.exports = (db) => {
       });
   });
 
-  // retrieves all the items wishlist from a user id
+  // USING retrieves all the items wishlist from a user id
   router.get("/:id", (req, res) => {
     db.query(
       `SELECT * FROM items_wishlist
