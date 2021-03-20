@@ -4,8 +4,8 @@ import "./Footer.scss";
 // Footer component
 export default function Footer() {
   return (
-    <div>
-      <div className="footer-section">
+    <div className="footer-section">
+      <div>
         <i className="fa fa-facebook-official" aria-hidden="true"></i>
         <i className="fa fa-twitter-square" aria-hidden="true"></i>
         <i className="fa fa-instagram" aria-hidden="true"></i>
