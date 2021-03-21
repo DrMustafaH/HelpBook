@@ -59,7 +59,13 @@ export default function WishlistItem(props) {
       <ListItemText>
         {props.quantity} - {props.itemName}
       </ListItemText>
-      <DonateItemForm />
+      <DonateItemForm
+        itemId={props.itemId}
+        category={props.category}
+        quantity={props.quantity}
+        itemName={props.itemName}
+        editWishlistItem={props.handleItemDonation}
+      />
     </ListItem>
   );
 }

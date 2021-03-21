@@ -70,7 +70,7 @@ export default function DonateMoneyForm(props) {
   };
 
   // Async function to be evoked when donate button is clicked in DonateMoneyForm
-  async function handleSubmit(event) {
+  async function handleSubmit() {
     const token = localStorage.getItem("token");
     const decoded = jwt_decode(token);
     // event.preventDefault();

@@ -127,24 +127,19 @@ module.exports = (db) => {
     // if the token contains the authenticated user information
     const token = req.headers.authorization.split(" ")[1];
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
-    if (
-      decoded.userId == req.params.id &&
-      (decoded.typeId === 2 || decoded.typeId === 3)
-    ) {
-      // allow user to perform edit action
-      db.query(
-        `UPDATE items_wishlist
+    // allow user to perform edit action
+    db.query(
+      `UPDATE items_wishlist
     SET item_name = $1, quantity = $2, category_id = $3 WHERE id = $4 RETURNING *;`,
-        [req.body.itemName, req.body.quantity, req.body.category, req.body.id]
-      )
-        .then((data) => {
-          res.send(data.rows[0]);
-          res.status(200);
-        })
-        .catch((err) => {
-          res.status(500).json({ error: err.message });
-        });
-    }
+      [req.body.itemName, req.body.quantity, req.body.category, req.body.itemId]
+    )
+      .then((data) => {
+        res.send(data.rows[0]);
+        res.status(200);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
   });
 
   // marks a item as inactive/donated

@@ -8,6 +8,9 @@ import {
   Typography,
   withStyles,
 } from "@material-ui/core";
+import axios from "axios";
+import jwt_decode from "jwt-decode";
+import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -48,14 +51,19 @@ const useStyles = makeStyles({
 });
 
 // DonateItemForm component
-export default function DonatedItemForm(props) {
+export default function DonateItemForm(props) {
   // States used in the DonateItemForm component
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
+    itemId: props.itemId,
+    itemName: props.itemName,
     quantity: props.quantity,
+    category: props.category,
   });
   const [acceptTerms, setAcceptTerms] = useState(false);
+  const params = useParams();
+  const [userId] = useState(Number(params.id));
   const history = useHistory();
 
   // function to control the acceptTerms tick box to be ticked or not on click by altering state
@@ -81,17 +89,39 @@ export default function DonatedItemForm(props) {
   };
 
   // Function to close the donateItemForm when submitted and if no quantity is entered user is alerted to do so
-  const handleSubmit = () => {
+  async function handleSubmit() {
+    const token = localStorage.getItem("token");
+    const decoded = jwt_decode(token);
     if (!formData.quantity) {
       alert("Please the missing feilds in form");
     } else {
+      const res = await axios.post(
+        `/api/wishlist/${userId}/edit`,
+        {
+          ...formData,
+          itemId: props.itemId,
+          quantity: props.quantity - formData.quantity,
+          itemName: props.itemName,
+          category: props.category,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
+      props.editWishlistItem(res.data, props.itemId);
       handleClose();
     }
-  };
+  }
 
   // Function to take the inputed quantity by user
   const handleInputQuantity = (e) => {
-    setFormData({ ...formData, quantity: Number(e.target.value) });
+    if (Number(e.target.value) > props.quantity) {
+      alert("You can't donate a quantity more than the requested");
+    } else {
+      setFormData({ ...formData, quantity: Number(e.target.value) });
+    }
   };
 
   return (

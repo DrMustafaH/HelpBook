@@ -94,7 +94,6 @@ module.exports = (db) => {
       [req.params.id]
     )
       .then((data) => {
-        console.log("SERVER", data.rows);
         const followersCount = data.rows[0];
         res.json(followersCount.count);
       })
