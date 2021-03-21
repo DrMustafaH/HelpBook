@@ -1213,3 +1213,15 @@ VALUES
   (9, 29),
   (22, 13),
   (20, 19);
+
+-- seeds for recevier followers table
+INSERT INTO
+  donated_items (
+    wishlist_item_id,
+    donor_id,
+    receiver_id,
+    quantity_donated
+  )
+VALUES
+  (32, 1, 5, 2),
+  (32, 10, 5, 3);
