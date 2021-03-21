@@ -90,8 +90,6 @@ export default function DonateItemForm(props) {
 
   // Function to close the donateItemForm when submitted and if no quantity is entered user is alerted to do so
   async function handleSubmit() {
-    const token = localStorage.getItem("token");
-    const decoded = jwt_decode(token);
     if (!formData.quantity) {
       alert("Please the missing feilds in form");
     } else {

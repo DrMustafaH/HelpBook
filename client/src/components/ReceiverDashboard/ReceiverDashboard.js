@@ -72,6 +72,16 @@ export default function ReceiverDashboard() {
     );
   };
 
+  const GetEditedWishlist = (newWishlistItem, id) => {
+    const copyWishlist = [...wishlist];
+    copyWishlist.map((item, i) => {
+      if (item.id === id) {
+        copyWishlist[i] = newWishlistItem;
+      }
+    });
+    setWishlist(copyWishlist);
+  };
+
   // A useEffect that activates on every time the userId state (in the params) changes to get the user information by using the userId by an axios GET call
   useEffect(() => {
     async function getUserData() {
@@ -172,7 +182,12 @@ export default function ReceiverDashboard() {
         )}
       </div>
       <div className="wishlist-donations-section">
-        {wishlist && <Wishlist wishlist={wishlist} />}
+        {wishlist && (
+          <Wishlist
+            wishlist={wishlist}
+            handleItemDonation={GetEditedWishlist}
+          />
+        )}
         {donationMoneyLog && donationItemLog && (
           <Donations donationLog={donationMoneyLog} itemLog={donationItemLog} />
         )}
