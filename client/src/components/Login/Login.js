@@ -74,13 +74,10 @@ export default function Login(props) {
         <h1 className="login-heading">Login</h1>
         <form className={classes.root} noValidate autoComplete="off">
           <div>
-            {/* <span>Username: </span> */}
             <TextField
-              // error
               required
               id="standard-required"
               label="Username"
-              // defaultValue="Username"
               placeholder="Username"
               type="text"
               InputProps={{
@@ -93,7 +90,6 @@ export default function Login(props) {
               required
               id="standard-required"
               label="Passsword"
-              // defaultValue="Password"
               placeholder="Password"
               type="password"
               InputProps={{

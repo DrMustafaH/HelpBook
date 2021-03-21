@@ -59,14 +59,17 @@ export default function ReceiverDashboard() {
   // Function to add a new donation made to the total donations sum
   const addNewDonation = (addedAmount, id) => {
     const copyTotalDonation = { ...totalDonation };
-    setTotalDonation(...copyTotalDonation, {
-      id: id,
-      is_active: true,
-      requested_money: totalDonation.requested_money,
-      requested_money_id: totalDonation.requested_money_id,
-      sum: totalDonation.sum + addedAmount,
-      user_id: userId,
-    });
+    setTotalDonation(
+      { ...copyTotalDonation },
+      {
+        id: id,
+        is_active: true,
+        requested_money: totalDonation.requested_money,
+        requested_money_id: totalDonation.requested_money_id,
+        sum: totalDonation.sum + addedAmount,
+        user_id: userId,
+      }
+    );
   };
 
   // A useEffect that activates on every time the userId state (in the params) changes to get the user information by using the userId by an axios GET call
