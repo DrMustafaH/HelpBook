@@ -59,17 +59,19 @@ export default function Wishlist(props) {
 
   // map all wishlist items of the user
   const mappedWishList = props.wishlist.map((wishListItem, i) => {
-    return (
-      <WishlistItem
-        key={i}
-        itemId={wishListItem.id}
-        category={wishListItem.category_id}
-        itemName={wishListItem.item_name}
-        is_active={wishListItem.is_active}
-        quantity={wishListItem.quantity}
-        handleItemDonation={GetEditedWishlist}
-      />
-    );
+    if (wishListItem.quantity !== 0) {
+      return (
+        <WishlistItem
+          key={i}
+          itemId={wishListItem.id}
+          category={wishListItem.category_id}
+          itemName={wishListItem.item_name}
+          is_active={wishListItem.is_active}
+          quantity={wishListItem.quantity}
+          handleItemDonation={GetEditedWishlist}
+        />
+      );
+    }
   });
   return (
     <div className="wishlist-section">

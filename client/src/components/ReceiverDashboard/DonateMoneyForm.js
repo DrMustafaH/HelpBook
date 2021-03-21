@@ -73,7 +73,6 @@ export default function DonateMoneyForm(props) {
   async function handleSubmit() {
     const token = localStorage.getItem("token");
     const decoded = jwt_decode(token);
-    // event.preventDefault();
     // if no quantity is entered user is alerted to do so
     if (!amountEntered) {
       alert("Please the missing feilds in form");
