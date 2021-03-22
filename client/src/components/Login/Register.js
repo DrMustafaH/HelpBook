@@ -70,7 +70,7 @@ export default function Register() {
           </div>
         </form>
         <a href="/login" className="no-account-mssg">
-          Already have an account? Login here
+          Already have an account? Sign in
         </a>
       </div>
       <Button variant="contained">Register</Button>

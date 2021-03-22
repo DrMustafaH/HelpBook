@@ -101,7 +101,7 @@ export default function Login(props) {
           </div>
         </form>
         <a href="/register" className="no-account-mssg">
-          Don't have an account yet? Register here
+          New user? Create an account
         </a>
       </div>
       <Button variant="contained" onClick={handleSubmit}>

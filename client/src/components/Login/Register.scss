@@ -4,22 +4,23 @@
   align-items: center;
 }
 .registration-section {
-  // margin: 20px;
+  margin: 150px 0 30px 0;
   Button {
     font-family: "Hind Madurai", sans-serif;
     font-weight: 700;
-    background-color: #3891a6;
     margin: 20px;
+    background-color: #0e212f;
     color: #f0efec;
     font-size: 1.15rem;
     margin: 30px 0 100px 0;
   }
   Button:hover {
-    background-color: #0e212f;
+    background-color: #3891a6;
   }
   .registration-heading {
-    font-family: "Trirong", serif;
-    margin-bottom: 50px;
+    font-family: adobe-caslon-pro,  serif;
+    font-size: 40px;
+    margin-bottom: 30px;
   }
 }
 
@@ -42,7 +43,7 @@
 }
 
 Button.user-type-registration {
-  background-color: #0e212f;
-  margin: 10px;
+  background-color: #3891a6;
+  margin: 0 10px 30px 10px;
   font-size: 14px;
 }
