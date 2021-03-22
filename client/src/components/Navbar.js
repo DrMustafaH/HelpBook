@@ -48,7 +48,11 @@ export default function Navbar(props) {
   return (
     <nav className="navbar">
       <div className="home-link" onClick={handleHomeClick}>
-        <img alt="logo" className="logo-img" src="../images/LogoHB.png"></img>
+        <img
+          alt="logo"
+          className="logo-img"
+          src="../images/LogoHelpBook.png"
+        ></img>
         <h1 onClick={handleHomeClick}>HelpBook</h1>
       </div>
       {props.isLoggedIn ? (
@@ -64,16 +68,16 @@ export default function Navbar(props) {
       <div className="nav-links">
         {!props.isLoggedIn ? (
           <div className="nav-links-text" onClick={handleLoginClick}>
-            LOGIN
+            SIGN IN
           </div>
         ) : (
           <div className="nav-links-text" onClick={handleLogoutClick}>
-            LOGOUT
+            SIGN OUT
           </div>
         )}
         {!props.isLoggedIn ? (
           <div className="nav-links-text" onClick={handleRegisterClick}>
-            REGISTER
+            SIGN UP
           </div>
         ) : null}
       </div>
