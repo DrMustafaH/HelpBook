@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import "./Navbar.scss";
 
 // Navbar component
@@ -34,13 +35,20 @@ export default function Navbar(props) {
 
   // function to route user to homepage when app logo clicked
   function handleProfileClick() {
-    history.push("/");
+    const token = localStorage.getItem("token");
+    const decoded = jwt_decode(props.isLoggedIn);
+    console.log("DECODED", decoded);
+    if (decoded.typeId === 1) {
+      history.push(`/donor/${decoded.userId}`);
+    } else {
+      history.push(`/receiver/${decoded.userId}`);
+    }
   }
 
   return (
     <nav className="navbar">
       <div className="home-link" onClick={handleHomeClick}>
-        <img alt="logo" className="logo-img" src="images/LogoHB.png"></img>
+        <img alt="logo" className="logo-img" src="../images/LogoHB.png"></img>
         <h1 onClick={handleHomeClick}>HelpBook</h1>
       </div>
       {props.isLoggedIn ? (
