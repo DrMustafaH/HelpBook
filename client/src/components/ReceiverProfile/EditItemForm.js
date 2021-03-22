@@ -64,7 +64,7 @@ export default function EditItemForm(props) {
         `/api/wishlist/${params.id}/edit`,
         {
           ...formData,
-          id: props.id,
+          itemId: props.id,
         },
         {
           headers: {

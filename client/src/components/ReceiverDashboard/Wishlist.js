@@ -33,25 +33,26 @@ const useStyles = makeStyles(() => ({
 // Wishlist component
 export default function Wishlist(props) {
   const classes = useStyles();
+
   // map all wishlist items of the user
-  const mappedWishList = props.wishlist.map((wishListItem) => {
-    return (
-      <WishlistItem
-        key={wishListItem.id}
-        category={wishListItem.category_id}
-        itemName={wishListItem.item_name}
-        is_active={wishListItem.is_active}
-        quantity={wishListItem.quantity}
-      />
-    );
+  const mappedWishList = props.wishlist.map((wishListItem, i) => {
+    if (wishListItem.quantity !== 0) {
+      return (
+        <WishlistItem
+          key={i}
+          itemId={wishListItem.id}
+          category={wishListItem.category_id}
+          itemName={wishListItem.item_name}
+          is_active={wishListItem.is_active}
+          quantity={wishListItem.quantity}
+          handleItemDonation={props.handleItemDonation}
+        />
+      );
+    }
   });
   return (
     <div className="wishlist-section">
       <StyledPaper>
-        {/* <div className="wishlist-items-list">
-          <h3 className="wishlist-title">Wish List</h3>
-          <List className={classes.root}>{mappedWishList}</List>
-        </div> */}
         <h3 className="wishlist-title">Wish List</h3>
         <List className={classes.root}>{mappedWishList}</List>
       </StyledPaper>
