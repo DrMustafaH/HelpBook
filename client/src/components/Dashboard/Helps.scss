@@ -1,7 +1,15 @@
 .helps-section {
   display: flex;
   justify-content: center;
-  height: 600px;
+  // height: 600px;
   width: 80%;
   margin: auto;
+}
+
+.helps-header {
+  margin-bottom: 0;
+}
+
+.MuiListItemAvatar-alignItemsFlexStart {
+  margin: 0 !important;
 }

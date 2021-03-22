@@ -12,9 +12,9 @@ const StyledPaper = withStyles({
     width: "50%",
     margin: "50px 10px 10px 10px",
     color: "#0E212F",
-    fontFamily: "'Trirong', serif",
+    fontFamily: "adobe-caslon-pro,  serif",
     fontWeight: "700",
-    fontSize: "2.5rem",
+    fontSize: "1.3rem",
     borderRadius: 0,
     maxHeight: 500,
     overflow: "auto",
@@ -24,11 +24,14 @@ const StyledPaper = withStyles({
 // makestyles method to style the whole help list
 const useStyles = makeStyles(() => ({
   root: {
-    width: "auto",
-    backgroundColor: "#f0efec",
-    borderRadius: 22,
+    // width: "auto",
+    width: "60%",
+    margin: "auto",
+    // backgroundColor: "#f0efec",
+    // borderRadius: 22,
     position: "center",
     padding: 20,
+    // bottom: "60px",
   },
 }));
 
@@ -78,13 +81,13 @@ export default function Helps(props) {
     <div className="helps-section">
       <StyledPaper>
         <div>
-          Organizations
+          <h1 className="helps-header">Organizations</h1>
           <List className={classes.root}>{users_organizations}</List>
         </div>
       </StyledPaper>
       <StyledPaper>
         <div>
-          Individuals
+          <h1 className="helps-header">Individuals</h1>
           <List className={classes.root}>{users_individuals}</List>
         </div>
       </StyledPaper>

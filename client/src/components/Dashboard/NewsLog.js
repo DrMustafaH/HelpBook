@@ -8,7 +8,7 @@ const StyledPaper = withStyles({
     width: "100%",
     color: "#0E212F",
     display: "flex",
-    fontFamily: "'Trirong', serif",
+    fontFamily: "adobe-caslon-pro, serif",
     fontWeight: "700",
     maxHeight: 300,
     overflow: "auto",
