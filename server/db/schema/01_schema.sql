@@ -1,7 +1,3 @@
-DROP TABLE IF EXISTS donated_items CASCADE;
-
-DROP TABLE IF EXISTS requested_items CASCADE;
-
 DROP TABLE IF EXISTS request_volunteer CASCADE;
 
 DROP TABLE IF EXISTS items_wishlist CASCADE;
@@ -99,19 +95,4 @@ CREATE TABLE receiver_followers (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   donor_id INTEGER REFERENCES donor_following(id) ON DELETE CASCADE
-);
-
--- eleventh
-CREATE TABLE requested_items (
-  id SERIAL PRIMARY KEY NOT NULL,
-  wishlist_item_id INTEGER REFERENCES items_wishlist(id) ON DELETE CASCADE,
-  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE
-);
-
--- tenth
-CREATE TABLE donated_items (
-  id SERIAL PRIMARY KEY NOT NULL,
-  wishlist_item_id INTEGER REFERENCES items_wishlist(id) ON DELETE CASCADE,
-  donor_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  quantity_donated INTEGER NOT NULL
 );
