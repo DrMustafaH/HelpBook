@@ -1,5 +1,6 @@
 .about-us-section {
   margin-top: 50px;
+  color: #0e212f;
 }
 
 .about-us-content {
@@ -20,6 +21,14 @@
 
 .about-us-heading {
   font-family: "adobe-caslon-pro, serif";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 30px;
+    height: auto;
+    padding-left: 10px;
+  }
 }
 
 .team-members {

@@ -5,21 +5,39 @@ import "./HowToHelp.scss";
 export default function HowToHelp() {
   return (
     <div className="how-to-help-section">
-      <h1 className="information-heading">How to Help</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur
-        arcu nec vestibulum iaculis. Suspendisse elementum vehicula arcu, id
-        dapibus augue pretium ac. Integer vitae nunc finibus, volutpat orci
-        vitae, porttitor ipsum. Morbi non nisi molestie, faucibus ante id,
-        pulvinar risus. Donec nec velit nec risus sodales tincidunt nec sit amet
-        augue. Sed sit amet accumsan augue, et feugiat velit. Suspendisse ac
-        volutpat velit. In sollicitudin fringilla leo at mattis. Praesent vitae
-        odio ac orci euismod tincidunt quis vitae lectus. Phasellus orci nulla,
-        molestie viverra odio eu, lacinia sodales velit. Ut fringilla sem dui,
-        sit amet pellentesque ex accumsan vel. Vivamus elementum sem in ligula
-        rutrum, ac hendrerit nulla pulvinar. Nullam vitae enim eget ligula
-        euismod pellentesque.
-      </p>
+      <div className="information-heading">
+        <h1>How to Help</h1>
+        <img alt="arrow" src="../images/arrow.png" className="team-img" />
+      </div>
+      <div className="how-to-help-content">
+        <h3>Step 1:</h3>
+        <p>
+          Busey ipsum dolor sit amet. Have you urinated? Have you drained your
+          bladder? Are you free? Because if you haven't it will only come out
+          later. I'm giving you some information that your bodily fluids may
+          penetrate your clothing fibre's without warning.It's OK to get
+          Rib-grease on your face, because you're allowing people to see that
+          you're proud of these ribs.
+        </p>
+        <h3>Step 2:</h3>
+        <p>
+          Busey ipsum dolor sit amet. Have you urinated? Have you drained your
+          bladder? Are you free? Because if you haven't it will only come out
+          later. I'm giving you some information that your bodily fluids may
+          penetrate your clothing fibre's without warning.It's OK to get
+          Rib-grease on your face, because you're allowing people to see that
+          you're proud of these ribs.
+        </p>
+        <h3>Step 3:</h3>
+        <p>
+          Busey ipsum dolor sit amet. Have you urinated? Have you drained your
+          bladder? Are you free? Because if you haven't it will only come out
+          later. I'm giving you some information that your bodily fluids may
+          penetrate your clothing fibre's without warning.It's OK to get
+          Rib-grease on your face, because you're allowing people to see that
+          you're proud of these ribs.
+        </p>
+      </div>
     </div>
   );
 }

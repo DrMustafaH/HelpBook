@@ -5,11 +5,18 @@ import "./AboutUs.scss";
 export default function AboutUs() {
   return (
     <div className="about-us-section">
-      <h1 className="about-us-heading">About Us</h1>
+      <div className="about-us-heading">
+        <h1>About Us</h1>
+        <img alt="arrow" src="../images/arrow.png" className="team-img" />
+      </div>
       <div className="about-us-content">
         <div>
           <div className="team-members">
-            <img alt="logo" src="../images/Mustafa.jpg" className="team-img" />
+            <img
+              alt="team-member"
+              src="../images/Mustafa.jpg"
+              className="team-img"
+            />
             <div className="team-name">Mustafa</div>
           </div>
           <p>
@@ -22,7 +29,11 @@ export default function AboutUs() {
         </div>
         <div>
           <div className="team-members">
-            <img alt="logo" src="../images/Maria.png" className="team-img" />
+            <img
+              alt="team-member"
+              src="../images/Maria.png"
+              className="team-img"
+            />
             <div className="team-name">Maria</div>
           </div>
           <p>
