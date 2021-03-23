@@ -12,6 +12,11 @@
   position: relative;
   max-width: 300px;
 }
+.selected {
+  .category-name{
+    opacity: 2;
+  }
+}
 
 .category-img {
   display: block;

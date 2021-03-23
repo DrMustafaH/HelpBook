@@ -8,7 +8,7 @@ import Search from "./Search";
 // Dashboard component
 export default function Dashboard(props) {
   // States used in the Dashboard component
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState({ id: 1 });
   const [helpList, setHelpList] = useState([]);
 
   // a useEffect that activates on every click made on a category the selected state will change and the useeffect will be evoked
@@ -28,6 +28,7 @@ export default function Dashboard(props) {
       <Search />
       <Categories
         categories={props.categories}
+        selected={selected}
         setCategory={(category) => setSelected(category)}
       />
       <Helps list={helpList} />

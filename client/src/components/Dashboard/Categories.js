@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Categories.scss";
 
 // Categories Component
@@ -12,7 +12,9 @@ export default function Categories(props) {
   const categories = props.categories.map((category, i) => {
     return (
       <div
-        className="category-container"
+        className={`category-container ${
+          props.selected.id === category.id ? "selected" : ""
+        }`}
         key={i}
         category_id={category.id}
         onClick={() => handleClick(category)}
