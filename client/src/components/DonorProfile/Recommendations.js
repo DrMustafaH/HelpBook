@@ -48,28 +48,48 @@ export default function Recommendations() {
       <StyledPaper>
         <div>
           <div>
-            <h1 className="recommendations-heading">Recommendations</h1>
+            <h1 className="recommendations-heading">Recommendations For You</h1>
           </div>
-          <div>
-            <div className="donor-profile-header">
-              <img alt="avatar" src={data[0].avatar}></img>
-              <h1 className="profile-greeting">{data[0].name}</h1>
+          <div className="recommendations-items">
+            <div>
+              <img
+                className="recommendation-avatar"
+                alt="avatar"
+                src={data[0].avatar}
+              ></img>
+              <h1 className="recommendation-name">{data[0].name}</h1>
             </div>
-            <div className="donor-profile-header">
-              <img alt="avatar" src={data[1].avatar}></img>
-              <h1 className="profile-greeting">{data[1].name}</h1>
+            <div>
+              <img
+                className="recommendation-avatar"
+                alt="avatar"
+                src={data[1].avatar}
+              ></img>
+              <h1 className="recommendation-name">{data[1].name}</h1>
             </div>
-            <div className="donor-profile-header">
-              <img alt="avatar" src={data[2].avatar}></img>
-              <h1 className="profile-greeting">{data[2].name}</h1>
+            <div>
+              <img
+                className="recommendation-avatar"
+                alt="avatar"
+                src={data[2].avatar}
+              ></img>
+              <h1 className="recommendation-name">{data[2].name}</h1>
             </div>
-            <div className="donor-profile-header">
-              <img alt="avatar" src={data[3].avatar}></img>
-              <h1 className="profile-greeting">{data[3].name}</h1>
+            <div>
+              <img
+                className="recommendation-avatar"
+                alt="avatar"
+                src={data[3].avatar}
+              ></img>
+              <h1 className="recommendation-name">{data[3].name}</h1>
             </div>
-            <div className="donor-profile-header">
-              <img alt="avatar" src={data[4].avatar}></img>
-              <h1 className="profile-greeting">{data[4].name}</h1>
+            <div>
+              <img
+                className="recommendation-avatar"
+                alt="avatar"
+                src={data[4].avatar}
+              ></img>
+              <h1 className="recommendation-name">{data[4].name}</h1>
             </div>
           </div>
         </div>
