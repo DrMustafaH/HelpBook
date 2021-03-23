@@ -146,7 +146,7 @@ module.exports = (db) => {
       JOIN requested_money on requested_money.id = donated_money.requested_money_id
       JOIN users on donated_money.user_id = users.id
       WHERE requested_money.user_id = $1 AND donated_amount != 0
-      GROUP BY requested_money.id, donated_money.requested_money_id, users.id, donated_money.id;`,
+      GROUP BY requested_money.id, donated_money.requested_money_id, users.id, donated_money.id ORDER BY donated_money.donation_date DESC;`,
       [req.params.id]
     )
       .then((data) => {
@@ -241,7 +241,7 @@ module.exports = (db) => {
         JOIN requested_money on requested_money.id = donated_money.requested_money_id
         JOIN users on requested_money.user_id = users.id
         WHERE donated_money.user_id = $1
-        GROUP BY requested_money.id, donated_money.requested_money_id, users.id, donated_money.id;`,
+        GROUP BY requested_money.id, donated_money.requested_money_id, users.id, donated_money.id ORDER BY donation_date DESC;`,
       [req.params.id]
     )
       .then((data) => {
