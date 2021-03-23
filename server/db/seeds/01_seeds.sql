@@ -10,14 +10,38 @@ VALUES
 INSERT INTO
   categories (name, image)
 VALUES
-  ('Health','https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
-  ('Kids','https://images.unsplash.com/photo-1524503033411-c9566986fc8f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'),
-  ('Education','https://images.unsplash.com/photo-1525921429624-479b6a26d84d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'),
-  ('Immigration & Refugees','https://images.unsplash.com/photo-1533845915284-f77b4651d406?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1355&q=80'),
-  ('Animals','https://images.unsplash.com/photo-1601758177266-bc599de87707?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'),
-  ('Food Banks','https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'),
-  ('Women','https://images.unsplash.com/photo-1498661367879-c2085689eed4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'),
-  ('Others','https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80');
+  (
+    'Health',
+    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+  ),
+  (
+    'Kids',
+    'https://images.unsplash.com/photo-1524503033411-c9566986fc8f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+  ),
+  (
+    'Education',
+    'https://images.unsplash.com/photo-1525921429624-479b6a26d84d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'
+  ),
+  (
+    'Immigration & Refugees',
+    'https://images.unsplash.com/photo-1533845915284-f77b4651d406?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1355&q=80'
+  ),
+  (
+    'Animals',
+    'https://images.unsplash.com/photo-1601758177266-bc599de87707?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+  ),
+  (
+    'Food Banks',
+    'https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+  ),
+  (
+    'Women',
+    'https://images.unsplash.com/photo-1498661367879-c2085689eed4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+  ),
+  (
+    'Others',
+    'https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80'
+  );
 
 -- seeds for users table
 INSERT INTO
@@ -1036,7 +1060,8 @@ VALUES
   (7, TRUE, 1000),
   (11, TRUE, 2500),
   (12, TRUE, 4500),
-  (13, TRUE, 2000);
+  (13, TRUE, 2000),
+  (3, TRUE, 4000);
 
 -- seeds for donated money table
 INSERT INTO
@@ -1057,7 +1082,8 @@ VALUES
   (10, '2020-12-03 04:23:18', 200, 1),
   (26, '2021-02-20 11:29:06', 100, 3),
   (30, '2020-11-19 13:07:14', 100, 4),
-  (47, '2020-08-26 10:17:19', 100, 5);
+  (47, '2020-08-26 10:17:19', 100, 5),
+  (47, '2020-08-26 10:17:19', 2000, 6);
 
 -- seeds for donor following table
 INSERT INTO

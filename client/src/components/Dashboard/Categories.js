@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Categories.scss";
 
 // Categories Component
@@ -12,13 +12,24 @@ export default function Categories(props) {
   const categories = props.categories.map((category, i) => {
     return (
       <div
-        className="category-container"
+        className={`category-container ${
+          props.selected.id === category.id ? "selected" : ""
+        }`}
         key={i}
         category_id={category.id}
         onClick={() => handleClick(category)}
       >
-        <img src={category.image} className="category-img"></img>
-        <div className="category-name">{category.name}</div>
+        <img
+          alt="categories"
+          src={category.image}
+          className="category-img"
+        ></img>
+        {category.name == "Immigration & Refugees" && (
+          <div className="category-name2">{category.name}</div>
+        )}
+        {category.name !== "Immigration & Refugees" && (
+          <div className="category-name">{category.name}</div>
+        )}
       </div>
     );
   });

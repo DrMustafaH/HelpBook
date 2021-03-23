@@ -12,6 +12,11 @@
   position: relative;
   max-width: 300px;
 }
+.selected {
+  .category-name{
+    opacity: 2;
+  }
+}
 
 .category-img {
   display: block;
@@ -39,6 +44,29 @@
 }
 
 .category-container:hover .category-name {
+  opacity: 2;
+  cursor: pointer;
+}
+
+.category-name2{
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(56, 145, 166, 0.9);
+  font-weight: 700;
+  color: #f0efec;
+  width: 90%;
+  height: 90%;
+  transition: 0.5s ease;
+  opacity: 0;
+  font-size: 15px;
+  text-align: center;
+  margin: auto;
+  justify-self: center;
+  line-height: 160px;
+}
+
+.category-container:hover .category-name2 {
   opacity: 2;
   cursor: pointer;
 }

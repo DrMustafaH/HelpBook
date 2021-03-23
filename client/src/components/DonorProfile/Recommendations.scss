@@ -6,6 +6,29 @@
   margin: 30px 0 30px 30px;
 }
 
-.recommendations-heading {
-  margin: 10px 0 0 20px;
+.recommendation-avatar {
+  height: 50px;
+  width: auto; 
+  border-radius: 50px;
 }
+
+.recommendation-name {
+  font-size: small;
+  width: 130px;
+}
+
+.recommendations-heading{
+  font-size: x-large;
+}
+
+.recommendations-items{
+  width: auto;
+  &:hover{
+    cursor: pointer;
+  }
+  align-self: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
