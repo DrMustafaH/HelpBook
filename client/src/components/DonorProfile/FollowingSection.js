@@ -11,16 +11,14 @@ const StyledPaper = withStyles({
     background: "#f0efec",
     height: 400,
     width: "100%",
-    margin: "20px 0",
     color: "#0E212F",
     display: "flex",
     flexDirection: "column",
-    fontFamily: "'Trirong', serif",
-    fontWeight: "700",
-    fontSize: "2.5rem",
-    borderRadius: 0,
+    fontFamily: "adobe-caslon-pro, serif",
     maxHeight: 500,
-    overflow: "auto",
+    "&.MuiPaper-elevation1": {
+      boxShadow: "none",
+    },
   },
 })(Paper);
 
@@ -28,7 +26,7 @@ const StyledPaper = withStyles({
 const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
-    backgroundColor: "#f0efec",
+    // backgroundColor: "#f0efec",
     position: "center",
     padding: "20px 50px",
   },
@@ -76,7 +74,10 @@ export default function FollowingSection() {
   return (
     <div className="following-section">
       <StyledPaper>
-        <div>Following</div>
+        <div className="following-header">
+          <h1>Following</h1>
+          {/* <img className="arrow-icon-header" src="../images/arrow.png"></img> */}
+        </div>
         <List className={classes.root}>
           <div className="list-display">{mappedFollowingList}</div>
         </List>

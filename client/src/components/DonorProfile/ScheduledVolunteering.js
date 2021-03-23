@@ -13,10 +13,9 @@ const StyledPaper = withStyles({
   root: {
     height: 350,
     width: "100%",
-    color: "#0E212F",
-    fontFamily: "'Trirong', serif",
-    fontWeight: "700",
-    fontSize: "2rem",
+    color: "#f0efec",
+    background: "#0E212F",
+    fontFamily: "adobe-caslon-pro, serif",
     paddingTop: "20px",
     maxHeight: 500,
     overflow: "auto",
@@ -25,12 +24,14 @@ const StyledPaper = withStyles({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
-    fontSize: "1rem",
     padding: "15px 20px 0 20px",
   },
   event: {
     marginLeft: "20px",
+  },
+  divider: {
+    color: "#f0efec",
+    background: "#f0efec",
   },
 }));
 
@@ -41,7 +42,10 @@ export default function ScheduledVolunteering() {
   return (
     <div className="scheduled-volunteering-section">
       <StyledPaper>
-        Upcoming Volunteering
+        <div className="following-header">
+          <h1>Upcoming Volunteering</h1>
+          {/* <img className="arrow-icon-header" src="../images/arrow.png"></img> */}
+        </div>
         <List component="nav" className={classes.root}>
           <div className="event-date">
             <h2>10/02</h2>
@@ -49,7 +53,7 @@ export default function ScheduledVolunteering() {
               <ListItemText primary="Event" />
             </ListItem>
           </div>
-          <Divider />
+          <Divider className={classes.divider} />
 
           <div className="event-date">
             <h2>20/07</h2>
@@ -57,7 +61,7 @@ export default function ScheduledVolunteering() {
               <ListItemText primary="Event" />
             </ListItem>
           </div>
-          <Divider />
+          <Divider className={classes.divider} />
 
           <div className="event-date">
             <h2>01/09</h2>
