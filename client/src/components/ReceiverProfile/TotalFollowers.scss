@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   height: 200px;
-  margin: 20px 20px 0 20px;
-  p {
-    margin: 0;
-  }
+  width: 20%;
+  align-items: center;
+  justify-content: center;
 }
 
 .total-followers {
@@ -14,4 +13,7 @@
   font-size: 45px;
   font-weight: 900;
   height: 47px;
+  h2 {
+    margin-top: 0px;
+  }
 }

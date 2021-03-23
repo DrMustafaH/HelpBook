@@ -7,7 +7,6 @@
 
 .wishlist-items-list {
   width: 95%;
-  margin-right: 7px;
 }
 
 .category-item {
@@ -16,7 +15,11 @@
   padding-right: 6px;
 }
 
-.edit-item-form{
+.edit-item-form {
   width: 24px;
   height: 24px;
+}
+
+.wishlist-title {
+  margin-bottom: 0;
 }

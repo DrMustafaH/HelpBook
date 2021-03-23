@@ -17,8 +17,9 @@ import EditItemForm from "./EditItemForm";
 const useStyles = makeStyles(() => ({
   root: {
     "&:hover": {
-      backgroundColor: "#dbd6c5",
-      borderRadius: 22,
+      cursor: "pointer",
+      transition: "all .2s ease-in-out",
+      transform: "scale(1.2)",
     },
   },
 }));

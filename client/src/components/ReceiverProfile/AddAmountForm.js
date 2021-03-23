@@ -66,7 +66,7 @@ export default function AddAmountForm(props) {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Add New Amount Wanted</DialogTitle>
+        <DialogTitle id="form-dialog-title">Add New Amount</DialogTitle>
         <DialogContent>
           <form required autoComplete="off">
             <TextField

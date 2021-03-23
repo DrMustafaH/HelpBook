@@ -11,9 +11,9 @@ import "./ProgressBar.scss";
 const BorderLinearProgress = withStyles(() => ({
   root: {
     height: 30,
-    width: "auto",
-    maxWidth: "1065px",
-    margin: "0 50px",
+    // width: "auto",
+    // maxWidth: "1065px",
+    // margin: "0 50px",
   },
   colorPrimary: {
     backgroundColor: "#f0efec",
@@ -27,7 +27,9 @@ const BorderLinearProgress = withStyles(() => ({
 // makestyles method to style the whole progress bar section
 const useStyles = makeStyles({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
+    width: "80%",
+    marginBottom: "30px",
   },
 });
 
@@ -66,12 +68,47 @@ export default function ProgressBar() {
   }, [userId]);
 
   return (
+    // <div className={classes.root}>
+    //   <div>
+    //     <h3>
+    //       Current donations: ${totalDonation.sum} / Goal: $
+    //       {totalDonation.requested_amount}
+    //     </h3>
+    //     <BorderLinearProgress
+    //       variant="determinate"
+    //       value={(totalDonation.sum / totalDonation.requested_amount) * 100}
+    //     />
+    //   </div>
+    //   <div className="donations-receiver-button">
+    //     {totalDonation.requested_amount != 0 && (
+    //       <EditAmountForm
+    //         disabled={totalDonation.requested_amount == totalDonation.sum}
+    //         requested_amount={totalDonation.requested_amount}
+    //         id={totalDonation.id}
+    //         onEdit={GetEditedAmount}
+    //       />
+    //     )}
+    //     <AddAmountForm
+    //       disabled={totalDonation.requested_amount != totalDonation.sum}
+    //       requested_amount={totalDonation.requested_amount}
+    //       sum={totalDonation.sum}
+    //       id={totalDonation.id}
+    //       onAdd={GetNewAmount}
+    //     />
+    //   </div>
+    // </div>
     <div className={classes.root}>
       <div>
-        <h3>
-          Current donations: ${totalDonation.sum} / Goal: $
-          {totalDonation.requested_amount}
-        </h3>
+        <div className="total-donations-receiver">
+          <div>
+            <div>Current donations:</div>
+            <h1>${totalDonation.sum}</h1>
+          </div>
+          <div>
+            <div>Goal:</div>
+            <h1>${totalDonation.requested_amount}</h1>
+          </div>
+        </div>
         <BorderLinearProgress
           variant="determinate"
           value={(totalDonation.sum / totalDonation.requested_amount) * 100}

@@ -6,8 +6,8 @@ import "./TotalFollowers.scss";
 const StyledPaper = withStyles({
   root: {
     background: "#0E212F",
-    height: 100,
-    width: 150,
+    height: "150px",
+    width: "200px",
     color: "#f0efec",
     display: "flex",
     alignItems: "center",
@@ -25,7 +25,7 @@ export default function TotalFollowers(props) {
       <StyledPaper>
         <div>
           <h1 className="total-followers">{props.count}</h1>
-          <p>Followers</p>
+          <h2>Followers</h2>
         </div>
       </StyledPaper>
     </div>
