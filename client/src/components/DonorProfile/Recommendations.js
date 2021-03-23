@@ -33,10 +33,13 @@ const data = [
 const StyledPaper = withStyles({
   root: {
     width: "100%",
+    margin: "30px 0 30px 30px",
     color: "#0E212F",
     display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     fontFamily: "adobe-caslon-pro, serif",
-    maxHeight: 300,
+    maxHeight: 350,
     overflow: "auto",
   },
 })(Paper);
@@ -44,56 +47,52 @@ const StyledPaper = withStyles({
 // Recommendation section
 export default function Recommendations() {
   return (
-    <div className="recommendations-section">
-      <StyledPaper>
-        <div>
+    <StyledPaper>
+      <div className="recommendations-section">
+        <h1 className="recommendations-heading">Recommendations For You</h1>
+        <div className="recommendations-items">
           <div>
-            <h1 className="recommendations-heading">Recommendations For You</h1>
+            <img
+              className="recommendation-avatar"
+              alt="avatar"
+              src={data[0].avatar}
+            ></img>
+            <p className="recommendation-name">{data[0].name}</p>
           </div>
-          <div className="recommendations-items">
-            <div>
-              <img
-                className="recommendation-avatar"
-                alt="avatar"
-                src={data[0].avatar}
-              ></img>
-              <h1 className="recommendation-name">{data[0].name}</h1>
-            </div>
-            <div>
-              <img
-                className="recommendation-avatar"
-                alt="avatar"
-                src={data[1].avatar}
-              ></img>
-              <h1 className="recommendation-name">{data[1].name}</h1>
-            </div>
-            <div>
-              <img
-                className="recommendation-avatar"
-                alt="avatar"
-                src={data[2].avatar}
-              ></img>
-              <h1 className="recommendation-name">{data[2].name}</h1>
-            </div>
-            <div>
-              <img
-                className="recommendation-avatar"
-                alt="avatar"
-                src={data[3].avatar}
-              ></img>
-              <h1 className="recommendation-name">{data[3].name}</h1>
-            </div>
-            <div>
-              <img
-                className="recommendation-avatar"
-                alt="avatar"
-                src={data[4].avatar}
-              ></img>
-              <h1 className="recommendation-name">{data[4].name}</h1>
-            </div>
+          <div>
+            <img
+              className="recommendation-avatar"
+              alt="avatar"
+              src={data[1].avatar}
+            ></img>
+            <p className="recommendation-name">{data[1].name}</p>
+          </div>
+          <div>
+            <img
+              className="recommendation-avatar"
+              alt="avatar"
+              src={data[2].avatar}
+            ></img>
+            <p className="recommendation-name">{data[2].name}</p>
+          </div>
+          <div>
+            <img
+              className="recommendation-avatar"
+              alt="avatar"
+              src={data[3].avatar}
+            ></img>
+            <p className="recommendation-name">{data[3].name}</p>
+          </div>
+          <div>
+            <img
+              className="recommendation-avatar"
+              alt="avatar"
+              src={data[4].avatar}
+            ></img>
+            <p className="recommendation-name">{data[4].name}</p>
           </div>
         </div>
-      </StyledPaper>
-    </div>
+      </div>
+    </StyledPaper>
   );
 }

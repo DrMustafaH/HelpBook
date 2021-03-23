@@ -1,5 +1,4 @@
 .recommendations-section {
-  display: flex;
   justify-content: space-evenly;
   height: 200px;
   width: 80%;
@@ -8,22 +7,22 @@
 
 .recommendation-avatar {
   height: 50px;
-  width: auto; 
+  width: auto;
   border-radius: 50px;
 }
 
 .recommendation-name {
-  font-size: small;
-  width: 130px;
+  font-family: "Hind Madurai", sans-serif;
+  padding: 0 10px;
 }
 
-.recommendations-heading{
-  font-size: x-large;
+.recommendations-heading {
+  margin-top: 0;
 }
 
-.recommendations-items{
+.recommendations-items {
   width: auto;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
   align-self: center;
@@ -31,4 +30,3 @@
   display: flex;
   justify-content: space-evenly;
 }
-
