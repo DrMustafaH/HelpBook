@@ -6,7 +6,10 @@ import ProgressBar from "./ProgressBar";
 import TotalFollowers from "./TotalFollowers";
 import Wishlist from "./Wishlist";
 import Donations from "./Donations";
+import Calendar from "../ReceiverDashboard/Calendar";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 import "./ReceiverProfile.scss";
+import { withStyles } from "@material-ui/core";
 
 // ReceiverProfile component
 export default function ReceiverProfile() {
@@ -54,6 +57,17 @@ export default function ReceiverProfile() {
     getDonationItemLog();
   }, [userId]);
 
+  // withstyles method to style the AddCircleIcon MUI react componect and assign a new name to it (StyledAddIcon)
+  const StyledAddEventIcon = withStyles({
+    root: {
+      fontSize: "40px",
+      "&:hover": {
+        color: "#3891A6",
+        cursor: "pointer",
+      },
+    },
+  })(AddCircleIcon);
+
   // condition if no user in state then the following will render
   if (!user) return <h4>User does not exist</h4>;
   return (
@@ -68,6 +82,16 @@ export default function ReceiverProfile() {
         {donationMoneyLog && donationItemLog && (
           <Donations donationLog={donationMoneyLog} itemLog={donationItemLog} />
         )}
+      </div>
+      <div>
+        <h1 className="volunteering-heading">Volunteering - Event Calendar</h1>
+        <div className="volunteering-section">
+          <Calendar />
+          <div className="participate-event">
+            <StyledAddEventIcon />
+            <p>Add an event to calendar</p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,9 @@ import ProgressBar from "./ProgressBar";
 import Donations from "./Donations";
 import Wishlist from "./Wishlist";
 import Header from "./Header";
+import Calendar from "./Calendar";
 import "./ReceiverDashboard.scss";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 // withstyles method to style the PersonAddIcon MUI react componect and assign a new name to it (StyledIconAdd)
 const StyledIconAdd = withStyles({
@@ -35,6 +37,17 @@ const StyledIconRemove = withStyles({
     },
   },
 })(RemoveCircleIcon);
+
+// withstyles method to style the AddCircleIcon MUI react componect and assign a new name to it (StyledAddIcon)
+const StyledAddEventIcon = withStyles({
+  root: {
+    fontSize: "40px",
+    "&:hover": {
+      color: "#3891A6",
+      cursor: "pointer",
+    },
+  },
+})(AddCircleIcon);
 
 // ReceiverDashboard component
 export default function ReceiverDashboard() {
@@ -191,6 +204,16 @@ export default function ReceiverDashboard() {
         {donationMoneyLog && donationItemLog && (
           <Donations donationLog={donationMoneyLog} itemLog={donationItemLog} />
         )}
+      </div>
+      <div>
+        <h1 className="volunteering-heading">Volunteering - Event Calendar</h1>
+        <div className="volunteering-section">
+          <Calendar />
+          <div className="participate-event">
+            <StyledAddEventIcon />
+            <p>Participate in an event</p>
+          </div>
+        </div>
       </div>
     </div>
   );
