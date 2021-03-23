@@ -623,7 +623,7 @@ VALUES
     3
   ),
   (
-    'Danny De Vito',
+    'Danny Mark',
     'gloiterton1d@ebay.com',
     'password',
     3,
