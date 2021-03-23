@@ -1,9 +1,8 @@
 .following-section {
   display: flex;
   justify-content: space-evenly;
-  width: 80%;
-  margin: auto;
-  padding-bottom: 20px;
+  width: 50%;
+  margin: auto 10px auto auto;
 }
 
 .list-display {
@@ -11,4 +10,10 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 0 50px;
+  width: 80%;
+  margin: auto;
+}
+
+.following-header {
+  margin-bottom: 0px;
 }

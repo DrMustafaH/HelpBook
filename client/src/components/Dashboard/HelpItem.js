@@ -18,13 +18,16 @@ const useStyles = makeStyles(() => ({
     width: "auto",
     backgroundColor: "#f0efec",
     position: "center",
-    padding: "5px 40px",
+    padding: "10px 40px",
     display: "flex",
     alignItems: "center",
     "&:hover": {
-      borderRadius: 25,
-      backgroundColor: "#dbd6c5",
       cursor: "pointer",
+      transition: "all .2s ease-in-out",
+      transform: "scale(1.2)",
+    },
+    ".MuiListItemAvatar-alignItemsFlexStart": {
+      margin: 0,
     },
   },
   avatar: {

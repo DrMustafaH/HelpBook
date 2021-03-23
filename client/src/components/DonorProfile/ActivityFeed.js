@@ -7,17 +7,17 @@ import "./ActivityFeed.scss";
 const StyledPaper = withStyles({
   root: {
     background: "#f0efec",
-    height: 350,
+    height: 400,
     width: "100%",
     color: "#0E212F",
     display: "flex",
     flexDirection: "column",
-    fontFamily: "'Trirong', serif",
-    fontWeight: "700",
-    fontSize: "2rem",
-    paddingTop: "20px",
+    fontFamily: "adobe-caslon-pro, serif",
     maxHeight: 500,
     overflow: "auto",
+    "&.MuiPaper-elevation1": {
+      boxShadow: "none",
+    },
   },
 })(Paper);
 
@@ -25,7 +25,6 @@ const StyledPaper = withStyles({
 const useStyles = makeStyles(() => ({
   root: {
     width: "auto",
-    backgroundColor: "#f0efec",
   },
 }));
 
@@ -56,9 +55,8 @@ export default function ActivityFeed(props) {
   return (
     <div className="activity-feed-section">
       <StyledPaper>
+        <h1 className="activity-header">Activity Feed</h1>
         <div className="donated-items-list">
-          {/* <h1 className="activity-feed-header">Activity Feed</h1> */}
-          Activity Feed
           <List className={classes.root}>{mappedMoneyLog}</List>
           <List className={classes.root}>{mappedItemLog}</List>
         </div>

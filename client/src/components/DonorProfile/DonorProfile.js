@@ -57,12 +57,14 @@ export default function DonorProfile() {
   return (
     <div>
       <Header username={user.username} avatar={user.avatar} />
-      <FollowingSection />
-      <div className="volunteering-feed">
-        <ScheduledVolunteering />
+      <div className="following-activity">
+        <FollowingSection />
         <ActivityFeed moneyLog={donationMoneyLog} itemLog={donationItemLog} />
       </div>
-      <Recommendations />
+      <div className="volunteering-recommendations">
+        <ScheduledVolunteering />
+        <Recommendations />
+      </div>
     </div>
   );
 }

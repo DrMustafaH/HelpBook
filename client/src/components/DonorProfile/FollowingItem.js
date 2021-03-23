@@ -17,9 +17,9 @@ const useStyles = makeStyles(() => ({
   root: {
     padding: "10px 20px",
     "&:hover": {
-      borderRadius: 22,
-      backgroundColor: "#dbd6c5",
       cursor: "pointer",
+      transition: "all .2s ease-in-out",
+      transform: "scale(1.2)",
     },
   },
   avatar: {

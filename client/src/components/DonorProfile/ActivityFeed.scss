@@ -1,16 +1,13 @@
 .activity-feed-section {
   display: flex;
   justify-content: space-evenly;
-  // height: 600px;
   width: 50%;
 }
 .donated-items-list {
-  // width: 95%;
-  // margin-right: 7px;
-  // margin: auto;
+  width: 70%;
+  margin: 0 auto;
 }
 
-.activity-feed-header {
-  font-size: 40px;
-  margin-bottom: 20px;
+.activity-header {
+  margin-bottom: 0px;
 }

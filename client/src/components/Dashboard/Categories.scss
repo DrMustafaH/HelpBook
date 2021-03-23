@@ -1,8 +1,44 @@
 .categories-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  // margin-top: 30px;
+  padding-top: 30px;
   margin: auto;
-  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(4, 15%);
+  grid-template-rows: repeat(2, 50%);
+  gap: 5px;
+  justify-content: center;
+}
+
+.category-container {
+  position: relative;
+  max-width: 300px;
+}
+
+.category-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.category-name {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(56, 145, 166, 0.9);
+  font-weight: 700;
+  color: #f0efec;
+  width: 90%;
+  height: 90%;
+  transition: 0.5s ease;
+  opacity: 0;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+  justify-self: center;
+  line-height: 160px;
+}
+
+.category-container:hover .category-name {
+  opacity: 2;
+  cursor: pointer;
 }

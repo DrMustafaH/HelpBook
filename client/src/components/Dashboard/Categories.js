@@ -1,29 +1,5 @@
 import React from "react";
-import { Paper, withStyles } from "@material-ui/core";
 import "./Categories.scss";
-
-// withstyles method to style the Paper MUI react componect and assign a new name to it (StyledPaper)
-const StyledPaper = withStyles({
-  root: {
-    background: "#0E212F",
-    height: 100,
-    width: 200,
-    margin: "30px 10px 10px 10px",
-    color: "#f0efec",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontFamily: "'Hind Madurai', sans-serif",
-    fontWeight: "700",
-    fontSize: "1.5rem",
-    borderRadius: 10,
-    "&:hover": {
-      background: "#3891A6",
-      transition: "background 0.5s ease-in-out",
-      cursor: "pointer",
-    },
-  },
-})(Paper);
 
 // Categories Component
 export default function Categories(props) {
@@ -35,13 +11,15 @@ export default function Categories(props) {
   // map function to render each category from the category table
   const categories = props.categories.map((category, i) => {
     return (
-      <StyledPaper
+      <div
+        className="category-container"
         key={i}
         category_id={category.id}
         onClick={() => handleClick(category)}
       >
-        {category.name}
-      </StyledPaper>
+        <img src={category.image} className="category-img"></img>
+        <div className="category-name">{category.name}</div>
+      </div>
     );
   });
 
