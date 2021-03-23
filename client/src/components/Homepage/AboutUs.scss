@@ -1,12 +1,54 @@
-.about-us-section{
-  display:flex;
+.about-us-section {
+  margin-top: 50px;
+}
+
+.about-us-content {
+  display: flex;
   justify-content: space-around;
-  img{
+  width: 70%;
+  margin: auto;
+  img {
     width: 250px;
     height: 250px;
+    border-radius: 150px;
+  }
+  p {
+    margin: 20px 40px;
+    text-align: justify;
   }
 }
 
-.about-us-heading{
-  font-family: 'Trirong', serif;
+.about-us-heading {
+  font-family: "adobe-caslon-pro, serif";
+}
+
+.team-members {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.team-name {
+  position: absolute;
+  bottom: 0;
+  background: rgba(56, 145, 166, 0.9);
+  font-weight: 700;
+  color: #f0efec;
+  width: 250px;
+  transition: 0.5s ease;
+  opacity: 0;
+  justify-self: center;
+  font-size: 20px;
+}
+
+.team-members:hover .team-name {
+  opacity: 2;
+  border-radius: 50px;
 }
