@@ -1,13 +1,8 @@
 .categories-section {
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
   padding-top: 30px;
   margin: auto;
-  // width: 90%;
   display: grid;
   grid-template-columns: repeat(4, 15%);
-  // grid-template-columns: 40% 40% 40% 40%;
   grid-template-rows: repeat(2, 50%);
   gap: 5px;
   justify-content: center;
@@ -22,7 +17,6 @@
   display: block;
   width: 100%;
   height: auto;
-  // height: 175px;
   border-radius: 5px;
 }
 
