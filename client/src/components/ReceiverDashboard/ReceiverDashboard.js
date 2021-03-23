@@ -170,7 +170,7 @@ export default function ReceiverDashboard() {
         {disableBtn && <StyledIconAdd onClick={handleFollow} />}
         {!disableBtn && <StyledIconRemove onClick={handleUnFollowStyle} />}
       </div>
-      <div className="receiver-followers">
+      <div className="receiver-followers-dash">
         {followersCount && <TotalFollowers count={followersCount} />}
         {totalDonation && (
           <ProgressBar

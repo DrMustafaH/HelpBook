@@ -1,9 +1,14 @@
-.receiver-followers {
+.receiver-followers-dash {
+  // display: flex;
+  // flex-direction: row;
+  // width: 80%;
+  // margin: 0 10%;
+  // justify-content: space-between;
   display: flex;
-  flex-direction: row;
   width: 80%;
   margin: 0 10%;
-  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
 }
 .wishlist-donations-section {
   display: flex;

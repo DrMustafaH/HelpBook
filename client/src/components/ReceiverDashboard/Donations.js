@@ -11,9 +11,10 @@ const StyledPaper = withStyles({
     width: "100%",
     margin: "0 0 10px 10px",
     color: "#0E212F",
-    display: "flex",
-    justifyContent: "center",
-    fontFamily: "'Trirong', serif",
+    // display: "flex",
+    // justifyContent: "center",
+    fontFamily: "adobe-caslon-pro,  serif",
+    fontSize: "1.3rem",
     fontWeight: "700",
     borderRadius: 0,
     maxHeight: 500,
@@ -28,9 +29,12 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#f0efec",
     borderRadius: 22,
     position: "center",
-    padding: 0,
-    marginLeft: 10,
-    marginTop: 0,
+    // padding: 0,
+    // marginLeft: 10,
+    // marginTop: 0,
+    padding: "0 20px 20px 20px",
+    width: "60%",
+    margin: "auto",
   },
 }));
 
@@ -62,8 +66,8 @@ export default function Donations(props) {
   return (
     <div className="donations-section">
       <StyledPaper>
+        <h1 className="donations-title-dash">Donations</h1>
         <div className="donation-items-list">
-          <h3 className="donations-title">Donations</h3>
           <List className={classes.root}>{mappedMoneyLog}</List>
           <List className={classes.root}>{mappedItemLog}</List>
         </div>

@@ -1,25 +1,32 @@
 .donations-receiver-button {
   Button {
     font-family: "Hind Madurai", sans-serif;
-    font-weight: 700;
     background-color: #0e212f;
     margin: 20px;
     color: #f0efec;
-    font-size: 1rem;
   }
 
   Button:hover {
+    font-weight: 700;
     background-color: #3891a6;
+  }
+}
+
+.total-donations {
+  margin: 0 150px;
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    margin-top: 0;
   }
 }
 
 // Payment details card layout
 .MuiButton-textPrimary {
-  // color: #0e212f !important;
   font-family: "Hind Madurai", sans-serif !important;
 }
 .MuiTypography-h6 {
-  font-family: "Trirong", serif !important;
+  font-family: adobe-caslon-pro,  serif !important;
   color: #0e212f !important;
 }
 .MuiInputBase-root {

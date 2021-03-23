@@ -10,9 +10,9 @@ const StyledPaper = withStyles({
     height: 500,
     width: "100%",
     color: "#0E212F",
-    fontFamily: "'Trirong', serif",
+    fontFamily: "adobe-caslon-pro, seri",
     fontWeight: "700",
-    fontSize: "2rem",
+    fontSize: "1.3rem",
     borderRadius: 0,
     maxHeight: 500,
     overflow: "auto",
@@ -27,6 +27,8 @@ const useStyles = makeStyles(() => ({
     borderRadius: 22,
     position: "center",
     padding: "0 20px 20px 20px",
+    width: "60%",
+    margin: "auto",
   },
 }));
 
@@ -53,7 +55,7 @@ export default function Wishlist(props) {
   return (
     <div className="wishlist-section">
       <StyledPaper>
-        <h3 className="wishlist-title">Wish List</h3>
+        <h1 className="wishlist-title">Wish List</h1>
         <List className={classes.root}>{mappedWishList}</List>
       </StyledPaper>
     </div>

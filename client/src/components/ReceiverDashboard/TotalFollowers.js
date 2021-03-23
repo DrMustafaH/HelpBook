@@ -6,8 +6,8 @@ import "./TotalFollowers.scss";
 const StyledPaper = withStyles({
   root: {
     background: "#0E212F",
-    height: 100,
-    width: 150,
+    height: "150px",
+    width: "200px",
     color: "#f0efec",
     display: "flex",
     alignItems: "center",
@@ -21,11 +21,11 @@ const StyledPaper = withStyles({
 // TotalFollowers component
 export default function TotalFollowers(props) {
   return (
-    <div className="total-followers-box">
+    <div className="total-followers-box-dash">
       <StyledPaper>
         <div>
           <h1 className="total-followers">{props.count}</h1>
-          <p>Followers</p>
+          <h2>Followers</h2>
         </div>
       </StyledPaper>
     </div>

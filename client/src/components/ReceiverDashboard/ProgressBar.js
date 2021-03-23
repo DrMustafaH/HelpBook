@@ -20,7 +20,8 @@ const BorderLinearProgress = withStyles(() => ({
 
 const useStyles = makeStyles({
   root: {
-    flexGrow: 1,
+    width: "80%",
+    marginBottom: "30px",
   },
 });
 
@@ -30,9 +31,16 @@ export default function ProgressBar(props) {
   return (
     <div className={classes.root}>
       <div>
-        <h3>
-          Current donations: ${props.sum} / Goal: ${props.requested_amount}
-        </h3>
+        <div className="total-donations">
+          <div>
+            <div>Current donations:</div>
+            <h1>${props.sum}</h1>
+          </div>
+          <div>
+            <div>Goal:</div>
+            <h1>${props.requested_amount}</h1>
+          </div>
+        </div>
         <BorderLinearProgress
           variant="determinate"
           value={(props.sum / props.requested_amount) * 100}
