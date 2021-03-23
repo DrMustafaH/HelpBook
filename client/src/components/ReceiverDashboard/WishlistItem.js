@@ -11,12 +11,10 @@ const useStyles = makeStyles(() => ({
     width: "auto",
     backgroundColor: "#f0efec",
     position: "center",
-    // padding: "0 20px",
     padding: "10px 40px",
     display: "flex",
     alignItems: "center",
     fontFamily: "'Hind Madurai', sans-serif",
-    // width: "80%",
     margin: "auto",
     "&:hover": {
       cursor: "pointer",
