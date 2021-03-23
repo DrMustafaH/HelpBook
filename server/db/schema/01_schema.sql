@@ -96,3 +96,11 @@ CREATE TABLE receiver_followers (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   donor_id INTEGER REFERENCES donor_following(id) ON DELETE CASCADE
 );
+
+-- tenth
+CREATE TABLE recommendations (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  recommended_name VARCHAR(255) NOT NULL,
+  recommended_avatar TEXT
+);
