@@ -24,14 +24,10 @@ const StyledPaper = withStyles({
 // makestyles method to style the whole help list
 const useStyles = makeStyles(() => ({
   root: {
-    // width: "auto",
     width: "60%",
     margin: "auto",
-    // backgroundColor: "#f0efec",
-    // borderRadius: 22,
     position: "center",
     padding: 20,
-    // bottom: "60px",
   },
 }));
 
