@@ -31,444 +31,828 @@ INSERT INTO
   )
 VALUES
   (
-    'helloWorld',
-    'hello@world.com',
-    'helloworld',
+    'Dan Brown',
+    'd',
+    'd',
     1,
-    'https://avatars.dicebear.com/v2/female/f3f1f083c911e25d5350659901780358.svg',
+    'https://images.pexels.com/photos/769772/pexels-photo-769772.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    1
+  ),
+  (
+    'Doctors of the World',
+    'o',
+    'o',
+    2,
+    'https://uploads.doctorsoftheworld.org/2013/07/logo.png',
+    1
+  ),
+  (
+    'John Smith',
+    'i',
+    'i',
+    3,
+    'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
     2
   ),
   (
-    'World Heath Organization',
-    'who@example.com',
-    'password',
-    2,
-    'https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=robohash&r=x',
-    null
-  ),
-  (
-    'share food bank',
-    'sfb@example.com',
-    'password',
-    2,
-    'https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=retro&r=x',
-    null
-  ),
-  (
-    'JoeD',
+    'Joe Adam',
     'joe@example.com',
     'password',
     1,
-    'https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=monsterid&r=x',
-    null
+    'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    6
   ),
   (
-    'MrDave',
+    'Megan Grey',
     'dave@example.com',
     'password',
     3,
-    'https://gravatar.com/avatar/f3f1f083c911e25d5350659901780358?s=400&d=retro&r=x',
-    1
+    'https://images.pexels.com/photos/1845534/pexels-photo-1845534.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    5
   ),
   (
-    'fpowelee0',
+    'Jessica Turner',
     'lhatcliffe0@clickbank.net',
-    'K4DCtnA',
+    'password',
     1,
-    'https://robohash.org/reprehenderitadea.jpg?size=50x50&set=set1',
+    'https://images.pexels.com/photos/1841819/pexels-photo-1841819.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
     8
   ),
   (
-    'thasard1',
+    'World Wildlife Foundation',
     'ckopman1@upenn.edu',
-    'U9lhtWIALu',
+    'password',
     2,
-    'https://robohash.org/autemiderror.png?size=50x50&set=set1',
-    8
+    'https://blog-cdn.classy.org/blog/wp-content/uploads/2016/09/22161501/wwf.png',
+    5
   ),
   (
-    'glesper2',
+    'Henry Hash',
     'lsleaford2@cloudflare.com',
-    'N8nFcpuzszH',
-    1,
-    'https://robohash.org/sintiuremolestias.bmp?size=50x50&set=set1',
+    'password',
+    3,
+    'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
     7
   ),
   (
-    'lvasyuchov3',
+    'Ronaldo Silva',
     'rchapiro3@archive.org',
-    'CGmHiW7KG9',
-    2,
-    'https://robohash.org/deseruntestab.bmp?size=50x50&set=set1',
+    'password',
+    1,
+    'https://images.pexels.com/photos/247885/pexels-photo-247885.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
     7
   ),
   (
-    'fhatherleigh4',
+    'Angelina Jolie',
     'lweitzel4@prlog.org',
-    'mF0S72ds0',
-    2,
-    'https://robohash.org/quipariaturnulla.jpg?size=50x50&set=set1',
+    'password',
+    1,
+    'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
     1
   ),
   (
-    'wmayhow5',
+    'One Campaign',
     'ecracknall5@webnode.com',
-    'PqkXuHLX',
+    'password',
     2,
-    'https://robohash.org/nihilaccusantiumtotam.png?size=50x50&set=set1',
-    1
-  ),
-  (
-    'haddeycott6',
-    'taronowitz6@businessweek.com',
-    'clzNWM2arnQ9',
-    2,
-    'https://robohash.org/recusandaeexercitationemqui.bmp?size=50x50&set=set1',
-    1
-  ),
-  (
-    'nhumbee7',
-    'wslany7@google.com',
-    'OdS22xftZ',
-    2,
-    'https://robohash.org/utrepellendusmolestiae.jpg?size=50x50&set=set1',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/ONE_Campaign.svg/1200px-ONE_Campaign.svg.png',
     3
   ),
   (
-    'rsilcocks8',
-    'nmouan8@opera.com',
-    'QPBOJAqJMM55',
+    'Southside Animal Shelter',
+    'taronowitz6@businessweek.com',
+    'password',
     2,
-    'https://robohash.org/rerumconsequunturnon.bmp?size=50x50&set=set1',
-    1
+    'https://ssasi.org/wp-content/uploads/2017/09/rosiessouthsideanimalshelter-logo-blue.png',
+    5
   ),
   (
-    'lblaiklock9',
-    'kleitche9@dropbox.com',
-    'aEXJXdf7vok',
-    1,
-    'https://robohash.org/autemquisin.png?size=50x50&set=set1',
-    7
+    'Animal Life',
+    'wslany7@google.com',
+    'password',
+    2,
+    'https://i.pinimg.com/originals/d7/e6/fe/d7e6fe6c4e540f6468d8638f5008c1d9.jpg',
+    5
   ),
   (
-    'eyounga',
-    'lballingera@java.com',
-    '3x0UStsdMDuW',
-    3,
-    'https://robohash.org/atquiahic.bmp?size=50x50&set=set1',
-    6
-  ),
-  (
-    'tmacclureb',
-    'lwinspurrb@sourceforge.net',
-    '0XteuM',
-    1,
-    'https://robohash.org/nisiistemaxime.png?size=50x50&set=set1',
-    8
-  ),
-  (
-    'wwychec',
-    'draccioc@discuz.net',
-    'Tavngty3Fhs',
-    1,
-    'https://robohash.org/culpamagnidignissimos.jpg?size=50x50&set=set1',
+    'Richmond Food Bank',
+    'nmouan8@opera.com',
+    'password',
+    2,
+    'http://richmondfoodbank.org/wp-content/uploads/2013/07/RFBS-Logo-Black-Logo-White-Background.jpg',
     2
   ),
   (
-    'dcuddd',
+    'Canada Food Bank',
+    'kleitche9@dropbox.com',
+    'password',
+    2,
+    'https://i.pinimg.com/originals/97/9a/e0/979ae08c4d7dbcda0df39eee6bb45ded.png',
+    2
+  ),
+  (
+    'Immigrant Services Society of BC',
+    'lballingera@java.com',
+    'password',
+    2,
+    'https://media.glassdoor.com/sqll/484533/immigrant-services-society-of-bc-squarelogo-1479837205268.png',
+    3
+  ),
+  (
+    'Mosaic BC',
+    'lwinspurrb@sourceforge.net',
+    'password',
+    2,
+    'https://mosaicbc.org/wp-content/uploads/2016/05/MOSAIC-icon-F-square.png',
+    3
+  ),
+  (
+    'Insurance Corporation of British Columbia',
+    'draccioc@discuz.net',
+    'password',
+    2,
+    'https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Insurance_Corporation_of_British_Columbia_Logo.svg/1200px-Insurance_Corporation_of_British_Columbia_Logo.svg.png',
+    8
+  ),
+  (
+    'The UN Refugee Agency',
     'dtumed@bluehost.com',
     'xE1aTrb1NAC',
     2,
-    'https://robohash.org/commodiquiculpa.bmp?size=50x50&set=set1',
-    5
+    'https://images.squarespace-cdn.com/content/v1/56d1fe3ed210b8b23f16d059/1570556718932-WIJCJYKJFXOVONOG9O42/ke17ZwdGBToddI8pDm48kAf-OpKpNsh_OjjU8JOdDKBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzAFzFJoCInLPKyj9AG8yKe7-Q2aFvP177fkO9TY_-rz5WoqqTEZpmj4yDEOdwKV68/UNHCR%2Blogo.jpg',
+    3
   ),
   (
-    'vwheatlande',
+    'James Park School ',
     'imcwhinniee@usgs.gov',
-    '4i3SpTX',
-    1,
-    'https://robohash.org/veritatisrerumquia.png?size=50x50&set=set1',
-    2
+    'password',
+    2,
+    'http://www.sd43.bc.ca/school/jamespark/Style%20Library/Images/LogoHeader.png',
+    4
   ),
   (
-    'amogganf',
+    'Catherine Cruise',
     'agureryf@storify.com',
-    'dknmGryY',
+    'password',
     3,
-    'https://robohash.org/repudiandaeetsint.png?size=50x50&set=set1',
-    2
+    'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
+    4
   ),
   (
-    'jrapperg',
+    'Mary Jane',
     'nkeniong@pinterest.com',
-    'ztQX6KqU',
+    'password',
     3,
-    'https://robohash.org/voluptatemrepellendusut.jpg?size=50x50&set=set1',
+    'https://images.pexels.com/photos/672445/pexels-photo-672445.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
     5
   ),
   (
-    'cstonbridgeh',
+    'Zelda Dan',
     'abintonh@toplist.cz',
-    'd6h22I',
+    'password',
     3,
-    'https://robohash.org/illoveniamarchitecto.bmp?size=50x50&set=set1',
-    4
-  ),
-  (
-    'lchazottei',
-    'aglastonburyi@topsy.com',
-    '4Od0T15ohPq',
-    3,
-    'https://robohash.org/velitomnisofficiis.png?size=50x50&set=set1',
-    3
-  ),
-  (
-    'aginnj',
-    'ccardoj@hatena.ne.jp',
-    'ZTOZ0npA0',
-    2,
-    'https://robohash.org/odiofacerecommodi.jpg?size=50x50&set=set1',
-    3
-  ),
-  (
-    'frillattk',
-    'jbrusterk@sogou.com',
-    'JYvnvosy',
-    2,
-    'https://robohash.org/enimquibusdamdicta.png?size=50x50&set=set1',
-    4
-  ),
-  (
-    'rporteousl',
-    'gbeasleyl@umich.edu',
-    'opZkataq2ycE',
-    3,
-    'https://robohash.org/magniidquia.png?size=50x50&set=set1',
-    5
-  ),
-  (
-    'szukermanm',
-    'disaaksohnm@altervista.org',
-    'FodboE',
-    3,
-    'https://robohash.org/quiaautiusto.jpg?size=50x50&set=set1',
-    1
-  ),
-  (
-    'rbremondn',
-    'mtwinbournen@lulu.com',
-    'I8TYvP16dPoD',
-    3,
-    'https://robohash.org/verovoluptatemrem.jpg?size=50x50&set=set1',
-    4
-  ),
-  (
-    'nbreedero',
-    'ecurteiso@blog.com',
-    'mv0pyCoc3',
-    1,
-    'https://robohash.org/etvoluptatesrepellendus.png?size=50x50&set=set1',
-    3
-  ),
-  (
-    'dmaddinp',
-    'cantonazzip@mozilla.org',
-    '4NRdasYn',
-    2,
-    'https://robohash.org/culpadoloremqui.jpg?size=50x50&set=set1',
-    3
-  ),
-  (
-    'ryushankinq',
-    'jbraycottonq@feedburner.com',
-    '5Vso8fPYiGj',
-    2,
-    'https://robohash.org/cupiditateautemmolestias.png?size=50x50&set=set1',
-    3
-  ),
-  (
-    'asouthernsr',
-    'wrudledger@skyrock.com',
-    'NHHmBJlDF',
-    2,
-    'https://robohash.org/autemvoluptasmagni.jpg?size=50x50&set=set1',
+    'https://images.pexels.com/photos/764529/pexels-photo-764529.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
     6
   ),
   (
-    'mpamplins',
-    'dmasdings@xinhuanet.com',
-    'FobQLNLvqyGy',
-    1,
-    'https://robohash.org/estquidemvoluptatem.png?size=50x50&set=set1',
-    4
+    'Angela Bush',
+    'aglastonburyi@topsy.com',
+    'password',
+    3,
+    'https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    7
   ),
   (
-    'mgallimoret',
-    'alovittt@exblog.jp',
-    '4vN8f0I5',
-    2,
-    'https://robohash.org/facerequidemnon.png?size=50x50&set=set1',
-    2
-  ),
-  (
-    'dgappu',
-    'kmitkcovu@pbs.org',
-    'g5ddAVbCTLWB',
-    2,
-    'https://robohash.org/harumlaborequo.jpg?size=50x50&set=set1',
-    4
-  ),
-  (
-    'jcarrolv',
-    'ggoodwillv@google.co.uk',
-    'cbsnHCq',
-    1,
-    'https://robohash.org/velaccusantiumodio.png?size=50x50&set=set1',
+    'Will Smith',
+    'ccardoj@hatena.ne.jp',
+    'password',
+    3,
+    'https://images.pexels.com/photos/576924/pexels-photo-576924.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
     3
   ),
   (
-    'aabelovw',
-    'pdavidaiw@yelp.com',
-    '78FwvXxDc',
-    3,
-    'https://robohash.org/perferendisvelitharum.png?size=50x50&set=set1',
+    'Dan Ling',
+    'jbrusterk@sogou.com',
+    'password',
+    1,
+    'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    4
+  ),
+  (
+    'Ming Chao',
+    'gbeasleyl@umich.edu',
+    'password',
+    1,
+    'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    5
+  ),
+  (
+    'Abraham Joseph',
+    'disaaksohnm@altervista.org',
+    'password',
+    1,
+    'https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    1
+  ),
+  (
+    'Mohammed Abdo',
+    'mtwinbournen@lulu.com',
+    'password',
+    1,
+    'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    4
+  ),
+  (
+    'Ash Green',
+    'ecurteiso@blog.com',
+    'password',
+    1,
+    'https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    6
+  ),
+  (
+    'Lili Marshal',
+    'cantonazzip@mozilla.org',
+    'password',
+    1,
+    'https://images.pexels.com/photos/227294/pexels-photo-227294.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
+    5
+  ),
+  (
+    'Nigella Hunt',
+    'jbraycottonq@feedburner.com',
+    'password',
+    1,
+    'https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
     2
   ),
   (
-    'sdelmontix',
+    'Amy White',
+    'wrudledger@skyrock.com',
+    'password',
+    3,
+    'https://images.pexels.com/photos/1559193/pexels-photo-1559193.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200',
+    6
+  ),
+  (
+    'Rural Literacy Coalition',
+    'dmasdings@xinhuanet.com',
+    'password',
+    2,
+    'https://i.pinimg.com/originals/70/34/1f/70341ff61825f30a9bf030c4d4458d2c.jpg',
+    4
+  ),
+  (
+    'Milo Adventist Academy',
+    'alovittt@exblog.jp',
+    'password',
+    2,
+    'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2020/01/9-Best-School-Logos-and-How-to-Make-Your-Own-for-Free-image7.png',
+    4
+  ),
+  (
+    'Woman Power',
+    'kmitkcovu@pbs.org',
+    'password',
+    2,
+    'https://image.shutterstock.com/image-vector/womens-power-rights-iconic-womans-260nw-1445242748.jpg',
+    7
+  ),
+  (
+    'Woman March Organization',
+    'ggoodwillv@google.co.uk',
+    'password',
+    2,
+    'https://static1.squarespace.com/static/5c3feb79fcf7fdce5a3c790b/t/5c3ff59dc74c50276f00f4a8/1598386377503/?format=1500w',
+    7
+  ),
+  (
+    'Woman Rights',
+    'pdavidaiw@yelp.com',
+    'password',
+    2,
+    'https://depdcblog.files.wordpress.com/2011/01/cedaw-logo.jpg',
+    7
+  ),
+  (
+    'Child Aid Association',
     'ebiddlecombex@pinterest.com',
-    'yX7DSvx',
+    'password',
     2,
-    'https://robohash.org/velitsuscipitqui.bmp?size=50x50&set=set1',
-    8
+    'https://seeklogo.com/images/C/child-aid-association-pakistan-logo-79D7590245-seeklogo.com.png',
+    6
   ),
   (
-    'lkalkofeny',
+    'The Children’s Aid Society',
     'tshakespearey@netvibes.com',
-    'tkKcFl5',
+    'password',
     2,
-    'https://robohash.org/eumtotamsunt.jpg?size=50x50&set=set1',
-    8
+    'https://lh3.googleusercontent.com/proxy/3SvhQp-JgAn5D3mdUbtNuuLXSbCX_WLf0NyairGhi0CVlVj1FGN662XW1LCfTL95arvWMIrwpuponnm2CtXc7II-unc3LBP8PqDwroVuntVckBh6M1JXUEtNXhcNNNA',
+    6
   ),
   (
-    'sdegenhardtz',
+    'Adopt an Orphanage',
     'mbecketz@amazon.co.uk',
     'Yeqzxwl',
     2,
-    'https://robohash.org/eaquefaciliscumque.png?size=50x50&set=set1',
+    'https://i.pinimg.com/originals/68/2e/4f/682e4f35d500afbf51b9593b828ccb87.png',
     6
   ),
   (
-    'aenrdigo10',
+    'Orphan World',
     'abilovsky10@vistaprint.com',
-    'IHyOVhbJzj5',
-    1,
-    'https://robohash.org/consequaturnihildicta.jpg?size=50x50&set=set1',
+    'password',
+    2,
+    'https://t4.ftcdn.net/jpg/03/13/00/21/360_F_313002173_ib6DVaxLb035ClMthvP6Ztup4GePFsYn.jpg',
+    6
+  ),
+  (
+    'Woodland Build',
+    'abeloe11@storify.com',
+    'password',
+    2,
+    'https://uploads.turbologo.com/uploads/design/hq_preview_image/662049/draw_svg20201116-31497-tmjb0u.svg.png',
     8
   ),
   (
-    'jocassidy11',
-    'abeloe11@storify.com',
-    'OG6mXe',
-    2,
-    'https://robohash.org/velitsapientedolores.png?size=50x50&set=set1',
-    2
-  ),
-  (
-    'rgrundwater12',
+    'Senior Help',
     'ohassan12@sfgate.com',
-    'asKwvH5C4Tt',
-    3,
-    'https://robohash.org/quocummolestias.bmp?size=50x50&set=set1',
-    6
+    'password',
+    2,
+    'https://p1.hiclipart.com/preview/846/862/409/home-logo-physical-therapy-geriatrics-massage-occupational-therapy-medicine-internal-medicine-family-medicine-png-clipart.jpg',
+    8
   ),
   (
-    'rchamberlen13',
+    'Elderly Help',
     'jbrockherst13@altervista.org',
-    '5DcIuGM',
-    3,
-    'https://robohash.org/laborumnemocum.png?size=50x50&set=set1',
-    7
-  ),
-  (
-    'cbeswick14',
-    'ahorick14@walmart.com',
-    'yLBr2s',
+    'password',
     2,
-    'https://robohash.org/fugiatquiaincidunt.png?size=50x50&set=set1',
+    'https://st4.depositphotos.com/4259495/24581/v/1600/depositphotos_245818810-stock-illustration-elderly-healthcare-heart-shaped-logo.jpg',
+    8
+  ),
+  (
+    'Phil Dunphy',
+    'ahorick14@walmart.com',
+    'password',
+    1,
+    'https://randomuser.me/api/portraits/men/97.jpg',
     7
   ),
   (
-    'averrier15',
+    'Bill Clinton',
     'glammerts15@xinhuanet.com',
-    'd2fWY5QaI',
-    3,
-    'https://robohash.org/ipsumdoloremqueinventore.jpg?size=50x50&set=set1',
+    'password',
+    1,
+    'https://uifaces.co/our-content/donated/gPZwCbdS.jpg',
     6
   ),
   (
-    'bpfaffel16',
+    'Mario Winnans',
     'hbedingfield16@amazon.co.uk',
-    'yW8pHcqDyM',
-    2,
-    'https://robohash.org/enimcummagni.jpg?size=50x50&set=set1',
+    'password',
+    1,
+    'https://randomuser.me/api/portraits/men/86.jpg',
     3
   ),
   (
-    'aenric17',
+    'Jill Mathiew',
     'lsushams17@edublogs.org',
-    'FXihKqZBk',
-    2,
-    'https://robohash.org/suscipitdictain.jpg?size=50x50&set=set1',
+    'password',
+    1,
+    'https://randomuser.me/api/portraits/women/44.jpg',
     2
   ),
   (
-    'blorent18',
+    'Megan Fox',
     'egossipin18@geocities.com',
-    'MNRom5U1jCAh',
-    2,
-    'https://robohash.org/consequaturlaudantiumrecusandae.png?size=50x50&set=set1',
+    'password',
+    1,
+    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9',
     8
   ),
   (
-    'ulawdham19',
+    'Mandy Moore',
     'gdrains19@walmart.com',
-    'nQ5AgmTG',
-    2,
-    'https://robohash.org/siteumqui.jpg?size=50x50&set=set1',
+    'password',
+    1,
+    'https://randomuser.me/api/portraits/women/63.jpg',
     5
   ),
   (
-    'imirrlees1a',
+    'Heather Saba',
     'ibalogh1a@imgur.com',
-    'j861iiS9Ri',
+    'password',
     1,
-    'https://robohash.org/remnesciuntrerum.png?size=50x50&set=set1',
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NjYzMzE1MV5BMl5BanBnXkFtZTgwNTA4NDY4OTE@._V1_UX172_CR0,0,172,256_AL_.jpg',
     4
   ),
   (
-    'ejosephsen1b',
+    'Hannah Mana',
     'mcuppleditch1b@woothemes.com',
-    'qc6e6cS5fOR6',
-    3,
-    'https://robohash.org/illumexercitationemdebitis.bmp?size=50x50&set=set1',
+    'password',
+    1,
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BODFjZTkwMjItYzRhMS00OWYxLWI3YTUtNWIzOWQ4Yjg4NGZiXkEyXkFqcGdeQXVyMTQ0ODAxNzE@._V1_UX172_CR0,0,172,256_AL_.jpg',
     3
   ),
   (
-    'elavies1c',
+    'Hail Mary',
     'iknevett1c@plala.or.jp',
-    'dMvsonB3f',
-    2,
-    'https://robohash.org/veliteumut.jpg?size=50x50&set=set1',
+    'password',
+    1,
+    'https://randomuser.me/api/portraits/women/47.jpg',
     1
   ),
   (
-    'agallimore1d',
+    'Sheela Min',
     'gloiterton1d@ebay.com',
-    'I1VZ4w7MKr',
-    2,
-    'https://robohash.org/itaquesitquia.jpg?size=50x50&set=set1',
+    'password',
+    1,
+    'https://randomuser.me/api/portraits/women/95.jpg',
     4
+  ),
+  (
+    'Hilary Duff',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/women/79.jpg',
+    1
+  ),
+  (
+    'Christina Adams',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/3799Ffxy.jpeg',
+    1
+  ),
+  (
+    'Ross Gellar',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/rSuiu_Hr.jpg',
+    1
+  ),
+  (
+    'Joey Tribbiani',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/KtCFjlD4.jpg',
+    1
+  ),
+  (
+    'Uncle Roger',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/xZ4wg2Xj.jpg',
+    1
+  ),
+  (
+    'Mathew Chan',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/men/22.jpg',
+    1
+  ),
+  (
+    'Jim Pattison',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/6MWH9Xi_.jpg',
+    1
+  ),
+  (
+    'Larry King',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/ukegoVAy.jpg',
+    2
+  ),
+  (
+    'John Wright',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/FJkauyEa.jpg',
+    2
+  ),
+  (
+    'Harry Potter',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/men/91.jpg',
+    2
+  ),
+  (
+    'Britney Spears',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg',
+    2
+  ),
+  (
+    'Catherine Dan',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
+    2
+  ),
+  (
+    'Mary Mercedes',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/women/9.jpg',
+    2
+  ),
+  (
+    'Mia Micheal',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
+    2
+  ),
+  (
+    'Mina Sheikh',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMTc1MTYzM15BMl5BanBnXkFtZTgwNzI5NjMwOTE@._V1_UY256_CR16,0,172,256_AL_.jpg',
+    3
+  ),
+  (
+    'Victoria Beckham',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BMTUxMjM1MzgxMl5BMl5BanBnXkFtZTcwNDI0NDE5NQ@@._V1_UY256_CR4,0,172,256_AL_.jpg',
+    3
+  ),
+  (
+    'Danny De Vito',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/AW-rdWlG.jpg',
+    3
+  ),
+  (
+    'Shawn Micheals',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/Square__small_.jpg',
+    3
+  ),
+  (
+    'Hailey Mathers',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1MDM5NjczOF5BMl5BanBnXkFtZTcwOTY2MDE4OA@@._V1_UY256_CR0,0,172,256_AL_.jpg',
+    3
+  ),
+  (
+    'Celine Dion',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BMTY2MDc2NjY1NF5BMl5BanBnXkFtZTcwMDY2MjE3Nw@@._V1_UX172_CR0,0,172,256_AL_.jpg',
+    3
+  ),
+  (
+    'Mel C',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BNjk5NjE5NTczMV5BMl5BanBnXkFtZTcwODI0OTM0NA@@._V1_UY256_CR4,0,172,256_AL_.jpg',
+    3
+  ),
+  (
+    'Nelly Furtado',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images-na.ssl-images-amazon.com/images/M/MV5BMTYwMDEyNTcxMV5BMl5BanBnXkFtZTcwNjM5ODQ2Ng@@._V1_UY256_CR10,0,172,256_AL_.jpg',
+    3
+  ),
+  (
+    'Lucy Lui',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=707b9c33066bf8808c934c8ab394dff6',
+    4
+  ),
+  (
+    'Dido Many',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/women/65.jpg',
+    4
+  ),
+  (
+    'Craig David',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/men/43.jpg',
+    4
+  ),
+  (
+    'Arura Heigle',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
+    4
+  ),
+  (
+    'Sting Harry',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=a72ca28288878f8404a795f39642a46f',
+    7
+  ),
+  (
+    'Yvonna Mick',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/women/26.jpg',
+    7
+  ),
+  (
+    'Omar Awad',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/vIqzOHXj.jpg',
+    7
+  ),
+  (
+    'Evan Jabar',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/women/17.jpg',
+    7
+  ),
+  (
+    'Micheal Jackson',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/men/61.jpg',
+    8
+  ),
+  (
+    'Janet Jackson',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=aa3a807e1bbdfd4364d1f449eaa96d82',
+    8
+  ),
+  (
+    'Adil Brown',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://uifaces.co/our-content/donated/N5PLzyan.jpg',
+    8
+  ),
+  (
+    'Tim Cook',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?crop=faces&fit=crop&h=200&w=200&auto=compress&cs=tinysrgb',
+    8
+  ),
+  (
+    'Gloria Singh',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.unsplash.com/photo-1498529605908-f357a9af7bf5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=047fade70e80ebb22ac8f09c04872c40',
+    8
+  ),
+  (
+    'Micheal Jackson',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/men/61.jpg',
+    8
+  ),
+  (
+    'Bill Gates',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://randomuser.me/api/portraits/men/78.jpg',
+    8
+  ),
+  (
+    'Elon Musk',
+    'gloiterton1d@ebay.com',
+    'password',
+    3,
+    'https://images.unsplash.com/photo-1506085452766-c330853bea50?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=3e378252a934e660f231666b51bd269a',
+    8
+  ),
+  (
+    'World Health Organization',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://www.who.int/images/default-source/infographics/who-emblem.png?sfvrsn=877bb56a_2',
+    1
+  ),
+  (
+    'GlaxoSmithKline',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://1000logos.net/wp-content/uploads/2017/01/GSK-Logo.png',
+    1
+  ),
+  (
+    'Bayer',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://canada2067.letstalkscience.ca/wp-content/uploads/2018/02/bayer-logo.jpg',
+    1
+  ),
+  (
+    'Canadian Red Cross',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://www.thechronicleherald.ca/media/photologue/photos/cache/Canadian_Red_Cross_logo_large.jpg',
+    1
+  ),
+  (
+    'Mental Health Society',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://cdn3.vectorstock.com/i/1000x1000/22/22/mental-health-and-psychology-concept-icon-or-logo-vector-27392222.jpg',
+    1
+  ),
+  (
+    'Food Bowl Association',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://previews.123rf.com/images/mantinov/mantinov1707/mantinov170700030/81714407-donate-and-help-logo-hungry-people-holding-empty-bowl-begging-for-food-and-help-.jpg',
+    2
+  ),
+  (
+    'Food Aid',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://logopond.com/logos/e2812b30e5877f8ea9417b26a05804f3.png',
+    2
+  ),
+  (
+    'Food For Thought',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://images-platform.99static.com/Mfgjuk2nfY_Ny0SvF2J86TZkn0Y=/500x500/top/smart/99designs-contests-attachments/18/18434/attachment_18434540',
+    2
+  ),
+  (
+    'US. Food',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://mms.businesswire.com/media/20201210005659/en/650770/23/USF_LOGOWITHOUTTAG_RGB_WEB.jpg',
+    2
+  ),
+  (
+    'Share Food',
+    'gloiterton1d@ebay.com',
+    'password',
+    2,
+    'https://thumbs.dreamstime.com/z/food-sharing-vector-design-template-giving-poor-refugees-emblem-charity-volunteer-organizations-feeding-89137695.jpg',
+    2
   );
 
 -- seeds for request volunteer table
@@ -544,532 +928,115 @@ INSERT INTO
   )
 VALUES
   (
-    33,
-    4,
-    'blankets',
+    2,
+    1,
+    'Syringes',
     true,
     '2020-03-21 23:50:30',
     null,
-    6,
-    9
+    40,
+    1
   ),
   (
-    10,
-    5,
-    'canned food',
+    2,
+    1,
+    'Medical Cotton',
     true,
     '2020-07-10 18:56:50',
     null,
-    6,
-    12
+    25,
+    6
   ),
   (
-    8,
-    3,
-    'water',
+    2,
+    2,
+    'Water Bottles',
     true,
     '2020-09-11 19:18:16',
     null,
-    6,
-    23
+    10,
+    10
   ),
   (
-    21,
-    6,
-    'dog food',
+    2,
+    8,
+    'Pens',
     true,
     '2020-08-16 21:28:23',
     null,
-    6,
-    34
+    20,
+    31
   ),
   (
-    43,
-    7,
-    'markers',
+    3,
+    2,
+    'Tuna cans',
     true,
     '2020-09-20 07:17:58',
     null,
-    8,
-    5
+    100,
+    46
   ),
   (
-    26,
-    7,
-    'water',
+    3,
+    2,
+    'Bread',
     true,
     '2020-03-03 03:24:54',
     null,
-    9,
+    500,
     27
   ),
   (
-    8,
     3,
-    'toilet paper',
+    8,
+    'Notepads',
     true,
     '2021-02-06 21:07:30',
     null,
-    2,
-    28
+    5,
+    null
   ),
   (
+    3,
     4,
-    8,
-    'toilet paper',
+    'KG books',
     true,
     '2020-08-23 13:55:32',
     null,
-    8,
-    44
+    10,
+    1
   ),
   (
-    10,
-    1,
-    'toilet paper',
+    3,
+    5,
+    'Puppy pads',
     true,
     '2020-11-06 13:13:50',
     null,
     4,
-    43
+    1
   ),
   (
-    50,
-    7,
-    'jackets',
-    false,
-    '2020-05-24 23:13:56',
-    null,
-    5,
-    10
-  ),
-  (
-    32,
-    5,
-    'markers',
+    3,
+    6,
+    'Children Toys',
     true,
     '2020-06-25 01:36:38',
     null,
     2,
-    13
-  ),
-  (
-    13,
-    8,
-    'water',
-    true,
-    '2020-08-16 22:13:16',
-    null,
-    8,
-    32
-  ),
-  (
-    6,
-    1,
-    'toilet paper',
-    true,
-    '2020-02-01 22:39:56',
-    null,
-    10,
-    9
-  ),
-  (
-    25,
-    2,
-    'jackets',
-    true,
-    '2020-07-04 23:02:23',
-    null,
-    5,
-    21
-  ),
-  (
-    34,
-    1,
-    'jackets',
-    true,
-    '2021-02-11 06:45:09',
-    null,
-    1,
-    15
-  ),
-  (
-    2,
-    7,
-    'puppy pads',
-    false,
-    '2020-12-06 14:36:11',
-    null,
-    2,
-    5
-  ),
-  (
-    42,
-    1,
-    'blankets',
-    true,
-    '2020-10-16 22:24:53',
-    null,
-    1,
-    31
-  ),
-  (
-    2,
-    1,
-    'blankets',
-    true,
-    '2020-01-28 05:07:07',
-    null,
-    10,
-    7
-  ),
-  (
-    45,
-    7,
-    'toilet paper',
-    true,
-    '2020-05-11 14:20:22',
-    null,
-    2,
-    17
-  ),
-  (
-    23,
-    5,
-    'toilet paper',
-    true,
-    '2020-10-13 07:29:04',
-    null,
-    8,
-    19
-  ),
-  (
-    45,
-    3,
-    'canned food',
-    true,
-    '2020-04-15 12:04:50',
-    null,
-    4,
-    23
-  ),
-  (
-    47,
-    4,
-    'toilet paper',
-    true,
-    '2020-12-23 21:04:20',
-    null,
-    3,
-    15
-  ),
-  (
-    15,
-    7,
-    'puppy pads',
-    true,
-    '2020-07-04 12:33:58',
-    null,
-    2,
-    47
-  ),
-  (
-    10,
-    2,
-    'water',
-    true,
-    '2020-07-15 04:00:42',
-    null,
-    6,
-    5
-  ),
-  (
-    5,
-    4,
-    'markers',
-    true,
-    '2020-09-28 03:16:23',
-    null,
-    1,
-    10
-  ),
-  (
-    17,
-    5,
-    'cat food',
-    true,
-    '2020-01-25 14:22:59',
-    null,
-    10,
-    24
-  ),
-  (
-    16,
-    7,
-    'canned food',
-    true,
-    '2020-06-10 10:44:39',
-    null,
-    8,
-    5
-  ),
-  (
-    10,
-    7,
-    'markers',
-    true,
-    '2020-05-10 14:14:40',
-    null,
-    7,
-    50
-  ),
-  (
-    29,
-    1,
-    'toilet paper',
-    true,
-    '2020-10-04 14:43:16',
-    null,
-    1,
-    40
-  ),
-  (
-    21,
-    1,
-    'markers',
-    true,
-    '2020-04-27 17:46:56',
-    null,
-    4,
-    20
-  ),
-  (
-    16,
-    1,
-    'canned food',
-    true,
-    '2020-03-09 00:43:15',
-    null,
-    3,
-    10
-  ),
-  (
-    5,
-    5,
-    'blankets',
-    true,
-    '2020-08-15 13:24:19',
-    null,
-    6,
-    1
-  ),
-  (
-    21,
-    6,
-    'toilet paper',
-    true,
-    '2020-09-25 19:51:02',
-    null,
-    6,
-    9
-  ),
-  (
-    48,
-    4,
-    'canned food',
-    true,
-    '2020-07-26 13:35:13',
-    null,
-    6,
-    7
-  ),
-  (
-    33,
-    6,
-    'canned food',
-    true,
-    '2020-03-16 16:49:46',
-    null,
-    7,
-    3
-  ),
-  (
-    7,
-    8,
-    'canned food',
-    true,
-    '2020-12-04 10:41:14',
-    null,
-    8,
-    3
-  ),
-  (
-    48,
-    5,
-    'cat food',
-    true,
-    '2020-06-19 07:09:24',
-    null,
-    7,
-    6
-  ),
-  (
-    10,
-    2,
-    'blankets',
-    true,
-    '2021-03-03 00:26:23',
-    null,
-    6,
-    14
-  ),
-  (
-    11,
-    3,
-    'blankets',
-    true,
-    '2020-04-26 06:14:20',
-    null,
-    7,
-    22
-  ),
-  (
-    4,
-    2,
-    'puppy pads',
-    true,
-    '2020-10-25 22:29:19',
-    null,
-    10,
-    1
-  ),
-  (
-    1,
-    1,
-    'dog food',
-    true,
-    '2020-04-29 09:56:46',
-    null,
-    9,
-    3
-  ),
-  (
-    43,
-    3,
-    'jackets',
-    true,
-    '2020-04-15 00:39:43',
-    null,
-    8,
-    9
-  ),
-  (
-    13,
-    1,
-    'puppy pads',
-    true,
-    '2020-09-16 16:58:25',
-    null,
-    9,
-    7
-  ),
-  (
-    7,
-    7,
-    'canned food',
-    true,
-    '2021-02-23 09:39:32',
-    null,
-    1,
-    17
-  ),
-  (
-    17,
-    1,
-    'water',
-    true,
-    '2020-09-26 23:09:19',
-    null,
-    10,
-    1
-  ),
-  (
-    26,
-    4,
-    'cat food',
-    true,
-    '2020-10-12 03:34:48',
-    null,
-    3,
-    10
-  ),
-  (
-    18,
-    1,
-    'blankets',
-    true,
-    '2020-02-08 22:12:33',
-    null,
-    1,
-    13
-  ),
-  (
-    21,
-    8,
-    'blankets',
-    true,
-    '2020-07-10 21:53:36',
-    null,
-    2,
-    10
-  ),
-  (
-    47,
-    1,
-    'markers',
-    true,
-    '2020-04-07 19:10:20',
-    null,
-    7,
-    2
-  ),
-  (
-    10,
-    5,
-    'markers',
-    true,
-    '2020-09-27 08:09:53',
-    null,
-    2,
-    40
+    4
   );
 
 -- seeds for requested money table
 INSERT INTO
   requested_money (user_id, is_active, requested_amount)
 VALUES
-  (2, TRUE, 1000),
-  (3, TRUE, 500),
-  (18, TRUE, 400),
-  (22, TRUE, 100),
-  (25, TRUE, 6000),
-  (35, TRUE, 6000),
-  (19, TRUE, 200),
-  (47, TRUE, 200),
-  (21, TRUE, 7050),
-  (9, TRUE, 400),
-  (24, TRUE, 200),
-  (37, TRUE, 100),
-  (1, TRUE, 7050),
-  (26, TRUE, 500),
-  (5, TRUE, 1000),
-  (9, TRUE, 500),
-  (12, TRUE, 7050),
-  (13, TRUE, 900),
-  (17, TRUE, 0),
-  (28, true, 1000),
-  (20, TRUE, 100),
-  (7, TRUE, 8000);
+  (2, TRUE, 5000),
+  (7, TRUE, 1000),
+  (11, TRUE, 2500),
+  (12, TRUE, 4500),
+  (13, TRUE, 2000);
 
 -- seeds for donated money table
 INSERT INTO
@@ -1080,154 +1047,53 @@ INSERT INTO
     requested_money_id
   )
 VALUES
-  (36, '2021-01-28 04:39:13', 5000, 5),
-  (32, '2020-04-22 23:24:45', 40, 4),
-  (12, '2020-07-21 18:54:53', 200, 3),
-  (50, '2020-09-08 11:58:50', 50, 7),
-  (18, '2021-01-02 12:03:20', 800, 13),
-  (46, '2021-02-12 00:10:09', 20, 4),
-  (36, '2020-06-07 08:25:14', 600, 22),
-  (5, '2020-12-03 04:23:18', 200, 1),
-  (41, '2021-02-20 11:29:06', 600, 18),
-  (10, '2020-11-19 13:07:14', 100, 14),
-  (47, '2020-08-26 10:17:19', 900, 20),
-  (39, '2020-10-09 21:51:43', 500, 1),
-  (4, '2021-03-10 15:25:15', 900, 17),
-  (4, '2020-04-07 09:23:04', 500, 22),
-  (3, '2020-11-22 14:32:52', 800, 15),
-  (8, '2020-10-08 09:44:37', 500, 16),
-  (42, '2020-07-07 06:50:21', 400, 2),
-  (13, '2020-07-08 16:35:09', 400, 6),
-  (11, '2021-01-18 14:46:56', 700, 22),
-  (7, '2020-04-06 01:25:50', 0, 19);
+  (1, '2021-01-28 04:39:13', 10, 1),
+  (1, '2020-04-22 23:24:45', 40, 3),
+  (1, '2020-07-21 18:54:53', 30, 2),
+  (1, '2020-09-08 11:58:50', 50, 1),
+  (6, '2021-01-02 12:03:20', 800, 4),
+  (6, '2021-02-12 00:10:09', 20, 5),
+  (6, '2020-06-07 08:25:14', 600, 1),
+  (10, '2020-12-03 04:23:18', 200, 1),
+  (26, '2021-02-20 11:29:06', 100, 3),
+  (30, '2020-11-19 13:07:14', 100, 4),
+  (47, '2020-08-26 10:17:19', 100, 5);
 
 -- seeds for donor following table
 INSERT INTO
   donor_following (user_id, receiver_id)
 VALUES
-  (2, 43),
-  (1, 22),
-  (5, 4),
-  (31, 29),
-  (27, 25),
-  (18, 18),
-  (33, 12),
-  (43, 50),
-  (25, 7),
-  (26, 9),
-  (1, 21),
-  (47, 32),
-  (50, 15),
-  (8, 9),
-  (25, 29),
-  (26, 3),
-  (29, 40),
-  (18, 15),
-  (11, 19),
-  (11, 4),
-  (30, 8),
-  (35, 6),
-  (31, 5),
-  (10, 12),
-  (18, 22),
-  (13, 9),
-  (31, 7),
-  (13, 16),
-  (26, 22),
-  (49, 21),
-  (10, 48),
-  (23, 47),
-  (29, 50),
-  (9, 12),
-  (13, 9),
+  (1, 16),
   (1, 7),
-  (22, 1),
-  (49, 6),
-  (32, 22),
-  (49, 21),
-  (12, 15),
-  (46, 4),
-  (35, 8),
-  (33, 6),
-  (12, 7),
-  (14, 10),
-  (33, 45),
-  (48, 30),
-  (15, 12),
-  (10, 4),
-  (8, 6),
-  (37, 5),
-  (47, 1);
+  (1, 5),
+  (1, 37),
+  (1, 38),
+  (1, 21),
+  (10, 12),
+  (10, 7),
+  (10, 15),
+  (10, 16),
+  (6, 2),
+  (10, 34),
+  (10, 40),
+  (6, 7),
+  (6, 11),
+  (6, 12),
+  (26, 2),
+  (27, 2),
+  (28, 2),
+  (29, 2),
+  (30, 2);
 
 -- seeds for recevier followers table
 INSERT INTO
   receiver_followers (user_id, donor_id)
 VALUES
-  (12, 34),
-  (46, 3),
-  (41, 40),
-  (33, 46),
-  (33, 39),
-  (33, 49),
-  (32, 2),
-  (26, 20),
-  (49, 34),
-  (32, 13),
-  (5, 15),
-  (11, 31),
-  (39, 32),
-  (27, 18),
-  (44, 21),
-  (9, 4),
-  (4, 23),
-  (12, 47),
-  (43, 11),
-  (13, 43),
-  (14, 26),
-  (34, 50),
-  (6, 25),
-  (44, 41),
-  (28, 22),
-  (23, 4),
-  (19, 36),
-  (43, 33),
-  (20, 44),
-  (31, 38),
-  (30, 48),
-  (27, 26),
-  (30, 43),
-  (31, 22),
-  (6, 41),
-  (5, 31),
-  (9, 45),
-  (30, 29),
-  (16, 41),
-  (43, 25),
-  (12, 46),
-  (39, 27),
-  (16, 19),
-  (38, 32),
-  (32, 33),
-  (37, 45),
-  (47, 9),
-  (9, 29),
-  (22, 13),
-  (20, 19);
-
--- seeds for donated items table
-INSERT INTO
-  donated_items (
-    wishlist_item_id,
-    donor_id,
-    quantity_donated
-  )
-VALUES
-  (32, 1, 2),
-  (32, 10, 3);
-
--- seeds for requested items table
-INSERT INTO
-  requested_items (wishlist_item_id, receiver_id)
-VALUES
-  (32, 5),
-  (32, 5);
+  (2, 21),
+  (2, 20),
+  (2, 19),
+  (2, 18),
+  (2, 17),
+  (2, 11),
+  (5, 3),
+  (21, 6);

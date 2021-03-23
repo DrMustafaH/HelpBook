@@ -27,7 +27,7 @@ module.exports = (db) => {
   router.post("/fetchUser", (req, res) => {
     db.query(
       `SELECT id , type_id FROM users
-    WHERE username = $1
+    WHERE email = $1
     ;`,
       [req.body.username]
     )

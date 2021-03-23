@@ -29,6 +29,7 @@ export default function Login(props) {
   });
   const history = useHistory();
   const classes = useStyles();
+  console.log(userInfo);
 
   //Async function that on clicking the login button to perform several axios calls
   async function handleSubmit(event) {
