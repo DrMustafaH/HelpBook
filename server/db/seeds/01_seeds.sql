@@ -10,14 +10,38 @@ VALUES
 INSERT INTO
   categories (name, image)
 VALUES
-  ('Health','https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'),
-  ('Kids','https://images.unsplash.com/photo-1524503033411-c9566986fc8f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'),
-  ('Education','https://images.unsplash.com/photo-1525921429624-479b6a26d84d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'),
-  ('Immigration & Refugees','https://images.unsplash.com/photo-1533845915284-f77b4651d406?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1355&q=80'),
-  ('Animals','https://images.unsplash.com/photo-1601758177266-bc599de87707?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'),
-  ('Food Banks','https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'),
-  ('Women','https://images.unsplash.com/photo-1498661367879-c2085689eed4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'),
-  ('Others','https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80');
+  (
+    'Health',
+    'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'
+  ),
+  (
+    'Kids',
+    'https://images.unsplash.com/photo-1524503033411-c9566986fc8f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+  ),
+  (
+    'Education',
+    'https://images.unsplash.com/photo-1525921429624-479b6a26d84d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80'
+  ),
+  (
+    'Immigration & Refugees',
+    'https://images.unsplash.com/photo-1533845915284-f77b4651d406?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1355&q=80'
+  ),
+  (
+    'Animals',
+    'https://images.unsplash.com/photo-1601758177266-bc599de87707?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+  ),
+  (
+    'Food Banks',
+    'https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+  ),
+  (
+    'Women',
+    'https://images.unsplash.com/photo-1498661367879-c2085689eed4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+  ),
+  (
+    'Others',
+    'https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80'
+  );
 
 -- seeds for users table
 INSERT INTO
@@ -1036,7 +1060,8 @@ VALUES
   (7, TRUE, 1000),
   (11, TRUE, 2500),
   (12, TRUE, 4500),
-  (13, TRUE, 2000);
+  (13, TRUE, 2000),
+  (3, TRUE, 4000);
 
 -- seeds for donated money table
 INSERT INTO
@@ -1057,7 +1082,8 @@ VALUES
   (10, '2020-12-03 04:23:18', 200, 1),
   (26, '2021-02-20 11:29:06', 100, 3),
   (30, '2020-11-19 13:07:14', 100, 4),
-  (47, '2020-08-26 10:17:19', 100, 5);
+  (47, '2020-08-26 10:17:19', 100, 5),
+  (47, '2020-08-26 10:17:19', 2000, 6);
 
 -- seeds for donor following table
 INSERT INTO
@@ -1097,33 +1123,3 @@ VALUES
   (2, 11),
   (5, 3),
   (21, 6);
-
--- seeds for recommendations table
-INSERT INTO
-  recommendations (user_id, recommended_name, recommended_avatar)
-VALUES
-  (
-    1,
-    'Animal Life',
-    'https://i.pinimg.com/originals/d7/e6/fe/d7e6fe6c4e540f6468d8638f5008c1d9.jpg'
-  ),
-  (
-    1,
-    'GlaxoSmithKline',
-    'https://1000logos.net/wp-content/uploads/2017/01/GSK-Logo.png'
-  ),
-  (
-    1,
-    'Mosaic BC',
-    'https://mosaicbc.org/wp-content/uploads/2016/05/MOSAIC-icon-F-square.png'
-  ),
-  (
-    1,
-    'Mia Micheal',
-    'https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
-  ),
-  (
-    1,
-    'The UN Refugee Agency',
-    'https://images.squarespace-cdn.com/content/v1/56d1fe3ed210b8b23f16d059/1570556718932-WIJCJYKJFXOVONOG9O42/ke17ZwdGBToddI8pDm48kAf-OpKpNsh_OjjU8JOdDKBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzAFzFJoCInLPKyj9AG8yKe7-Q2aFvP177fkO9TY_-rz5WoqqTEZpmj4yDEOdwKV68/UNHCR%2Blogo.jpg'
-  );
