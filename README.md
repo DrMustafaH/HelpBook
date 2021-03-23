@@ -56,7 +56,7 @@ npm start
 
 ## ScreenShots
 
-!['Landing Page']()
+!['Landing Page'](https://github.com/DrMustafaH/HelpBook/blob/main/docs/HelpBook%20Landing%20Page.png?raw=true)
 _Helpbook Landing Page_
 
 ## Project Stack
