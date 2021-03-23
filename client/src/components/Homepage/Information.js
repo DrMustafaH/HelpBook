@@ -4,32 +4,26 @@ import "./Information.scss";
 // Information component
 export default function Information() {
   return (
-    <div>
-      <h1 className="information-heading">More Information</h1>
-      <div className="information-section">
+    <div className="information-section">
+      <div className="information-heading">
+        <h1>More Information</h1>
+        <img alt="arrow" src="../images/arrow.png" className="team-img" />
+      </div>
+      <div className="information-content">
         <div>
-          <img
-            alt="logo"
-            src="https://i.pinimg.com/originals/a5/e0/2a/a5e02a5a141f2a2a7b588edf7b467f45.jpg"
-          />
+          <h3>Front-end</h3>
+          <div>
+            <img
+              alt="logo"
+              src="https://icon-library.com/images/react-icon/react-icon-15.jpg"
+            />
+          </div>
         </div>
         <div>
-          <img
-            alt="logo"
-            src="https://i.pinimg.com/originals/a5/e0/2a/a5e02a5a141f2a2a7b588edf7b467f45.jpg"
-          />
-        </div>
-        <div>
-          <img
-            alt="logo"
-            src="https://i.pinimg.com/originals/a5/e0/2a/a5e02a5a141f2a2a7b588edf7b467f45.jpg"
-          />
-        </div>
-        <div>
-          <img
-            alt="logo"
-            src="https://i.pinimg.com/originals/a5/e0/2a/a5e02a5a141f2a2a7b588edf7b467f45.jpg"
-          />
+          <h3>Back-end</h3>
+          <div>
+            <img alt="logo" src="../images/expressjs-icon.png" />
+          </div>
         </div>
       </div>
     </div>
