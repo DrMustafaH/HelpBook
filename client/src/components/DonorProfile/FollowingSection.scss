@@ -1,10 +1,8 @@
 .following-section {
   display: flex;
   justify-content: space-evenly;
-  // width: 80%;
   width: 50%;
   margin: auto 10px auto auto;
-  // border-right: 1px solid #f0efec;
 }
 
 .list-display {
@@ -12,17 +10,10 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 0 50px;
-  width: 50%;
+  width: 80%;
   margin: auto;
 }
 
 .following-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.arrow-icon-header {
-  padding-left: 20px;
-  height: 25px;
+  margin-bottom: 0px;
 }

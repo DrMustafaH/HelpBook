@@ -14,7 +14,7 @@ const StyledPaper = withStyles({
     flexDirection: "column",
     fontFamily: "adobe-caslon-pro, serif",
     maxHeight: 500,
-
+    overflow: "auto",
     "&.MuiPaper-elevation1": {
       boxShadow: "none",
     },
@@ -55,10 +55,7 @@ export default function ActivityFeed(props) {
   return (
     <div className="activity-feed-section">
       <StyledPaper>
-        <div className="activity-header">
-          <h1>Activity Feed</h1>
-          {/* <img className="arrow-icon-header" src="../images/arrow.png"></img> */}
-        </div>
+        <h1 className="activity-header">Activity Feed</h1>
         <div className="donated-items-list">
           <List className={classes.root}>{mappedMoneyLog}</List>
           <List className={classes.root}>{mappedItemLog}</List>
