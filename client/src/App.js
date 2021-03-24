@@ -10,6 +10,7 @@ import DonorProfile from "./components/DonorProfile/DonorProfile";
 import ReceiverProfile from "./components/ReceiverProfile/ReceiverProfile";
 import ReceiverDashboard from "./components/ReceiverDashboard/ReceiverDashboard";
 import Login from "./components/Login/Login";
+import jwt_decode from "jwt-decode";
 import Register from "./components/Login/Register";
 
 // App component
@@ -53,10 +54,22 @@ function App() {
     });
   }, []);
 
+  let decoded;
+  if (token) {
+    decoded = jwt_decode(token);
+  }
+
   return (
     <div className="App">
       <Router>
-        <Navbar isLoggedIn={token} logout={handleLogout} />
+        {!token && <Navbar />}
+        {token && (
+          <Navbar
+            username={decoded.username}
+            isLoggedIn={token}
+            logout={handleLogout}
+          />
+        )}
         <Switch>
           <Route exact path="/">
             <HomePage />
@@ -78,7 +91,7 @@ function App() {
             <DonorProfile />
           </Route>
           <Route exact path="/login">
-            <Login setToken={handleLogin} />
+            <Login isLoggedIn={token} setToken={handleLogin} />
           </Route>
           <Route exact path="/register">
             <Register />

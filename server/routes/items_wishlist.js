@@ -111,7 +111,7 @@ module.exports = (db) => {
         `DELETE FROM items_wishlist
     WHERE id = $1 AND user_id = $2
     RETURNING *;`,
-        [req.body.id, req.body.user_id]
+        [req.body.id, req.params.id]
       )
         .then(() => {
           res.sendStatus(200);

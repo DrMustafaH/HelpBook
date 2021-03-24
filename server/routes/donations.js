@@ -147,7 +147,10 @@ module.exports = (db) => {
     const token = req.headers.authorization.split(" ")[1];
     const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
     // if the token contains the authenticated user information
-    if (decoded.userId == req.params.id && decoded.typeId === 2) {
+    if (
+      decoded.userId == req.params.id &&
+      (decoded.typeId === 2 || decoded.typeId === 3)
+    ) {
       // allow user (receiver organization) to edit a donation goal
       db.query(
         `UPDATE requested_money
@@ -155,6 +158,7 @@ module.exports = (db) => {
         [req.body.requested_amount, req.body.id]
       )
         .then((data) => {
+          console.log("Data", data.rows[0]);
           res.send(data.rows[0]);
           res.status(200);
         })

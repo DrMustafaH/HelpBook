@@ -129,7 +129,7 @@ export default function ScheduledVolunteering() {
               <h2 className={classes.date}>12/09</h2>
               <ListItemText
                 className={classes.event}
-                primary="Help deliver meals and gifts to patients at a local hospital"
+                primary="Deliver meals to patients at local hospital"
               />
               <div>
                 <StyledIconEdit />

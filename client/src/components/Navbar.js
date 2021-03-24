@@ -37,7 +37,8 @@ export default function Navbar(props) {
   function handleProfileClick() {
     const token = localStorage.getItem("token");
     const decoded = jwt_decode(props.isLoggedIn);
-    console.log("DECODED", decoded);
+    console.log("token");
+    console.log("DECODED", decoded.username);
     if (decoded.typeId === 1) {
       history.push(`/donor/${decoded.userId}`);
     } else {
@@ -45,6 +46,7 @@ export default function Navbar(props) {
     }
   }
 
+  console.log("USERNAME", props.username);
   return (
     <nav className="navbar">
       <div className="home-link" onClick={handleHomeClick}>
@@ -71,9 +73,12 @@ export default function Navbar(props) {
             SIGN IN
           </div>
         ) : (
-          <div className="nav-links-text" onClick={handleLogoutClick}>
-            SIGN OUT
-          </div>
+          <>
+            <div>Logged in as: {props.username}</div>
+            <div className="nav-links-text" onClick={handleLogoutClick}>
+              SIGN OUT
+            </div>
+          </>
         )}
         {!props.isLoggedIn ? (
           <div className="nav-links-text" onClick={handleRegisterClick}>
