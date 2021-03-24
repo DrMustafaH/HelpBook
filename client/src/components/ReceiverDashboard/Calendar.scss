@@ -11,12 +11,6 @@
   direction: ltr;
 }
 
-/* GENERAL */
-
-* {
-  box-sizing: border-box;
-}
-
 /* GRID */
 
 .row {
@@ -56,6 +50,7 @@
 /* Calendar */
 
 .calendar {
+  box-sizing: border-box;
   display: block;
   position: relative;
   width: 60%;
@@ -110,6 +105,7 @@
   cursor: pointer;
   // background: var(#f0efec);
   transition: 0.25s ease-out;
+  box-sizing: border-box;
 }
 
 .calendar .body .cell:hover {
