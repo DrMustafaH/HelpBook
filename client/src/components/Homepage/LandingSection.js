@@ -27,7 +27,11 @@ export default function LandingSection() {
         ></img>
       </div>
       <div>
-        <Button variant="contained" onClick={handleClickNeedHelp}>
+        <Button
+          className="need-btn"
+          variant="contained"
+          onClick={handleClickNeedHelp}
+        >
           I Need Help
         </Button>
         <Button variant="contained" onClick={handleClickWantToHelp}>

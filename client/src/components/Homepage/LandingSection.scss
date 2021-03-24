@@ -44,6 +44,7 @@
     color: #f0efec;
     font-size: 1.15rem;
     position: inherit;
+
   }
   Button:hover {
     font-weight: 700;
@@ -70,4 +71,8 @@
 .landing-msg-helpbook {
   font-size: 50px;
   color: #0e212f;
+}
+
+.need-btn{
+  padding: 6px 32px !important;
 }

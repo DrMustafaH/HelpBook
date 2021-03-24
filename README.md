@@ -36,7 +36,7 @@ To setup the app,
 ## Setup Database
 
 - Set a .env file using the .env.example provided
-- Run psql using `psql -d <project name in .env> -U <username in .env>`
+- Run psql in the server directory using `psql -d <project name in .env> -U <username in .env>`
 - Create tables in database using `\i db/schema/01_schema.sql`
 - Seed tables using `\i db/seeds/01_seeds.sql`
 
@@ -101,3 +101,4 @@ _Helpbook Landing Page_
 - Pg
 - Pg-native
 - Nodemon
+  \i
