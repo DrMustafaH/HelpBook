@@ -37,75 +37,108 @@ const data = [
 // withstyles method to style the Paper MUI react component and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
-    width: "100%",
+    width: "80%",
+    margin: "20px auto 50px auto",
     color: "#0E212F",
     display: "flex",
     flexDirection: "column",
     fontFamily: "adobe-caslon-pro, serif",
+    fontSize: "1.3rem",
     fontWeight: "700",
-    maxHeight: 200,
+    maxHeight: 400,
     overflow: "auto",
   },
 })(Paper);
 
 export default function NewsLog() {
   return (
-    <div className="newslog-section">
-      <StyledPaper>
+    <StyledPaper>
+      <div className="newslog-section">
         <h1 className="newslog-heading">News Log</h1>
+
         <div className="news-items">
           <div className="newslog-item">
-            <p className="newslog-news">
+            <img
+              className="newslog-avatar"
+              alt="avatar"
+              src={data[0].avatar}
+            ></img>
+            <p className="newslog-news">{data[0].news}</p>
+            <div className="read-more">
+              <a className="news-link-more">Read more</a>
               <img
-                className="newslog-avatar"
-                alt="avatar"
-                src={data[0].avatar}
-              ></img>
-              {data[0].news}
-            </p>
+                alt="arrow"
+                src="../images/arrow.png"
+                className="news-arrow"
+              />
+            </div>
           </div>
           <div className="newslog-item">
-            <p className="newslog-news">
+            <img
+              className="newslog-avatar"
+              alt="avatar"
+              src={data[1].avatar}
+            ></img>
+            <p className="newslog-news">{data[1].news}</p>
+            <div className="read-more">
+              <a className="news-link-more">Read more</a>
               <img
-                className="newslog-avatar"
-                alt="avatar"
-                src={data[1].avatar}
-              ></img>
-              {data[1].news}
-            </p>
+                alt="arrow"
+                src="../images/arrow.png"
+                className="news-arrow"
+              />
+            </div>
           </div>
           <div className="newslog-item">
-            <p className="newslog-news">
+            <img
+              className="newslog-avatar"
+              alt="avatar"
+              src={data[2].avatar}
+            ></img>
+            <p className="newslog-news">{data[2].news}</p>
+            <div className="read-more">
+              <a className="news-link-more">Read more</a>
               <img
-                className="newslog-avatar"
-                alt="avatar"
-                src={data[2].avatar}
-              ></img>
-              {data[2].news}
-            </p>
+                alt="arrow"
+                src="../images/arrow.png"
+                className="news-arrow"
+              />
+            </div>
           </div>
           <div className="newslog-item">
-            <p className="newslog-news">
+            <img
+              className="newslog-avatar"
+              alt="avatar"
+              src={data[3].avatar}
+            ></img>
+            <p className="newslog-news">{data[3].news}</p>
+            <div className="read-more">
+              <a className="news-link-more">Read more</a>
               <img
-                className="newslog-avatar"
-                alt="avatar"
-                src={data[3].avatar}
-              ></img>
-              {data[3].news}
-            </p>
+                alt="arrow"
+                src="../images/arrow.png"
+                className="news-arrow"
+              />
+            </div>
           </div>
           <div className="newslog-item">
-            <p className="newslog-news">
+            <img
+              className="newslog-avatar"
+              alt="avatar"
+              src={data[4].avatar}
+            ></img>
+            <p className="newslog-news">{data[4].news}</p>
+            <div className="read-more">
+              <a className="news-link-more">Read more</a>
               <img
-                className="newslog-avatar"
-                alt="avatar"
-                src={data[4].avatar}
-              ></img>
-              {data[4].news}
-            </p>
+                alt="arrow"
+                src="../images/arrow.png"
+                className="news-arrow"
+              />
+            </div>
           </div>
         </div>
-      </StyledPaper>
-    </div>
+      </div>
+    </StyledPaper>
   );
 }
