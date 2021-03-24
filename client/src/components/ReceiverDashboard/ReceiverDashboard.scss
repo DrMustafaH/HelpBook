@@ -11,6 +11,7 @@
   margin: 0 10%;
 }
 
+/* HEADER */
 .header-receiver-dash {
   display: flex;
   align-items: center;
@@ -19,7 +20,6 @@
   margin: 100px auto 0 auto;
   padding: 40px 0;
 }
-
 .profile-header {
   display: flex;
   align-items: center;
@@ -29,6 +29,33 @@
     border: 1px solid #0e212f;
   }
 }
+
+.profile-description {
+  text-align: justify;
+  width: 70%;
+  padding-left: 130px;
+  p {
+    margin: 0;
+  }
+}
+.receiver-read-more {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.receiver-read-more:hover {
+  cursor: pointer;
+  color: #3891a6;
+  font-weight: 600;
+}
+.receiver-link-more {
+  font-style: italic;
+  font-size: 14px;
+  padding-right: 20px;
+}
+
+/* VOLUNTEERING SECTION */
+
 .volunteering-section {
   display: flex;
   justify-content: center;

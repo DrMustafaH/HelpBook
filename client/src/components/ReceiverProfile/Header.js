@@ -1,5 +1,17 @@
 import React from "react";
 import "../DonorProfile/Header.scss";
+import EditIcon from "@material-ui/icons/Edit";
+import { withStyles } from "@material-ui/core/styles";
+
+// withstyles method to style the Icon MUI react componect and assign a new name to it (StyledIconEdit)
+const StyledIconEdit = withStyles({
+  root: {
+    "&:hover": {
+      color: "#3891A6",
+      cursor: "pointer",
+    },
+  },
+})(EditIcon);
 
 // Header component
 export default function Header(props) {
@@ -19,8 +31,8 @@ export default function Header(props) {
           citizen-centered.
         </p>
         <div className="receiver-read-more">
-          <a className="receiver-link-more">Visit Website</a>
-          <img alt="arrow" src="../images/arrow.png" className="news-arrow" />
+          <StyledIconEdit />
+          <a className="receiver-link-more">Edit profile</a>
         </div>
       </div>
     </div>

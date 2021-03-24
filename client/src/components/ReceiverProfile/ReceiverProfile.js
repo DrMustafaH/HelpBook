@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Header from "../DonorProfile/Header";
+import Header from "./Header";
 import ProgressBar from "./ProgressBar";
 import TotalFollowers from "./TotalFollowers";
 import Wishlist from "./Wishlist";
@@ -72,7 +72,9 @@ export default function ReceiverProfile() {
   if (!user) return <h4>User does not exist</h4>;
   return (
     <div>
-      <Header username={user.username} avatar={user.avatar} />
+      <div className="header-receiver">
+        <Header username={user.username} avatar={user.avatar} />
+      </div>
       <div className="receiver-followers">
         {followersCount && <TotalFollowers count={followersCount} />}
         <ProgressBar />
