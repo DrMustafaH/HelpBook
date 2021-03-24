@@ -101,7 +101,7 @@ export default function Calendar(props) {
 
   const nextMonth = () => {
     setState({
-      currentMonth: dateFns.addMonths(state.state.currentMonth, 1),
+      currentMonth: dateFns.addMonths(state.currentMonth, 1),
     });
   };
 
