@@ -50,9 +50,18 @@
 .profile-dashboard {
   display: flex;
   align-content: space-between;
-  // p {
-  //   font-family: "Hind Madurai", sans-serif;
-  //   font-size: 20px;
-  //   font-weight: 900;
-  // }
+}
+
+.logged-in {
+  display: flex;
+  align-items: center;
+}
+
+.username-logged {
+  padding-right: 20px;
+  font-style: italic;
+}
+
+.spacer {
+  padding: 0 20px;
 }

@@ -73,12 +73,13 @@ export default function Navbar(props) {
             SIGN IN
           </div>
         ) : (
-          <>
-            <div>Logged in as: {props.username}</div>
+          <div className="logged-in">
+            <div className="username-logged">{props.username} </div>
+            <div className="spacer">{" | "}</div>
             <div className="nav-links-text" onClick={handleLogoutClick}>
               SIGN OUT
             </div>
-          </>
+          </div>
         )}
         {!props.isLoggedIn ? (
           <div className="nav-links-text" onClick={handleRegisterClick}>
