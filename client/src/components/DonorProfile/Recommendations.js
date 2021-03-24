@@ -32,8 +32,8 @@ const data = [
 // withstyles method to style the Paper MUI react component and assign a new name to it (StyledPaper)
 const StyledPaper = withStyles({
   root: {
-    width: "100%",
-    margin: "30px 0 30px 30px",
+    width: "50%",
+    margin: "30px 0 30px 10px",
     color: "#0E212F",
     display: "flex",
     flexDirection: "column",
