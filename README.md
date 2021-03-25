@@ -56,8 +56,16 @@ npm start
 
 ## ScreenShots
 
-!['Landing Page'](https://github.com/DrMustafaH/HelpBook/blob/main/docs/HelpBook%20Landing%20Page.png?raw=true)
+!['Landing Page'](https://github.com/DrMustafaH/HelpBook/blob/main/docs/Landing%20Page.png?raw=true)
 _Helpbook Landing Page_
+!['App Dashboard'](https://github.com/DrMustafaH/HelpBook/blob/main/docs/App%20Dashboard%20.gif?raw=true)
+_App Dashboard where user can navigate through different categories to see organizations and individuals accordingly_
+!['Receiver Profile'](https://github.com/DrMustafaH/HelpBook/blob/main/docs/Organization%20Profile.png?raw=true)
+_Receiver (organization) profile where an organization can edit their information_
+!['Donor Profile'](https://github.com/DrMustafaH/HelpBook/blob/main/docs/Donor%20Profile.png?raw=true)
+_Donor profile where a donor can see their stats , information and unfollow other users_
+!['Donate Item process'](https://github.com/DrMustafaH/HelpBook/blob/main/docs/Donate%20item%20process.gif?raw=true)
+_Item donation walkthrough, when all quantity is donated item is removed_
 
 ## Project Stack
 
